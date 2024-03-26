@@ -18,7 +18,7 @@ mixin Reports on Authentication, Utilities {
       authenticated: true,
       payload: {
         "account_id": id,
-        "status_ids": statusIds,
+        "status_ids": statusIds.first,
         "comment": comment,
         "forward": forward?.toString(),
       },
