@@ -1,5 +1,11 @@
 ## Unreleased
 
+## v1.0.0-beta.20
+
+**Features**
+
+- Updae to latest mastodon-openapi spec which included a complete rewrite and a number of fixed bugs that changed the public API
+
 ## v1.0.0-beta.19
 
 **Features**
