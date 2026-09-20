@@ -6,8 +6,8 @@ import 'package:openapi_generator_annotations/openapi_generator_annotations.dart
     pubName: 'mastodon',
     pubDescription:
         'Mastodon API client generated from the unofficial OpenAPI specification.',
-    pubHomepage: 'https://github.com/abraham/mastodon-dart',
-    pubVersion: '1.0.0-beta.20',
+    pubHomepage: 'https://github.com/abraham/mastodon_dart',
+    pubVersion: '1.0.0',
     pubAuthor: 'Abraham Williams',
     serializationLibrary: DioSerializationLibrary.jsonSerializable,
   ),
