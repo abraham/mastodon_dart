@@ -1,5 +1,5 @@
 name: mastodon
-version: 1.0.0-beta.19
+version: 1.0.0-beta.20
 description: Mastodon API client generated from the unofficial OpenAPI specification.
 homepage: https://github.com/abraham/mastodon-dart
 topics:
