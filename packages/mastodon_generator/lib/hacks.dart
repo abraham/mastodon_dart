@@ -174,6 +174,11 @@ void main() async {
       ],
       description: "Fix List types",
     ),
+    Hack(
+      filePath: 'packages/mastodon/README.md',
+      replacements: [Replacement('# mastodon (EXPERIMENTAL)', '# mastodon')],
+      description: 'Remove experimental label from package title',
+    ),
   ];
 
   for (final hack in hacks) {
