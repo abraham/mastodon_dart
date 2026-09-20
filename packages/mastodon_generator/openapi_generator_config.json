@@ -1,6 +1,6 @@
 {
   "openapiGeneratorVersion": "7.24.0",
-  "additionalCommands": "",
+  "additionalCommands": "--config=openapi_generator_cli_config.json",
   "downloadUrlOverride": null,
   "jarCacheDir": ".dart_tool/openapi_generator_cache"
 }

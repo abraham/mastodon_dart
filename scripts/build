@@ -8,6 +8,7 @@ curl --silent --show-error --location \
 
 cd packages/mastodon_generator
 
+dart run build_runner clean
 dart run build_runner build
 
 cd ../..
