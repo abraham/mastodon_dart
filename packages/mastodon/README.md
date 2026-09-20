@@ -28,7 +28,7 @@ If this Dart package is published to Github, please include the following in pub
 dependencies:
   mastodon:
     git:
-      url: https://github.com/abraham/mastodon-dart.git
+      url: https://github.com/abraham/mastodon_dart.git
       #ref: main
 ```
 

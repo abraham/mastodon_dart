@@ -13,7 +13,7 @@ Mastodon API Dart client generated from [mastodon-openapi](https://github.com/ab
 
 ## Release
 
-1. Run the [update](https://github.com/abraham/mastodon-dart/actions/workflows/update.yml) action and merge the resulting PR.
-2. Run the [version bump](https://github.com/abraham/mastodon-dart/actions/workflows/release.yml) action.
+1. Run the [update](https://github.com/abraham/mastodon_dart/actions/workflows/update.yml) action and merge the resulting PR.
+2. Run the [version bump](https://github.com/abraham/mastodon_dart/actions/workflows/release.yml) action.
 3. Edit the `packages/mastodon/CHANGELOG.md` file with the changes in the version bump branch and merge.
-4. Run the [tag](https://github.com/abraham/mastodon-dart/actions/workflows/tag.yml) action to publish to pub.dev.
+4. Run the [tag](https://github.com/abraham/mastodon_dart/actions/workflows/tag.yml) action to publish to pub.dev.
