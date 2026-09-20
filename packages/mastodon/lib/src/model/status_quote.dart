@@ -25,11 +25,11 @@ class StatusQuote {
   @JsonKey(name: r'state', required: true, includeIfNull: false)
   final QuoteStateEnum state;
 
-  /// The status being quoted, if the quote has been accepted. This will be `null`, unless the `state` attribute is `accepted`, `blocked_account`, `blocked_domain`, or `muted_account`, or the wrapping [Status]({{< relref \"entities/status\" >}}) entity has been obtained by calling `DELETE /api/v1/statuses/:id`..
+  /// The status being quoted, if the quote has been accepted. This will be `null`, unless the `state` attribute is `accepted`, `blocked_account`, `blocked_domain`, or `muted_account`, or the wrapping [Status](https://docs.joinmastodon.org/entities/status/) entity has been obtained by calling `DELETE /api/v1/statuses/:id`..
   @JsonKey(name: r'quoted_status', required: false, includeIfNull: false)
   final Status? quotedStatus;
 
-  /// The identifier of the status being quoted. This will be `null`, unless the `state` attribute is one of `accepted`, `blocked_account`, `blocked_domain` or `muted_account`, or the wrapping [Status]({{< relref \"entities/status\" >}}) entity has been obtained by calling `DELETE /api/v1/statuses/:id`.
+  /// The identifier of the status being quoted. This will be `null`, unless the `state` attribute is one of `accepted`, `blocked_account`, `blocked_domain` or `muted_account`, or the wrapping [Status](https://docs.joinmastodon.org/entities/status/) entity has been obtained by calling `DELETE /api/v1/statuses/:id`.
   @JsonKey(name: r'quoted_status_id', required: false, includeIfNull: false)
   final String? quotedStatusId;
 

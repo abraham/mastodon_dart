@@ -42,21 +42,21 @@ void main() {
       // TODO
     });
 
+    // Revoke inclusion in a Collection
+    //
+    // Remove the current user from a Collection created by a different user.  Version history:  4.6.0 (`mastodon` [API version] 10) - added
+    //
+    //Future postCollectionItemRevoke(String collectionId, String id) async
+    test('test postCollectionItemRevoke', () async {
+      // TODO
+    });
+
     // Add an account to a Collection
     //
     // Add an account to a Collection.  Version history:  4.6.0 (`mastodon` [API version] 10) - added
     //
     //Future<WrappedCollectionItem> postCollectionItems(String collectionId, { PostCollectionItemsRequest postCollectionItemsRequest }) async
     test('test postCollectionItems', () async {
-      // TODO
-    });
-
-    // Revoke inclusion in a Collection
-    //
-    // Remove the current user from a Collection created by a different user.  Version history:  4.6.0 (`mastodon` [API version] 10) - added
-    //
-    //Future postCollectionsByCollectionIdItemsByIdRevoke(String collectionId, String id) async
-    test('test postCollectionsByCollectionIdItemsByIdRevoke', () async {
       // TODO
     });
 

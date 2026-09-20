@@ -1,4 +1,4 @@
-# mastodon.model.PatchAccountsUpdateCredentialsRequestSource
+# mastodon.model.PatchAccountUpdateCredentialsRequestSource
 
 ## Load the model package
 ```dart

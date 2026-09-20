@@ -22,10 +22,10 @@ Name | Type | Description | Notes
 **silenced** | **bool** | Whether the account is currently silenced. | 
 **suspended** | **bool** | Whether the account is currently suspended. | 
 **username** | **String** | The username of the account. | 
-**createdByApplicationId** | **String** | The ID of the [Application]({{< relref \"entities/application\" >}}) that created this account, if applicable. | [optional] 
+**createdByApplicationId** | **String** | The ID of the [Application](https://docs.joinmastodon.org/entities/application/) that created this account, if applicable. | [optional] 
 **domain** | **String** | The domain of the account, if it is remote. | [optional] 
 **inviteRequest** | **String** | The reason given when requesting an invite (for instances that require manual approval of registrations) | [optional] 
-**invitedByAccountId** | **String** | The ID of the [Account]({{< relref \"entities/account\" >}}) that invited this user, if applicable. | [optional] 
+**invitedByAccountId** | **String** | The ID of the [Account](https://docs.joinmastodon.org/entities/account/) that invited this user, if applicable. | [optional] 
 **ip** | **String** | The IP address last used to login to this account. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

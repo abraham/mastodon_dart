@@ -1,13 +1,13 @@
 import 'package:test/test.dart';
 import 'package:mastodon/mastodon.dart';
 
-// tests for PatchAccountsUpdateCredentialsRequest
+// tests for PatchAccountUpdateCredentialsRequest
 void main() {
-  final PatchAccountsUpdateCredentialsRequest?
-  instance = /* PatchAccountsUpdateCredentialsRequest(...) */ null;
+  final PatchAccountUpdateCredentialsRequest?
+  instance = /* PatchAccountUpdateCredentialsRequest(...) */ null;
   // TODO add properties to the entity
 
-  group(PatchAccountsUpdateCredentialsRequest, () {
+  group(PatchAccountUpdateCredentialsRequest, () {
     // Domains of websites allowed to credit the account. Maximum of 10 domains.
     // List<String> attributionDomains
     test('to test the property `attributionDomains`', () async {
@@ -45,7 +45,7 @@ void main() {
     });
 
     // The profile fields to be set. Inside this hash, the key is an integer cast to a string (although the exact integer does not matter), and the value is another hash including `name` and `value`. By default, max 4 fields (specified in [Instance#max_profile_fields]).
-    // Object fieldsAttributes
+    // Map<String, PatchAccountUpdateCredentialsRequestFieldsAttributesValue> fieldsAttributes
     test('to test the property `fieldsAttributes`', () async {
       // TODO
     });
@@ -86,7 +86,7 @@ void main() {
       // TODO
     });
 
-    // PatchAccountsUpdateCredentialsRequestSource source_
+    // PatchAccountUpdateCredentialsRequestSource source_
     test('to test the property `source_`', () async {
       // TODO
     });

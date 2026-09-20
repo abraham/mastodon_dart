@@ -10,24 +10,24 @@ All URIs are relative to *https://mastodon.example*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createNotificationClear**](NotificationsApi.md#createnotificationclear) | **POST** /api/v1/notifications/clear | Dismiss all notifications
-[**createNotificationsRequestsAccept**](NotificationsApi.md#createnotificationsrequestsaccept) | **POST** /api/v1/notifications/requests/accept | Accept multiple notification requests
-[**createNotificationsRequestsDismiss**](NotificationsApi.md#createnotificationsrequestsdismiss) | **POST** /api/v1/notifications/requests/dismiss | Dismiss multiple notification requests
+[**createNotificationRequestAccept**](NotificationsApi.md#createnotificationrequestaccept) | **POST** /api/v1/notifications/requests/accept | Accept multiple notification requests
+[**createNotificationRequestDismiss**](NotificationsApi.md#createnotificationrequestdismiss) | **POST** /api/v1/notifications/requests/dismiss | Dismiss multiple notification requests
 [**getNotification**](NotificationsApi.md#getnotification) | **GET** /api/v1/notifications/{id} | Get a single notification
 [**getNotificationAccountsV2**](NotificationsApi.md#getnotificationaccountsv2) | **GET** /api/v2/notifications/{group_key}/accounts | Get accounts of all notifications in a notification group
 [**getNotificationPolicyV2**](NotificationsApi.md#getnotificationpolicyv2) | **GET** /api/v2/notifications/policy | Get the filtering policy for notifications
+[**getNotificationRequest**](NotificationsApi.md#getnotificationrequest) | **GET** /api/v1/notifications/requests/{id} | Get a single notification request
+[**getNotificationRequestMerged**](NotificationsApi.md#getnotificationrequestmerged) | **GET** /api/v1/notifications/requests/merged | Check if accepted notification requests have been merged
 [**getNotificationRequests**](NotificationsApi.md#getnotificationrequests) | **GET** /api/v1/notifications/requests | Get all notification requests
+[**getNotificationUnreadCount**](NotificationsApi.md#getnotificationunreadcount) | **GET** /api/v1/notifications/unread_count | Get the number of unread notifications
+[**getNotificationUnreadCountV2**](NotificationsApi.md#getnotificationunreadcountv2) | **GET** /api/v2/notifications/unread_count | Get the number of unread notifications
+[**getNotificationV2**](NotificationsApi.md#getnotificationv2) | **GET** /api/v2/notifications/{group_key} | Get a single notification group
 [**getNotifications**](NotificationsApi.md#getnotifications) | **GET** /api/v1/notifications | Get all notifications
-[**getNotificationsByGroupKeyV2**](NotificationsApi.md#getnotificationsbygroupkeyv2) | **GET** /api/v2/notifications/{group_key} | Get a single notification group
-[**getNotificationsRequestsById**](NotificationsApi.md#getnotificationsrequestsbyid) | **GET** /api/v1/notifications/requests/{id} | Get a single notification request
-[**getNotificationsRequestsMerged**](NotificationsApi.md#getnotificationsrequestsmerged) | **GET** /api/v1/notifications/requests/merged | Check if accepted notification requests have been merged
-[**getNotificationsUnreadCount**](NotificationsApi.md#getnotificationsunreadcount) | **GET** /api/v1/notifications/unread_count | Get the number of unread notifications
-[**getNotificationsUnreadCountV2**](NotificationsApi.md#getnotificationsunreadcountv2) | **GET** /api/v2/notifications/unread_count | Get the number of unread notifications
 [**getNotificationsV2**](NotificationsApi.md#getnotificationsv2) | **GET** /api/v2/notifications | Get all grouped notifications
 [**patchNotificationPolicyV2**](NotificationsApi.md#patchnotificationpolicyv2) | **PATCH** /api/v2/notifications/policy | Update the filtering policy for notifications
 [**postNotificationDismiss**](NotificationsApi.md#postnotificationdismiss) | **POST** /api/v1/notifications/{id}/dismiss | Dismiss a single notification
 [**postNotificationDismissV2**](NotificationsApi.md#postnotificationdismissv2) | **POST** /api/v2/notifications/{group_key}/dismiss | Dismiss a single notification group
-[**postNotificationsRequestsByIdAccept**](NotificationsApi.md#postnotificationsrequestsbyidaccept) | **POST** /api/v1/notifications/requests/{id}/accept | Accept a single notification request
-[**postNotificationsRequestsByIdDismiss**](NotificationsApi.md#postnotificationsrequestsbyiddismiss) | **POST** /api/v1/notifications/requests/{id}/dismiss | Dismiss a single notification request
+[**postNotificationRequestAccept**](NotificationsApi.md#postnotificationrequestaccept) | **POST** /api/v1/notifications/requests/{id}/accept | Accept a single notification request
+[**postNotificationRequestDismiss**](NotificationsApi.md#postnotificationrequestdismiss) | **POST** /api/v1/notifications/requests/{id}/dismiss | Dismiss a single notification request
 
 
 # **createNotificationClear**
@@ -72,8 +72,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **createNotificationsRequestsAccept**
-> createNotificationsRequestsAccept()
+# **createNotificationRequestAccept**
+> createNotificationRequestAccept()
 
 Accept multiple notification requests
 
@@ -90,9 +90,9 @@ import 'package:mastodon/api.dart';
 final api = Mastodon().getNotificationsApi();
 
 try {
-    api.createNotificationsRequestsAccept();
+    api.createNotificationRequestAccept();
 } on DioException catch (e) {
-    print('Exception when calling NotificationsApi->createNotificationsRequestsAccept: $e\n');
+    print('Exception when calling NotificationsApi->createNotificationRequestAccept: $e\n');
 }
 ```
 
@@ -114,8 +114,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **createNotificationsRequestsDismiss**
-> createNotificationsRequestsDismiss()
+# **createNotificationRequestDismiss**
+> createNotificationRequestDismiss()
 
 Dismiss multiple notification requests
 
@@ -132,9 +132,9 @@ import 'package:mastodon/api.dart';
 final api = Mastodon().getNotificationsApi();
 
 try {
-    api.createNotificationsRequestsDismiss();
+    api.createNotificationRequestDismiss();
 } on DioException catch (e) {
-    print('Exception when calling NotificationsApi->createNotificationsRequestsDismiss: $e\n');
+    print('Exception when calling NotificationsApi->createNotificationRequestDismiss: $e\n');
 }
 ```
 
@@ -295,6 +295,96 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getNotificationRequest**
+> NotificationRequest getNotificationRequest(id)
+
+Get a single notification request
+
+View information about a notification request with a given ID.  Version history:  4.3.0 - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getNotificationsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.getNotificationRequest(id);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling NotificationsApi->getNotificationRequest: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**NotificationRequest**](NotificationRequest.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getNotificationRequestMerged**
+> MergedResponse getNotificationRequestMerged()
+
+Check if accepted notification requests have been merged
+
+Check whether accepted notification requests have been merged.  Version history:  4.3.0 - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getNotificationsApi();
+
+try {
+    final response = api.getNotificationRequestMerged();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling NotificationsApi->getNotificationRequestMerged: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**MergedResponse**](MergedResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getNotificationRequests**
 > List<NotificationRequest> getNotificationRequests(limit, maxId, minId, sinceId)
 
@@ -336,6 +426,163 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;NotificationRequest&gt;**](NotificationRequest.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getNotificationUnreadCount**
+> CountResponse getNotificationUnreadCount(accountId, excludeTypes, limit, types)
+
+Get the number of unread notifications
+
+Get the (capped) number of unread notifications for the current user.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getNotificationsApi();
+final String accountId = accountId_example; // String | Only count unread notifications received from the specified account.
+final List<String> excludeTypes = ; // List<String> | Types of notifications that should not count towards unread notifications.
+final int limit = 56; // int | Maximum number of results to return. Defaults to 100 notifications. Max 1000 notifications.
+final List<String> types = ; // List<String> | Types of notifications that should count towards unread notifications.
+
+try {
+    final response = api.getNotificationUnreadCount(accountId, excludeTypes, limit, types);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling NotificationsApi->getNotificationUnreadCount: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **String**| Only count unread notifications received from the specified account. | [optional] 
+ **excludeTypes** | [**List&lt;String&gt;**](String.md)| Types of notifications that should not count towards unread notifications. | [optional] 
+ **limit** | **int**| Maximum number of results to return. Defaults to 100 notifications. Max 1000 notifications. | [optional] [default to 100]
+ **types** | [**List&lt;String&gt;**](String.md)| Types of notifications that should count towards unread notifications. | [optional] 
+
+### Return type
+
+[**CountResponse**](CountResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getNotificationUnreadCountV2**
+> CountResponse getNotificationUnreadCountV2(accountId, excludeTypes, groupedTypes, limit, types)
+
+Get the number of unread notifications
+
+Get the (capped) number of unread notification groups for the current user.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getNotificationsApi();
+final String accountId = accountId_example; // String | Only count unread notifications received from the specified account.
+final List<String> excludeTypes = ; // List<String> | Types of notifications that should not count towards unread notifications.
+final List<String> groupedTypes = ; // List<String> | Restrict which notification types can be grouped. Use this if there are notification types for which your client does not support grouping. If omitted, the server will group notifications of all types it supports (currently, `favourite`, `follow` and `reblog`). If you do not want any notification grouping, use [GET `/api/v1/notifications/unread_count`] instead.
+final int limit = 56; // int | Maximum number of results to return. Defaults to 100 notifications. Max 1000 notifications.
+final List<String> types = ; // List<String> | Types of notifications that should count towards unread notifications.
+
+try {
+    final response = api.getNotificationUnreadCountV2(accountId, excludeTypes, groupedTypes, limit, types);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling NotificationsApi->getNotificationUnreadCountV2: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **String**| Only count unread notifications received from the specified account. | [optional] 
+ **excludeTypes** | [**List&lt;String&gt;**](String.md)| Types of notifications that should not count towards unread notifications. | [optional] 
+ **groupedTypes** | [**List&lt;String&gt;**](String.md)| Restrict which notification types can be grouped. Use this if there are notification types for which your client does not support grouping. If omitted, the server will group notifications of all types it supports (currently, `favourite`, `follow` and `reblog`). If you do not want any notification grouping, use [GET `/api/v1/notifications/unread_count`] instead. | [optional] 
+ **limit** | **int**| Maximum number of results to return. Defaults to 100 notifications. Max 1000 notifications. | [optional] [default to 100]
+ **types** | [**List&lt;String&gt;**](String.md)| Types of notifications that should count towards unread notifications. | [optional] 
+
+### Return type
+
+[**CountResponse**](CountResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getNotificationV2**
+> GroupedNotificationsResults getNotificationV2(groupKey, supportedTypes)
+
+Get a single notification group
+
+View information about a specific notification group with a given group key.  Version history:  4.3.0 (`mastodon` [API version] 2) - added\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getNotificationsApi();
+final String groupKey = groupKey_example; // String | group_key parameter
+final List<String> supportedTypes = ; // List<String> | Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification group's `fallback` attribute.
+
+try {
+    final response = api.getNotificationV2(groupKey, supportedTypes);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling NotificationsApi->getNotificationV2: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupKey** | **String**| group_key parameter | 
+ **supportedTypes** | [**List&lt;String&gt;**](String.md)| Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification group's `fallback` attribute. | [optional] 
+
+### Return type
+
+[**GroupedNotificationsResults**](GroupedNotificationsResults.md)
 
 ### Authorization
 
@@ -399,253 +646,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;Notification&gt;**](Notification.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getNotificationsByGroupKeyV2**
-> GroupedNotificationsResults getNotificationsByGroupKeyV2(groupKey, supportedTypes)
-
-Get a single notification group
-
-View information about a specific notification group with a given group key.  Version history:  4.3.0 (`mastodon` [API version] 2) - added\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getNotificationsApi();
-final String groupKey = groupKey_example; // String | group_key parameter
-final List<String> supportedTypes = ; // List<String> | Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification group's `fallback` attribute.
-
-try {
-    final response = api.getNotificationsByGroupKeyV2(groupKey, supportedTypes);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling NotificationsApi->getNotificationsByGroupKeyV2: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupKey** | **String**| group_key parameter | 
- **supportedTypes** | [**List&lt;String&gt;**](String.md)| Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification group's `fallback` attribute. | [optional] 
-
-### Return type
-
-[**GroupedNotificationsResults**](GroupedNotificationsResults.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getNotificationsRequestsById**
-> NotificationRequest getNotificationsRequestsById(id)
-
-Get a single notification request
-
-View information about a notification request with a given ID.  Version history:  4.3.0 - added
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getNotificationsApi();
-final String id = id_example; // String | id parameter
-
-try {
-    final response = api.getNotificationsRequestsById(id);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling NotificationsApi->getNotificationsRequestsById: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| id parameter | 
-
-### Return type
-
-[**NotificationRequest**](NotificationRequest.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getNotificationsRequestsMerged**
-> MergedResponse getNotificationsRequestsMerged()
-
-Check if accepted notification requests have been merged
-
-Check whether accepted notification requests have been merged.  Version history:  4.3.0 - added
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getNotificationsApi();
-
-try {
-    final response = api.getNotificationsRequestsMerged();
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling NotificationsApi->getNotificationsRequestsMerged: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**MergedResponse**](MergedResponse.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getNotificationsUnreadCount**
-> CountResponse getNotificationsUnreadCount(accountId, excludeTypes, limit, types)
-
-Get the number of unread notifications
-
-Get the (capped) number of unread notifications for the current user.
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getNotificationsApi();
-final String accountId = accountId_example; // String | Only count unread notifications received from the specified account.
-final List<String> excludeTypes = ; // List<String> | Types of notifications that should not count towards unread notifications.
-final int limit = 56; // int | Maximum number of results to return. Defaults to 100 notifications. Max 1000 notifications.
-final List<String> types = ; // List<String> | Types of notifications that should count towards unread notifications.
-
-try {
-    final response = api.getNotificationsUnreadCount(accountId, excludeTypes, limit, types);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling NotificationsApi->getNotificationsUnreadCount: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **String**| Only count unread notifications received from the specified account. | [optional] 
- **excludeTypes** | [**List&lt;String&gt;**](String.md)| Types of notifications that should not count towards unread notifications. | [optional] 
- **limit** | **int**| Maximum number of results to return. Defaults to 100 notifications. Max 1000 notifications. | [optional] [default to 100]
- **types** | [**List&lt;String&gt;**](String.md)| Types of notifications that should count towards unread notifications. | [optional] 
-
-### Return type
-
-[**CountResponse**](CountResponse.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getNotificationsUnreadCountV2**
-> CountResponse getNotificationsUnreadCountV2(accountId, excludeTypes, groupedTypes, limit, types)
-
-Get the number of unread notifications
-
-Get the (capped) number of unread notification groups for the current user.
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getNotificationsApi();
-final String accountId = accountId_example; // String | Only count unread notifications received from the specified account.
-final List<String> excludeTypes = ; // List<String> | Types of notifications that should not count towards unread notifications.
-final List<String> groupedTypes = ; // List<String> | Restrict which notification types can be grouped. Use this if there are notification types for which your client does not support grouping. If omitted, the server will group notifications of all types it supports (currently, `favourite`, `follow` and `reblog`). If you do not want any notification grouping, use [GET `/api/v1/notifications/unread_count`] instead.
-final int limit = 56; // int | Maximum number of results to return. Defaults to 100 notifications. Max 1000 notifications.
-final List<String> types = ; // List<String> | Types of notifications that should count towards unread notifications.
-
-try {
-    final response = api.getNotificationsUnreadCountV2(accountId, excludeTypes, groupedTypes, limit, types);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling NotificationsApi->getNotificationsUnreadCountV2: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **String**| Only count unread notifications received from the specified account. | [optional] 
- **excludeTypes** | [**List&lt;String&gt;**](String.md)| Types of notifications that should not count towards unread notifications. | [optional] 
- **groupedTypes** | [**List&lt;String&gt;**](String.md)| Restrict which notification types can be grouped. Use this if there are notification types for which your client does not support grouping. If omitted, the server will group notifications of all types it supports (currently, `favourite`, `follow` and `reblog`). If you do not want any notification grouping, use [GET `/api/v1/notifications/unread_count`] instead. | [optional] 
- **limit** | **int**| Maximum number of results to return. Defaults to 100 notifications. Max 1000 notifications. | [optional] [default to 100]
- **types** | [**List&lt;String&gt;**](String.md)| Types of notifications that should count towards unread notifications. | [optional] 
-
-### Return type
-
-[**CountResponse**](CountResponse.md)
 
 ### Authorization
 
@@ -860,8 +860,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **postNotificationsRequestsByIdAccept**
-> postNotificationsRequestsByIdAccept(id)
+# **postNotificationRequestAccept**
+> postNotificationRequestAccept(id)
 
 Accept a single notification request
 
@@ -879,9 +879,9 @@ final api = Mastodon().getNotificationsApi();
 final String id = id_example; // String | id parameter
 
 try {
-    api.postNotificationsRequestsByIdAccept(id);
+    api.postNotificationRequestAccept(id);
 } on DioException catch (e) {
-    print('Exception when calling NotificationsApi->postNotificationsRequestsByIdAccept: $e\n');
+    print('Exception when calling NotificationsApi->postNotificationRequestAccept: $e\n');
 }
 ```
 
@@ -906,8 +906,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **postNotificationsRequestsByIdDismiss**
-> postNotificationsRequestsByIdDismiss(id)
+# **postNotificationRequestDismiss**
+> postNotificationRequestDismiss(id)
 
 Dismiss a single notification request
 
@@ -925,9 +925,9 @@ final api = Mastodon().getNotificationsApi();
 final String id = id_example; // String | id parameter
 
 try {
-    api.postNotificationsRequestsByIdDismiss(id);
+    api.postNotificationRequestDismiss(id);
 } on DioException catch (e) {
-    print('Exception when calling NotificationsApi->postNotificationsRequestsByIdDismiss: $e\n');
+    print('Exception when calling NotificationsApi->postNotificationRequestDismiss: $e\n');
 }
 ```
 

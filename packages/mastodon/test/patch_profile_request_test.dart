@@ -44,7 +44,7 @@ void main() {
     });
 
     // The profile fields to be set. Each hash includes `name` and `value`. By default, max 4 fields (specified in [Instance#max_profile_fields]).
-    // Object fieldsAttributes
+    // Map<String, PatchAccountUpdateCredentialsRequestFieldsAttributesValue> fieldsAttributes
     test('to test the property `fieldsAttributes`', () async {
       // TODO
     });

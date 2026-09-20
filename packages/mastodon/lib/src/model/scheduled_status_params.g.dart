@@ -35,7 +35,7 @@ abstract class _$ScheduledStatusParamsCWProxy {
 
   ScheduledStatusParams quotedStatusId(String? quotedStatusId);
 
-  ScheduledStatusParams scheduledAt(String? scheduledAt);
+  ScheduledStatusParams scheduledAt(Object? scheduledAt);
 
   ScheduledStatusParams sensitive(bool? sensitive);
 
@@ -60,7 +60,7 @@ abstract class _$ScheduledStatusParamsCWProxy {
     ScheduledStatusParamsPoll? poll,
     ScheduledStatusParamsQuoteApprovalPolicyEnum? quoteApprovalPolicy,
     String? quotedStatusId,
-    String? scheduledAt,
+    Object? scheduledAt,
     bool? sensitive,
     String? spoilerText,
   });
@@ -120,7 +120,7 @@ class _$ScheduledStatusParamsCWProxyImpl
       call(quotedStatusId: quotedStatusId);
 
   @override
-  ScheduledStatusParams scheduledAt(String? scheduledAt) =>
+  ScheduledStatusParams scheduledAt(Object? scheduledAt) =>
       call(scheduledAt: scheduledAt);
 
   @override
@@ -209,7 +209,7 @@ class _$ScheduledStatusParamsCWProxyImpl
       scheduledAt: scheduledAt == const $CopyWithPlaceholder()
           ? _value.scheduledAt
           // ignore: cast_nullable_to_non_nullable
-          : scheduledAt as String?,
+          : scheduledAt as Object?,
       sensitive: sensitive == const $CopyWithPlaceholder()
           ? _value.sensitive
           // ignore: cast_nullable_to_non_nullable
@@ -284,7 +284,7 @@ ScheduledStatusParams _$ScheduledStatusParamsFromJson(
         ),
       ),
       quotedStatusId: $checkedConvert('quoted_status_id', (v) => v as String?),
-      scheduledAt: $checkedConvert('scheduled_at', (v) => v as String?),
+      scheduledAt: $checkedConvert('scheduled_at', (v) => v),
       sensitive: $checkedConvert('sensitive', (v) => v as bool?),
       spoilerText: $checkedConvert('spoiler_text', (v) => v as String?),
     );

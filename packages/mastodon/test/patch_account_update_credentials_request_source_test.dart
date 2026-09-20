@@ -1,13 +1,13 @@
 import 'package:test/test.dart';
 import 'package:mastodon/mastodon.dart';
 
-// tests for PatchAccountsUpdateCredentialsRequestSource
+// tests for PatchAccountUpdateCredentialsRequestSource
 void main() {
-  final PatchAccountsUpdateCredentialsRequestSource?
-  instance = /* PatchAccountsUpdateCredentialsRequestSource(...) */ null;
+  final PatchAccountUpdateCredentialsRequestSource?
+  instance = /* PatchAccountUpdateCredentialsRequestSource(...) */ null;
   // TODO add properties to the entity
 
-  group(PatchAccountsUpdateCredentialsRequestSource, () {
+  group(PatchAccountUpdateCredentialsRequestSource, () {
     // String (Enumerable, oneOf `public`, `unlisted`, or `private`). Default post privacy for authored statuses.
     // StatusVisibilityEnum privacy
     test('to test the property `privacy`', () async {

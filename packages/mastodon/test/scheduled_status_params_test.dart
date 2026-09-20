@@ -73,7 +73,7 @@ void main() {
     });
 
     // When the status will be scheduled. This will be null because the status is only scheduled once.
-    // String scheduledAt
+    // Object scheduledAt
     test('to test the property `scheduledAt`', () async {
       // TODO
     });

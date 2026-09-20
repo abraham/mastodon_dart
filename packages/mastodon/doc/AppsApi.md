@@ -10,7 +10,7 @@ All URIs are relative to *https://mastodon.example*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createApp**](AppsApi.md#createapp) | **POST** /api/v1/apps | Create an application
-[**getAppsVerifyCredentials**](AppsApi.md#getappsverifycredentials) | **GET** /api/v1/apps/verify_credentials | Verify your app works
+[**getAppVerifyCredentials**](AppsApi.md#getappverifycredentials) | **GET** /api/v1/apps/verify_credentials | Verify your app works
 
 
 # **createApp**
@@ -56,8 +56,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getAppsVerifyCredentials**
-> Application getAppsVerifyCredentials()
+# **getAppVerifyCredentials**
+> Application getAppVerifyCredentials()
 
 Verify your app works
 
@@ -74,10 +74,10 @@ import 'package:mastodon/api.dart';
 final api = Mastodon().getAppsApi();
 
 try {
-    final response = api.getAppsVerifyCredentials();
+    final response = api.getAppVerifyCredentials();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AppsApi->getAppsVerifyCredentials: $e\n');
+    print('Exception when calling AppsApi->getAppVerifyCredentials: $e\n');
 }
 ```
 

@@ -187,7 +187,7 @@ class MutedAccount {
   @JsonKey(name: r'discoverable', required: false, includeIfNull: false)
   final bool? discoverable;
 
-  /// Summary of the account's policy with regards to being featured in a [Collection]({{< relref \"entities/Collection\" >}}) and how it applies to the user making the request.
+  /// Summary of the account's policy with regards to being featured in a [Collection](https://docs.joinmastodon.org/entities/Collection/) and how it applies to the user making the request.
   @JsonKey(name: r'feature_approval', required: false, includeIfNull: false)
   final FeatureApproval? featureApproval;
 

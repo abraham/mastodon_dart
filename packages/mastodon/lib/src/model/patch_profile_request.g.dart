@@ -19,7 +19,10 @@ abstract class _$PatchProfileRequestCWProxy {
 
   PatchProfileRequest displayName(String? displayName);
 
-  PatchProfileRequest fieldsAttributes(Object? fieldsAttributes);
+  PatchProfileRequest fieldsAttributes(
+    Map<String, PatchAccountUpdateCredentialsRequestFieldsAttributesValue>?
+    fieldsAttributes,
+  );
 
   PatchProfileRequest header(String? header);
 
@@ -53,7 +56,8 @@ abstract class _$PatchProfileRequestCWProxy {
     bool? bot,
     bool? discoverable,
     String? displayName,
-    Object? fieldsAttributes,
+    Map<String, PatchAccountUpdateCredentialsRequestFieldsAttributesValue>?
+    fieldsAttributes,
     String? header,
     String? headerDescription,
     bool? hideCollections,
@@ -96,8 +100,10 @@ class _$PatchProfileRequestCWProxyImpl implements _$PatchProfileRequestCWProxy {
       call(displayName: displayName);
 
   @override
-  PatchProfileRequest fieldsAttributes(Object? fieldsAttributes) =>
-      call(fieldsAttributes: fieldsAttributes);
+  PatchProfileRequest fieldsAttributes(
+    Map<String, PatchAccountUpdateCredentialsRequestFieldsAttributesValue>?
+    fieldsAttributes,
+  ) => call(fieldsAttributes: fieldsAttributes);
 
   @override
   PatchProfileRequest header(String? header) => call(header: header);
@@ -184,7 +190,11 @@ class _$PatchProfileRequestCWProxyImpl implements _$PatchProfileRequestCWProxy {
       fieldsAttributes: fieldsAttributes == const $CopyWithPlaceholder()
           ? _value.fieldsAttributes
           // ignore: cast_nullable_to_non_nullable
-          : fieldsAttributes as Object?,
+          : fieldsAttributes
+                as Map<
+                  String,
+                  PatchAccountUpdateCredentialsRequestFieldsAttributesValue
+                >?,
       header: header == const $CopyWithPlaceholder()
           ? _value.header
           // ignore: cast_nullable_to_non_nullable
@@ -237,58 +247,66 @@ extension $PatchProfileRequestCopyWith on PatchProfileRequest {
 // JsonSerializableGenerator
 // **************************************************************************
 
-PatchProfileRequest _$PatchProfileRequestFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'PatchProfileRequest',
-      json,
-      ($checkedConvert) {
-        final val = PatchProfileRequest(
-          attributionDomains: $checkedConvert(
-            'attribution_domains',
-            (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+PatchProfileRequest _$PatchProfileRequestFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate(
+  'PatchProfileRequest',
+  json,
+  ($checkedConvert) {
+    final val = PatchProfileRequest(
+      attributionDomains: $checkedConvert(
+        'attribution_domains',
+        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+      ),
+      avatar: $checkedConvert('avatar', (v) => v as String?),
+      avatarDescription: $checkedConvert(
+        'avatar_description',
+        (v) => v as String?,
+      ),
+      bot: $checkedConvert('bot', (v) => v as bool?),
+      discoverable: $checkedConvert('discoverable', (v) => v as bool?),
+      displayName: $checkedConvert('display_name', (v) => v as String?),
+      fieldsAttributes: $checkedConvert(
+        'fields_attributes',
+        (v) => (v as Map<String, dynamic>?)?.map(
+          (k, e) => MapEntry(
+            k,
+            PatchAccountUpdateCredentialsRequestFieldsAttributesValue.fromJson(
+              e as Map<String, dynamic>,
+            ),
           ),
-          avatar: $checkedConvert('avatar', (v) => v as String?),
-          avatarDescription: $checkedConvert(
-            'avatar_description',
-            (v) => v as String?,
-          ),
-          bot: $checkedConvert('bot', (v) => v as bool?),
-          discoverable: $checkedConvert('discoverable', (v) => v as bool?),
-          displayName: $checkedConvert('display_name', (v) => v as String?),
-          fieldsAttributes: $checkedConvert('fields_attributes', (v) => v),
-          header: $checkedConvert('header', (v) => v as String?),
-          headerDescription: $checkedConvert(
-            'header_description',
-            (v) => v as String?,
-          ),
-          hideCollections: $checkedConvert(
-            'hide_collections',
-            (v) => v as bool?,
-          ),
-          indexable: $checkedConvert('indexable', (v) => v as bool?),
-          locked: $checkedConvert('locked', (v) => v as bool?),
-          note: $checkedConvert('note', (v) => v as String?),
-          showFeatured: $checkedConvert('show_featured', (v) => v as bool?),
-          showMedia: $checkedConvert('show_media', (v) => v as bool?),
-          showMediaReplies: $checkedConvert(
-            'show_media_replies',
-            (v) => v as bool?,
-          ),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'attributionDomains': 'attribution_domains',
-        'avatarDescription': 'avatar_description',
-        'displayName': 'display_name',
-        'fieldsAttributes': 'fields_attributes',
-        'headerDescription': 'header_description',
-        'hideCollections': 'hide_collections',
-        'showFeatured': 'show_featured',
-        'showMedia': 'show_media',
-        'showMediaReplies': 'show_media_replies',
-      },
+        ),
+      ),
+      header: $checkedConvert('header', (v) => v as String?),
+      headerDescription: $checkedConvert(
+        'header_description',
+        (v) => v as String?,
+      ),
+      hideCollections: $checkedConvert('hide_collections', (v) => v as bool?),
+      indexable: $checkedConvert('indexable', (v) => v as bool?),
+      locked: $checkedConvert('locked', (v) => v as bool?),
+      note: $checkedConvert('note', (v) => v as String?),
+      showFeatured: $checkedConvert('show_featured', (v) => v as bool?),
+      showMedia: $checkedConvert('show_media', (v) => v as bool?),
+      showMediaReplies: $checkedConvert(
+        'show_media_replies',
+        (v) => v as bool?,
+      ),
     );
+    return val;
+  },
+  fieldKeyMap: const {
+    'attributionDomains': 'attribution_domains',
+    'avatarDescription': 'avatar_description',
+    'displayName': 'display_name',
+    'fieldsAttributes': 'fields_attributes',
+    'headerDescription': 'header_description',
+    'hideCollections': 'hide_collections',
+    'showFeatured': 'show_featured',
+    'showMedia': 'show_media',
+    'showMediaReplies': 'show_media_replies',
+  },
+);
 
 Map<String, dynamic> _$PatchProfileRequestToJson(
   PatchProfileRequest instance,
@@ -299,7 +317,9 @@ Map<String, dynamic> _$PatchProfileRequestToJson(
   'bot': ?instance.bot,
   'discoverable': ?instance.discoverable,
   'display_name': ?instance.displayName,
-  'fields_attributes': ?instance.fieldsAttributes,
+  'fields_attributes': ?instance.fieldsAttributes?.map(
+    (k, e) => MapEntry(k, e.toJson()),
+  ),
   'header': ?instance.header,
   'header_description': ?instance.headerDescription,
   'hide_collections': ?instance.hideCollections,

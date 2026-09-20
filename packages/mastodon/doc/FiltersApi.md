@@ -12,22 +12,22 @@ Method | HTTP request | Description
 [**createFilter**](FiltersApi.md#createfilter) | **POST** /api/v1/filters | Create a filter
 [**createFilterV2**](FiltersApi.md#createfilterv2) | **POST** /api/v2/filters | Create a filter
 [**deleteFilter**](FiltersApi.md#deletefilter) | **DELETE** /api/v1/filters/{id} | Remove a filter
+[**deleteFilterKeywordV2**](FiltersApi.md#deletefilterkeywordv2) | **DELETE** /api/v2/filters/keywords/{id} | Remove keywords from a filter
+[**deleteFilterStatusV2**](FiltersApi.md#deletefilterstatusv2) | **DELETE** /api/v2/filters/statuses/{id} | Remove a status from a filter group
 [**deleteFilterV2**](FiltersApi.md#deletefilterv2) | **DELETE** /api/v2/filters/{id} | Delete a filter
-[**deleteFiltersKeywordsByIdV2**](FiltersApi.md#deletefilterskeywordsbyidv2) | **DELETE** /api/v2/filters/keywords/{id} | Remove keywords from a filter
-[**deleteFiltersStatusesByIdV2**](FiltersApi.md#deletefiltersstatusesbyidv2) | **DELETE** /api/v2/filters/statuses/{id} | Remove a status from a filter group
 [**getFilter**](FiltersApi.md#getfilter) | **GET** /api/v1/filters/{id} | View a single filter
+[**getFilterKeywordV2**](FiltersApi.md#getfilterkeywordv2) | **GET** /api/v2/filters/keywords/{id} | View a single keyword
 [**getFilterKeywordsV2**](FiltersApi.md#getfilterkeywordsv2) | **GET** /api/v2/filters/{filter_id}/keywords | View keywords added to a filter
+[**getFilterStatusV2**](FiltersApi.md#getfilterstatusv2) | **GET** /api/v2/filters/statuses/{id} | View a single status filter
 [**getFilterStatusesV2**](FiltersApi.md#getfilterstatusesv2) | **GET** /api/v2/filters/{filter_id}/statuses | View all status filters
 [**getFilterV2**](FiltersApi.md#getfilterv2) | **GET** /api/v2/filters/{id} | View a specific filter
 [**getFilters**](FiltersApi.md#getfilters) | **GET** /api/v1/filters | View your filters
-[**getFiltersKeywordsByIdV2**](FiltersApi.md#getfilterskeywordsbyidv2) | **GET** /api/v2/filters/keywords/{id} | View a single keyword
-[**getFiltersStatusesByIdV2**](FiltersApi.md#getfiltersstatusesbyidv2) | **GET** /api/v2/filters/statuses/{id} | View a single status filter
 [**getFiltersV2**](FiltersApi.md#getfiltersv2) | **GET** /api/v2/filters | View all filters
 [**postFilterKeywordsV2**](FiltersApi.md#postfilterkeywordsv2) | **POST** /api/v2/filters/{filter_id}/keywords | Add a keyword to a filter
 [**postFilterStatusesV2**](FiltersApi.md#postfilterstatusesv2) | **POST** /api/v2/filters/{filter_id}/statuses | Add a status to a filter group
 [**updateFilter**](FiltersApi.md#updatefilter) | **PUT** /api/v1/filters/{id} | Update a filter
+[**updateFilterKeywordV2**](FiltersApi.md#updatefilterkeywordv2) | **PUT** /api/v2/filters/keywords/{id} | Edit a keyword within a filter
 [**updateFilterV2**](FiltersApi.md#updatefilterv2) | **PUT** /api/v2/filters/{id} | Update a filter
-[**updateFiltersKeywordsByIdV2**](FiltersApi.md#updatefilterskeywordsbyidv2) | **PUT** /api/v2/filters/keywords/{id} | Edit a keyword within a filter
 
 
 # **createFilter**
@@ -170,6 +170,99 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **deleteFilterKeywordV2**
+> deleteFilterKeywordV2(id)
+
+Remove keywords from a filter
+
+Deletes the given filter keyword.  Version history:  4.0.0 - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getFiltersApi();
+final String id = id_example; // String | id parameter
+
+try {
+    api.deleteFilterKeywordV2(id);
+} on DioException catch (e) {
+    print('Exception when calling FiltersApi->deleteFilterKeywordV2: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteFilterStatusV2**
+> FilterStatus deleteFilterStatusV2(id)
+
+Remove a status from a filter group
+
+Remove a status filter from the current filter group.  Version history:  4.0.0 - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getFiltersApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.deleteFilterStatusV2(id);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling FiltersApi->deleteFilterStatusV2: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**FilterStatus**](FilterStatus.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **deleteFilterV2**
 > deleteFilterV2(id)
 
@@ -204,99 +297,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **deleteFiltersKeywordsByIdV2**
-> deleteFiltersKeywordsByIdV2(id)
-
-Remove keywords from a filter
-
-Deletes the given filter keyword.  Version history:  4.0.0 - added
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getFiltersApi();
-final String id = id_example; // String | id parameter
-
-try {
-    api.deleteFiltersKeywordsByIdV2(id);
-} on DioException catch (e) {
-    print('Exception when calling FiltersApi->deleteFiltersKeywordsByIdV2: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| id parameter | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **deleteFiltersStatusesByIdV2**
-> FilterStatus deleteFiltersStatusesByIdV2(id)
-
-Remove a status from a filter group
-
-Remove a status filter from the current filter group.  Version history:  4.0.0 - added
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getFiltersApi();
-final String id = id_example; // String | id parameter
-
-try {
-    final response = api.deleteFiltersStatusesByIdV2(id);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling FiltersApi->deleteFiltersStatusesByIdV2: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| id parameter | 
-
-### Return type
-
-[**FilterStatus**](FilterStatus.md)
 
 ### Authorization
 
@@ -356,6 +356,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getFilterKeywordV2**
+> FilterKeyword getFilterKeywordV2(id)
+
+View a single keyword
+
+Get one filter keyword by the given id.  Version history:  4.0.0 - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getFiltersApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.getFilterKeywordV2(id);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling FiltersApi->getFilterKeywordV2: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**FilterKeyword**](FilterKeyword.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getFilterKeywordsV2**
 > List<FilterKeyword> getFilterKeywordsV2(filterId)
 
@@ -391,6 +438,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;FilterKeyword&gt;**](FilterKeyword.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getFilterStatusV2**
+> FilterStatus getFilterStatusV2(id)
+
+View a single status filter
+
+Obtain a single status filter.  Version history:  4.0.0 - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getFiltersApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.getFilterStatusV2(id);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling FiltersApi->getFilterStatusV2: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**FilterStatus**](FilterStatus.md)
 
 ### Authorization
 
@@ -528,100 +622,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**V1Filter**](V1Filter.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getFiltersKeywordsByIdV2**
-> FilterKeyword getFiltersKeywordsByIdV2(id)
-
-View a single keyword
-
-Get one filter keyword by the given id.  Version history:  4.0.0 - added
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getFiltersApi();
-final String id = id_example; // String | id parameter
-
-try {
-    final response = api.getFiltersKeywordsByIdV2(id);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling FiltersApi->getFiltersKeywordsByIdV2: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| id parameter | 
-
-### Return type
-
-[**FilterKeyword**](FilterKeyword.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getFiltersStatusesByIdV2**
-> FilterStatus getFiltersStatusesByIdV2(id)
-
-View a single status filter
-
-Obtain a single status filter.  Version history:  4.0.0 - added
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getFiltersApi();
-final String id = id_example; // String | id parameter
-
-try {
-    final response = api.getFiltersStatusesByIdV2(id);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling FiltersApi->getFiltersStatusesByIdV2: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| id parameter | 
-
-### Return type
-
-[**FilterStatus**](FilterStatus.md)
 
 ### Authorization
 
@@ -824,6 +824,55 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **updateFilterKeywordV2**
+> FilterKeyword updateFilterKeywordV2(id, postFilterKeywordsV2Request)
+
+Edit a keyword within a filter
+
+Update the given filter keyword.  Version history:  4.0.0 - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getFiltersApi();
+final String id = id_example; // String | id parameter
+final PostFilterKeywordsV2Request postFilterKeywordsV2Request = ; // PostFilterKeywordsV2Request | JSON request body parameters
+
+try {
+    final response = api.updateFilterKeywordV2(id, postFilterKeywordsV2Request);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling FiltersApi->updateFilterKeywordV2: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+ **postFilterKeywordsV2Request** | [**PostFilterKeywordsV2Request**](PostFilterKeywordsV2Request.md)| JSON request body parameters | 
+
+### Return type
+
+[**FilterKeyword**](FilterKeyword.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **updateFilterV2**
 > Filter updateFilterV2(id, updateFilterV2Request)
 
@@ -861,55 +910,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Filter**](Filter.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **updateFiltersKeywordsByIdV2**
-> FilterKeyword updateFiltersKeywordsByIdV2(id, postFilterKeywordsV2Request)
-
-Edit a keyword within a filter
-
-Update the given filter keyword.  Version history:  4.0.0 - added
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getFiltersApi();
-final String id = id_example; // String | id parameter
-final PostFilterKeywordsV2Request postFilterKeywordsV2Request = ; // PostFilterKeywordsV2Request | JSON request body parameters
-
-try {
-    final response = api.updateFiltersKeywordsByIdV2(id, postFilterKeywordsV2Request);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling FiltersApi->updateFiltersKeywordsByIdV2: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| id parameter | 
- **postFilterKeywordsV2Request** | [**PostFilterKeywordsV2Request**](PostFilterKeywordsV2Request.md)| JSON request body parameters | 
-
-### Return type
-
-[**FilterKeyword**](FilterKeyword.md)
 
 ### Authorization
 

@@ -42,6 +42,15 @@ void main() {
       // TODO
     });
 
+    // Find familiar followers
+    //
+    // Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
+    //
+    //Future<List<FamiliarFollowers>> getAccountFamiliarFollowers({ List<String> id }) async
+    test('test getAccountFamiliarFollowers', () async {
+      // TODO
+    });
+
     // Get account's featured tags
     //
     // Tags featured by this account.  Version history:  3.3.0 - added
@@ -132,6 +141,15 @@ void main() {
       // TODO
     });
 
+    // Verify account credentials
+    //
+    // Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added `profile` scope
+    //
+    //Future<CredentialAccount> getAccountVerifyCredentials() async
+    test('test getAccountVerifyCredentials', () async {
+      // TODO
+    });
+
     // Get multiple accounts
     //
     // View information about multiple profiles.  Version history:  4.3.0 - added
@@ -141,36 +159,18 @@ void main() {
       // TODO
     });
 
-    // Find familiar followers
-    //
-    // Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
-    //
-    //Future<List<FamiliarFollowers>> getAccountsFamiliarFollowers({ List<String> id }) async
-    test('test getAccountsFamiliarFollowers', () async {
-      // TODO
-    });
-
-    // Verify account credentials
-    //
-    // Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added `profile` scope
-    //
-    //Future<CredentialAccount> getAccountsVerifyCredentials() async
-    test('test getAccountsVerifyCredentials', () async {
-      // TODO
-    });
-
     // Update account credentials
     //
     // Update the user's display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added `locked` parameter\\ 2.4.0 - added `source[privacy,sensitive]` parameters\\ 2.4.2 - added `source[language]` parameter\\ 2.7.0 - added `discoverable` parameter\\ 4.1.0 - added `hide_collections` parameter\\ 4.2.0 - added `indexable` parameter\\ 4.4.0 (`mastodon` [API version] 3) - added `attribution_domains` parameter\\ 4.5.0 (`mastodon` [API version] 7) - added `quote_policy` parameter\\ 4.6.1 (`mastodon` [API version] 11) - added `avatar_description` and `header_description` parameter
     //
-    //Future<CredentialAccount> patchAccountsUpdateCredentials({ PatchAccountsUpdateCredentialsRequest patchAccountsUpdateCredentialsRequest }) async
-    test('test patchAccountsUpdateCredentials', () async {
+    //Future<CredentialAccount> patchAccountUpdateCredentials({ PatchAccountUpdateCredentialsRequest patchAccountUpdateCredentialsRequest }) async
+    test('test patchAccountUpdateCredentials', () async {
       // TODO
     });
 
     // Block account
     //
-    // [Blocks]({{< relref \"user/moderating#block\">}}) the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`
+    // [Blocks](https://docs.joinmastodon.org/user/moderating/#block) the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`
     //
     //Future<Relationship> postAccountBlock(String id) async
     test('test postAccountBlock', () async {

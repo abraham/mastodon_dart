@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **username** | **String** | The username of the account, not including domain. | 
 **avatarDescription** | **String** | A textual description of the avatar image. | [optional] 
 **discoverable** | **bool** | Whether the account has opted into discovery features such as the profile directory. | [optional] 
-**featureApproval** | [**FeatureApproval**](FeatureApproval.md) | Summary of the account's policy with regards to being featured in a [Collection]({{< relref \"entities/Collection\" >}}) and how it applies to the user making the request. | [optional] 
+**featureApproval** | [**FeatureApproval**](FeatureApproval.md) | Summary of the account's policy with regards to being featured in a [Collection](https://docs.joinmastodon.org/entities/Collection/) and how it applies to the user making the request. | [optional] 
 **headerDescription** | **String** | A textual description of the header image. | [optional] 
 **hideCollections** | **bool** | Whether the user hides the contents of their follows and followers collections. | [optional] 
 **lastStatusAt** | [**DateTime**](DateTime.md) | When the most recent status was posted. | [optional] 

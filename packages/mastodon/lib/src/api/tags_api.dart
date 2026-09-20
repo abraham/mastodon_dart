@@ -32,7 +32,7 @@ class TagsApi {
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [View information about a single tag Documentation](https://docs.joinmastodon.org/methods/tags/#get)
-  Future<Response<Tag>> getTagsByName({
+  Future<Response<Tag>> getTag({
     required String name,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

@@ -268,61 +268,6 @@ class FiltersApi {
     return _response;
   }
 
-  /// Delete a filter
-  /// Delete a filter group with the given id.  Version history:  4.0.0 - added
-  ///
-  /// Parameters:
-  /// * [id] - id parameter
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
-  /// Official Mastodon API documentation
-  /// Also see [Delete a filter Documentation](https://docs.joinmastodon.org/methods/filters/#delete)
-  Future<Response<void>> deleteFilterV2({
-    required String id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v2/filters/{id}'.replaceAll(
-      '{'
-      r'id'
-      '}',
-      id.toString(),
-    );
-    final _options = Options(
-      method: r'DELETE',
-      headers: <String, dynamic>{...?headers},
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'OAuth2'},
-          {'type': 'oauth2', 'name': 'OAuth2'},
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
   /// Remove keywords from a filter
   /// Deletes the given filter keyword.  Version history:  4.0.0 - added
   ///
@@ -339,7 +284,7 @@ class FiltersApi {
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Remove keywords from a filter Documentation](https://docs.joinmastodon.org/methods/filters/#keywords-delete)
-  Future<Response<void>> deleteFiltersKeywordsByIdV2({
+  Future<Response<void>> deleteFilterKeywordV2({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -394,7 +339,7 @@ class FiltersApi {
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Remove a status from a filter group Documentation](https://docs.joinmastodon.org/methods/filters/#statuses-remove)
-  Future<Response<FilterStatus>> deleteFiltersStatusesByIdV2({
+  Future<Response<FilterStatus>> deleteFilterStatusV2({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -461,6 +406,61 @@ class FiltersApi {
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
+  }
+
+  /// Delete a filter
+  /// Delete a filter group with the given id.  Version history:  4.0.0 - added
+  ///
+  /// Parameters:
+  /// * [id] - id parameter
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [Delete a filter Documentation](https://docs.joinmastodon.org/methods/filters/#delete)
+  Future<Response<void>> deleteFilterV2({
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v2/filters/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
   }
 
   /// View a single filter
@@ -549,6 +549,91 @@ class FiltersApi {
     );
   }
 
+  /// View a single keyword
+  /// Get one filter keyword by the given id.  Version history:  4.0.0 - added
+  ///
+  /// Parameters:
+  /// * [id] - id parameter
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [FilterKeyword] as data
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [View a single keyword Documentation](https://docs.joinmastodon.org/methods/filters/#keywords-get-one)
+  Future<Response<FilterKeyword>> getFilterKeywordV2({
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v2/filters/keywords/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    FilterKeyword? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<FilterKeyword, FilterKeyword>(
+              rawData,
+              'FilterKeyword',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<FilterKeyword>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// View keywords added to a filter
   /// List all keywords attached to the current filter group.  Version history:  4.0.0 - added
   ///
@@ -623,6 +708,91 @@ class FiltersApi {
     }
 
     return Response<List<FilterKeyword>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// View a single status filter
+  /// Obtain a single status filter.  Version history:  4.0.0 - added
+  ///
+  /// Parameters:
+  /// * [id] - id parameter
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [FilterStatus] as data
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [View a single status filter Documentation](https://docs.joinmastodon.org/methods/filters/#statuses-get-one)
+  Future<Response<FilterStatus>> getFilterStatusV2({
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v2/filters/statuses/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    FilterStatus? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<FilterStatus, FilterStatus>(
+              rawData,
+              'FilterStatus',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<FilterStatus>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -868,176 +1038,6 @@ class FiltersApi {
     }
 
     return Response<V1Filter>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// View a single keyword
-  /// Get one filter keyword by the given id.  Version history:  4.0.0 - added
-  ///
-  /// Parameters:
-  /// * [id] - id parameter
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [FilterKeyword] as data
-  /// Throws [DioException] if API call or serialization fails
-  /// Official Mastodon API documentation
-  /// Also see [View a single keyword Documentation](https://docs.joinmastodon.org/methods/filters/#keywords-get-one)
-  Future<Response<FilterKeyword>> getFiltersKeywordsByIdV2({
-    required String id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v2/filters/keywords/{id}'.replaceAll(
-      '{'
-      r'id'
-      '}',
-      id.toString(),
-    );
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{...?headers},
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'OAuth2'},
-          {'type': 'oauth2', 'name': 'OAuth2'},
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    FilterKeyword? _responseData;
-
-    try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<FilterKeyword, FilterKeyword>(
-              rawData,
-              'FilterKeyword',
-              growable: true,
-            );
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<FilterKeyword>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// View a single status filter
-  /// Obtain a single status filter.  Version history:  4.0.0 - added
-  ///
-  /// Parameters:
-  /// * [id] - id parameter
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [FilterStatus] as data
-  /// Throws [DioException] if API call or serialization fails
-  /// Official Mastodon API documentation
-  /// Also see [View a single status filter Documentation](https://docs.joinmastodon.org/methods/filters/#statuses-get-one)
-  Future<Response<FilterStatus>> getFiltersStatusesByIdV2({
-    required String id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v2/filters/statuses/{id}'.replaceAll(
-      '{'
-      r'id'
-      '}',
-      id.toString(),
-    );
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{...?headers},
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'OAuth2'},
-          {'type': 'oauth2', 'name': 'OAuth2'},
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    FilterStatus? _responseData;
-
-    try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<FilterStatus, FilterStatus>(
-              rawData,
-              'FilterStatus',
-              growable: true,
-            );
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<FilterStatus>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1434,6 +1434,108 @@ class FiltersApi {
     );
   }
 
+  /// Edit a keyword within a filter
+  /// Update the given filter keyword.  Version history:  4.0.0 - added
+  ///
+  /// Parameters:
+  /// * [id] - id parameter
+  /// * [postFilterKeywordsV2Request] - JSON request body parameters
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [FilterKeyword] as data
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [Edit a keyword within a filter Documentation](https://docs.joinmastodon.org/methods/filters/#keywords-update)
+  Future<Response<FilterKeyword>> updateFilterKeywordV2({
+    required String id,
+    required PostFilterKeywordsV2Request postFilterKeywordsV2Request,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v2/filters/keywords/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
+    final _options = Options(
+      method: r'PUT',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(postFilterKeywordsV2Request);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(_dio.options, _path),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    FilterKeyword? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<FilterKeyword, FilterKeyword>(
+              rawData,
+              'FilterKeyword',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<FilterKeyword>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Update a filter
   /// Update a filter group with the given parameters.  Version history:  4.0.0 - added\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 5) - added &#x60;blur&#x60; value to &#x60;filter_action&#x60; attribute
   ///
@@ -1521,108 +1623,6 @@ class FiltersApi {
     }
 
     return Response<Filter>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// Edit a keyword within a filter
-  /// Update the given filter keyword.  Version history:  4.0.0 - added
-  ///
-  /// Parameters:
-  /// * [id] - id parameter
-  /// * [postFilterKeywordsV2Request] - JSON request body parameters
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [FilterKeyword] as data
-  /// Throws [DioException] if API call or serialization fails
-  /// Official Mastodon API documentation
-  /// Also see [Edit a keyword within a filter Documentation](https://docs.joinmastodon.org/methods/filters/#keywords-update)
-  Future<Response<FilterKeyword>> updateFiltersKeywordsByIdV2({
-    required String id,
-    required PostFilterKeywordsV2Request postFilterKeywordsV2Request,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v2/filters/keywords/{id}'.replaceAll(
-      '{'
-      r'id'
-      '}',
-      id.toString(),
-    );
-    final _options = Options(
-      method: r'PUT',
-      headers: <String, dynamic>{...?headers},
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'OAuth2'},
-          {'type': 'oauth2', 'name': 'OAuth2'},
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
-
-    dynamic _bodyData;
-
-    try {
-      _bodyData = jsonEncode(postFilterKeywordsV2Request);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    FilterKeyword? _responseData;
-
-    try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<FilterKeyword, FilterKeyword>(
-              rawData,
-              'FilterKeyword',
-              growable: true,
-            );
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<FilterKeyword>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

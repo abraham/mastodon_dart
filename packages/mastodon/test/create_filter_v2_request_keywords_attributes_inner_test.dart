@@ -19,17 +19,5 @@ void main() {
     test('to test the property `wholeWord`', () async {
       // TODO
     });
-
-    // Will cause a 404 error if provided.
-    // String id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
-    // Will cause the keyword to not be attached if provided.
-    // bool destroy
-    test('to test the property `destroy`', () async {
-      // TODO
-    });
   });
 }

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/patch_account_update_credentials_request_fields_attributes_value.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -77,7 +78,8 @@ class PatchProfileRequest {
 
   /// The profile fields to be set. Each hash includes `name` and `value`. By default, max 4 fields (specified in [Instance#max_profile_fields]).
   @JsonKey(name: r'fields_attributes', required: false, includeIfNull: false)
-  final Object? fieldsAttributes;
+  final Map<String, PatchAccountUpdateCredentialsRequestFieldsAttributesValue>?
+  fieldsAttributes;
 
   /// Header image encoded using `multipart/form-data`
   @JsonKey(name: r'header', required: false, includeIfNull: false)

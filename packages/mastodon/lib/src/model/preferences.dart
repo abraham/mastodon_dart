@@ -31,7 +31,7 @@ class Preferences {
     this.postingColonDefaultColonLanguage,
   });
 
-  /// Default sensitivity flag for new posts. Equivalent to [CredentialAccount#source\\[sensitive\\]]({{< relref \"entities/Account#source-sensitive\" >}}).
+  /// Default sensitivity flag for new posts. Equivalent to [CredentialAccount#source\\[sensitive\\]](https://docs.joinmastodon.org/entities/Account/#source-sensitive).
   @JsonKey(
     name: r'posting:default:sensitive',
     required: true,
@@ -39,7 +39,7 @@ class Preferences {
   )
   final bool postingColonDefaultColonSensitive;
 
-  /// Default visibility for new posts. Equivalent to [CredentialAccount#source\\[privacy\\]]({{< relref \"entities/Account#source-privacy\" >}}).
+  /// Default visibility for new posts. Equivalent to [CredentialAccount#source\\[privacy\\]](https://docs.joinmastodon.org/entities/Account/#source-privacy).
   @JsonKey(
     name: r'posting:default:visibility',
     required: true,
@@ -59,7 +59,7 @@ class Preferences {
   )
   final bool readingColonExpandColonSpoilers;
 
-  /// Default language for new posts. Equivalent to [CredentialAccount#source\\[language\\]]({{< relref \"entities/Account#source-language\" >}})
+  /// Default language for new posts. Equivalent to [CredentialAccount#source\\[language\\]](https://docs.joinmastodon.org/entities/Account/#source-language)
   @JsonKey(
     name: r'posting:default:language',
     required: false,

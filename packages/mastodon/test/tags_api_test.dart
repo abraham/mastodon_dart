@@ -10,8 +10,8 @@ void main() {
     //
     // Show a hashtag and its associated information  Version history:  4.0.0 - added
     //
-    //Future<Tag> getTagsByName(String name) async
-    test('test getTagsByName', () async {
+    //Future<Tag> getTag(String name) async
+    test('test getTag', () async {
       // TODO
     });
 

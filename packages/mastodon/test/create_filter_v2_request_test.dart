@@ -31,7 +31,7 @@ void main() {
       // TODO
     });
 
-    // Array of objects with properties: keyword, whole_word, id, _destroy
+    // Array of objects with properties: keyword, whole_word
     // List<CreateFilterV2RequestKeywordsAttributesInner> keywordsAttributes
     test('to test the property `keywordsAttributes`', () async {
       // TODO

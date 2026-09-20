@@ -41,7 +41,7 @@ class CreateCollectionRequest {
   @JsonKey(name: r'account_ids', required: false, includeIfNull: false)
   final List<String>? accountIds;
 
-  /// A longer description of this Collection, max. 100 characters. String is taken \"as is\", which means there is currently no special handling of URLs a
+  /// A longer description of this Collection, max. 100 characters. String is taken \"as is\", which means there is currently no special handling of URLs a nd hashtags and no support for custom emoji.
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 

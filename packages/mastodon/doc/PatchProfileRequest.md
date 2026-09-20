@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **bot** | **bool** | Whether the account has a bot flag. | [optional] 
 **discoverable** | **bool** | Whether the account should be shown in the profile directory and be available for other discovery features, like being included in Collections. | [optional] 
 **displayName** | **String** | The display name to use for the profile. | [optional] 
-**fieldsAttributes** | **Object** | The profile fields to be set. Each hash includes `name` and `value`. By default, max 4 fields (specified in [Instance#max_profile_fields]). | [optional] 
+**fieldsAttributes** | [**Map&lt;String, PatchAccountUpdateCredentialsRequestFieldsAttributesValue&gt;**](PatchAccountUpdateCredentialsRequestFieldsAttributesValue.md) | The profile fields to be set. Each hash includes `name` and `value`. By default, max 4 fields (specified in [Instance#max_profile_fields]). | [optional] 
 **header** | **String** | Header image encoded using `multipart/form-data` | [optional] 
 **headerDescription** | **String** | A plain-text description of the header, for accessibility purposes. | [optional] 
 **hideCollections** | **bool** | Whether to hide followers and followed accounts. This field predates the Collections feature and has nothing to do with it, despite the name. | [optional] 

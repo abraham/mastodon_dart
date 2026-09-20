@@ -17,15 +17,15 @@ Name | Type | Description | Notes
 **id** | **String** | The account id. | 
 **indexable** | **bool** | Whether the account allows indexing by search engines. | 
 **locked** | **bool** | Whether the account manually approves follow requests. | 
-**note** | **String** | The profile's bio or description. Unlike for [Account]({{< relref \"entities/Account\">}}), this is the raw unprocessed text, not the rendered HTML. | 
+**note** | **String** | The profile's bio or description. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is the raw unprocessed text, not the rendered HTML. | 
 **showFeatured** | **bool** | Whether the account wishes to have a “Featured” tab on their profile. | 
 **showMedia** | **bool** | Whether the account wishes to have a “Media” tab with media attachments on their profile. | 
 **showMediaReplies** | **bool** | Whether the account wishes to have replies in the “Media” tab on their profile. | 
-**avatar** | [**Uri**](Uri.md) | An image icon that is shown next to statuses and in the profile. Unlike for [Account]({{< relref \"entities/Account\">}}), this is nullable and will be null if the avatar is unset. | [optional] 
-**avatarStatic** | [**Uri**](Uri.md) | A static version of the avatar. Unlike for [Account]({{< relref \"entities/Account\">}}), this is nullable and will be null if the avatar is unset. | [optional] 
+**avatar** | [**Uri**](Uri.md) | An image icon that is shown next to statuses and in the profile. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is nullable and will be null if the avatar is unset. | [optional] 
+**avatarStatic** | [**Uri**](Uri.md) | A static version of the avatar. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is nullable and will be null if the avatar is unset. | [optional] 
 **discoverable** | **bool** | Whether the account has opted into discovery features such as the profile directory. | [optional] 
-**header** | [**Uri**](Uri.md) | An image banner that is shown above the profile and in profile cards. Unlike for [Account]({{< relref \"entities/Account\">}}), this is nullable and will be null if the header is unset. | [optional] 
-**headerStatic** | [**Uri**](Uri.md) | A static version of the header. Unlike for [Account]({{< relref \"entities/Account\">}}), this is nullable and will be null if the header is unset. | [optional] 
+**header** | [**Uri**](Uri.md) | An image banner that is shown above the profile and in profile cards. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is nullable and will be null if the header is unset. | [optional] 
+**headerStatic** | [**Uri**](Uri.md) | A static version of the header. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is nullable and will be null if the header is unset. | [optional] 
 **hideCollections** | **bool** | Whether the user hides the contents of their follows and followers collections. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

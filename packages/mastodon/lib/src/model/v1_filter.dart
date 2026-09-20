@@ -40,7 +40,7 @@ class V1Filter {
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  /// Should matching entities in home and notifications be dropped by the server? See [implementation guidelines for filters]({{< relref \"api/guidelines#filters\" >}}).
+  /// Should matching entities in home and notifications be dropped by the server? See [implementation guidelines for filters](https://docs.joinmastodon.org/api/guidelines/#filters).
   @JsonKey(name: r'irreversible', required: true, includeIfNull: false)
   final bool irreversible;
 
@@ -48,7 +48,7 @@ class V1Filter {
   @JsonKey(name: r'phrase', required: true, includeIfNull: false)
   final String phrase;
 
-  /// Should the filter consider word boundaries? See [implementation guidelines for filters]({{< relref \"api/guidelines#filters\" >}}).
+  /// Should the filter consider word boundaries? See [implementation guidelines for filters](https://docs.joinmastodon.org/api/guidelines/#filters).
   @JsonKey(name: r'whole_word', required: true, includeIfNull: false)
   final bool wholeWord;
 

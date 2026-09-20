@@ -9,15 +9,15 @@ All URIs are relative to *https://mastodon.example*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTagsByName**](TagsApi.md#gettagsbyname) | **GET** /api/v1/tags/{name} | View information about a single tag
+[**getTag**](TagsApi.md#gettag) | **GET** /api/v1/tags/{name} | View information about a single tag
 [**postTagFeature**](TagsApi.md#posttagfeature) | **POST** /api/v1/tags/{id}/feature | Feature a hashtag
 [**postTagFollow**](TagsApi.md#posttagfollow) | **POST** /api/v1/tags/{name}/follow | Follow a hashtag
 [**postTagUnfeature**](TagsApi.md#posttagunfeature) | **POST** /api/v1/tags/{id}/unfeature | Unfeature a hashtag
 [**postTagUnfollow**](TagsApi.md#posttagunfollow) | **POST** /api/v1/tags/{name}/unfollow | Unfollow a hashtag
 
 
-# **getTagsByName**
-> Tag getTagsByName(name)
+# **getTag**
+> Tag getTag(name)
 
 View information about a single tag
 
@@ -35,10 +35,10 @@ final api = Mastodon().getTagsApi();
 final String name = name_example; // String | name parameter
 
 try {
-    final response = api.getTagsByName(name);
+    final response = api.getTag(name);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling TagsApi->getTagsByName: $e\n');
+    print('Exception when calling TagsApi->getTag: $e\n');
 }
 ```
 

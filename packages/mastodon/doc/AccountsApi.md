@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**getAccount**](AccountsApi.md#getaccount) | **GET** /api/v1/accounts/{id} | Get account
 [**getAccountCollections**](AccountsApi.md#getaccountcollections) | **GET** /api/v1/accounts/{account_id}/collections | Get all Collections from a given account
 [**getAccountEndorsements**](AccountsApi.md#getaccountendorsements) | **GET** /api/v1/accounts/{id}/endorsements | Get featured accounts
+[**getAccountFamiliarFollowers**](AccountsApi.md#getaccountfamiliarfollowers) | **GET** /api/v1/accounts/familiar_followers | Find familiar followers
 [**getAccountFeaturedTags**](AccountsApi.md#getaccountfeaturedtags) | **GET** /api/v1/accounts/{id}/featured_tags | Get account&#39;s featured tags
 [**getAccountFollowers**](AccountsApi.md#getaccountfollowers) | **GET** /api/v1/accounts/{id}/followers | Get account&#39;s followers
 [**getAccountFollowing**](AccountsApi.md#getaccountfollowing) | **GET** /api/v1/accounts/{id}/following | Get account&#39;s following
@@ -23,10 +24,9 @@ Method | HTTP request | Description
 [**getAccountRelationships**](AccountsApi.md#getaccountrelationships) | **GET** /api/v1/accounts/relationships | Check relationships to other accounts
 [**getAccountSearch**](AccountsApi.md#getaccountsearch) | **GET** /api/v1/accounts/search | Search for matching accounts
 [**getAccountStatuses**](AccountsApi.md#getaccountstatuses) | **GET** /api/v1/accounts/{id}/statuses | Get account&#39;s statuses
+[**getAccountVerifyCredentials**](AccountsApi.md#getaccountverifycredentials) | **GET** /api/v1/accounts/verify_credentials | Verify account credentials
 [**getAccounts**](AccountsApi.md#getaccounts) | **GET** /api/v1/accounts | Get multiple accounts
-[**getAccountsFamiliarFollowers**](AccountsApi.md#getaccountsfamiliarfollowers) | **GET** /api/v1/accounts/familiar_followers | Find familiar followers
-[**getAccountsVerifyCredentials**](AccountsApi.md#getaccountsverifycredentials) | **GET** /api/v1/accounts/verify_credentials | Verify account credentials
-[**patchAccountsUpdateCredentials**](AccountsApi.md#patchaccountsupdatecredentials) | **PATCH** /api/v1/accounts/update_credentials | Update account credentials
+[**patchAccountUpdateCredentials**](AccountsApi.md#patchaccountupdatecredentials) | **PATCH** /api/v1/accounts/update_credentials | Update account credentials
 [**postAccountBlock**](AccountsApi.md#postaccountblock) | **POST** /api/v1/accounts/{id}/block | Block account
 [**postAccountEndorse**](AccountsApi.md#postaccountendorse) | **POST** /api/v1/accounts/{id}/endorse | Feature account on your profile
 [**postAccountFollow**](AccountsApi.md#postaccountfollow) | **POST** /api/v1/accounts/{id}/follow | Follow account
@@ -223,6 +223,53 @@ Name | Type | Description  | Notes
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountFamiliarFollowers**
+> List<FamiliarFollowers> getAccountFamiliarFollowers(id)
+
+Find familiar followers
+
+Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final List<String> id = ; // List<String> | Find familiar followers for the provided account IDs.
+
+try {
+    final response = api.getAccountFamiliarFollowers(id);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling AccountsApi->getAccountFamiliarFollowers: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**List&lt;String&gt;**](String.md)| Find familiar followers for the provided account IDs. | [optional] 
+
+### Return type
+
+[**List&lt;FamiliarFollowers&gt;**](FamiliarFollowers.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -737,6 +784,49 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getAccountVerifyCredentials**
+> CredentialAccount getAccountVerifyCredentials()
+
+Verify account credentials
+
+Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added `profile` scope
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+
+try {
+    final response = api.getAccountVerifyCredentials();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling AccountsApi->getAccountVerifyCredentials: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CredentialAccount**](CredentialAccount.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getAccounts**
 > List<Account> getAccounts(id)
 
@@ -780,98 +870,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getAccountsFamiliarFollowers**
-> List<FamiliarFollowers> getAccountsFamiliarFollowers(id)
-
-Find familiar followers
-
-Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getAccountsApi();
-final List<String> id = ; // List<String> | Find familiar followers for the provided account IDs.
-
-try {
-    final response = api.getAccountsFamiliarFollowers(id);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling AccountsApi->getAccountsFamiliarFollowers: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**List&lt;String&gt;**](String.md)| Find familiar followers for the provided account IDs. | [optional] 
-
-### Return type
-
-[**List&lt;FamiliarFollowers&gt;**](FamiliarFollowers.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getAccountsVerifyCredentials**
-> CredentialAccount getAccountsVerifyCredentials()
-
-Verify account credentials
-
-Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added `profile` scope
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getAccountsApi();
-
-try {
-    final response = api.getAccountsVerifyCredentials();
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling AccountsApi->getAccountsVerifyCredentials: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**CredentialAccount**](CredentialAccount.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **patchAccountsUpdateCredentials**
-> CredentialAccount patchAccountsUpdateCredentials(patchAccountsUpdateCredentialsRequest)
+# **patchAccountUpdateCredentials**
+> CredentialAccount patchAccountUpdateCredentials(patchAccountUpdateCredentialsRequest)
 
 Update account credentials
 
@@ -886,13 +886,13 @@ import 'package:mastodon/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = Mastodon().getAccountsApi();
-final PatchAccountsUpdateCredentialsRequest patchAccountsUpdateCredentialsRequest = ; // PatchAccountsUpdateCredentialsRequest | JSON request body parameters
+final PatchAccountUpdateCredentialsRequest patchAccountUpdateCredentialsRequest = ; // PatchAccountUpdateCredentialsRequest | JSON request body parameters
 
 try {
-    final response = api.patchAccountsUpdateCredentials(patchAccountsUpdateCredentialsRequest);
+    final response = api.patchAccountUpdateCredentials(patchAccountUpdateCredentialsRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AccountsApi->patchAccountsUpdateCredentials: $e\n');
+    print('Exception when calling AccountsApi->patchAccountUpdateCredentials: $e\n');
 }
 ```
 
@@ -900,7 +900,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **patchAccountsUpdateCredentialsRequest** | [**PatchAccountsUpdateCredentialsRequest**](PatchAccountsUpdateCredentialsRequest.md)| JSON request body parameters | [optional] 
+ **patchAccountUpdateCredentialsRequest** | [**PatchAccountUpdateCredentialsRequest**](PatchAccountUpdateCredentialsRequest.md)| JSON request body parameters | [optional] 
 
 ### Return type
 
@@ -922,7 +922,7 @@ Name | Type | Description  | Notes
 
 Block account
 
-[Blocks]({{< relref \"user/moderating#block\">}}) the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`
+[Blocks](https://docs.joinmastodon.org/user/moderating/#block) the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`
 
 ### Example
 ```dart

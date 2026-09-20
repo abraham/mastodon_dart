@@ -33,6 +33,15 @@ void main() {
       // TODO
     });
 
+    // View list timeline
+    //
+    // View statuses in the given list timeline.  Version history:  2.1.0 - added\\ 2.6.0 - add `min_id`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now
+    //
+    //Future<List<Status>> getTimelineList(String listId, { int limit, String maxId, String minId, String sinceId }) async
+    test('test getTimelineList', () async {
+      // TODO
+    });
+
     // View public timeline
     //
     // View public statuses.  Version history:  0.0.0 - added\\ 2.3.0 - added `only_media`\\ 2.6.0 - add `min_id`\\ 3.0.0 - auth is required if public preview is disabled\\ 3.1.4 - added `remote`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now\\ 4.5.0 - add [access control settings]
@@ -42,21 +51,12 @@ void main() {
       // TODO
     });
 
-    // View list timeline
-    //
-    // View statuses in the given list timeline.  Version history:  2.1.0 - added\\ 2.6.0 - add `min_id`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now
-    //
-    //Future<List<Status>> getTimelinesListByListId(String listId, { int limit, String maxId, String minId, String sinceId }) async
-    test('test getTimelinesListByListId', () async {
-      // TODO
-    });
-
     // View hashtag timeline
     //
     // View public statuses containing the given hashtag.  Version history:  0.0.0 - added\\ 2.3.0 - added `only_media`\\ 2.6.0 - add `min_id`\\ 2.7.0 - add `any[]`, `all[]`, `none[]` for additional tags\\ 3.0.0 - auth is required if public preview is disabled\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now. add `remote`\\ 4.5.0 - add [access control settings]
     //
-    //Future<List<Status>> getTimelinesTagByHashtag(String hashtag, { List<String> all, List<String> any, int limit, bool local, String maxId, String minId, List<String> none, bool onlyMedia, bool remote, String sinceId }) async
-    test('test getTimelinesTagByHashtag', () async {
+    //Future<List<Status>> getTimelineTagByHashtag(String hashtag, { List<String> all, List<String> any, int limit, bool local, String maxId, String minId, List<String> none, bool onlyMedia, bool remote, String sinceId }) async
+    test('test getTimelineTagByHashtag', () async {
       // TODO
     });
   });

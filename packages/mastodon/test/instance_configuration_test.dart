@@ -47,5 +47,10 @@ void main() {
     test('to test the property `timelinesAccess`', () async {
       // TODO
     });
+
+    // InstanceConfigurationVapid vapid
+    test('to test the property `vapid`', () async {
+      // TODO
+    });
   });
 }

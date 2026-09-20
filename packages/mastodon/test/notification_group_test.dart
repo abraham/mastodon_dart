@@ -85,7 +85,7 @@ void main() {
       // TODO
     });
 
-    // ID of the [Status]({{< relref \"entities/Status\" >}}) that was the object of the notification. Attached when `type` of the notification is `favourite`, `reblog`, `status`, `mention`, `poll`, `update`, `quote` or `quoted_update`. In the case of `quoted_update`, your quote of the edited status is attached, not the status that was edited.
+    // ID of the [Status](https://docs.joinmastodon.org/entities/Status/) that was the object of the notification. Attached when `type` of the notification is `favourite`, `reblog`, `status`, `mention`, `poll`, `update`, `quote` or `quoted_update`. In the case of `quoted_update`, your quote of the edited status is attached, not the status that was edited.
     // String statusId
     test('to test the property `statusId`', () async {
       // TODO

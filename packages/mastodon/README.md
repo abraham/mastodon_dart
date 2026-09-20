@@ -70,6 +70,7 @@ Class | Method | HTTP request | Description
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccount**](doc/AccountsApi.md#getaccount) | **GET** /api/v1/accounts/{id} | Get account
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccountCollections**](doc/AccountsApi.md#getaccountcollections) | **GET** /api/v1/accounts/{account_id}/collections | Get all Collections from a given account
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccountEndorsements**](doc/AccountsApi.md#getaccountendorsements) | **GET** /api/v1/accounts/{id}/endorsements | Get featured accounts
+[*AccountsApi*](doc/AccountsApi.md) | [**getAccountFamiliarFollowers**](doc/AccountsApi.md#getaccountfamiliarfollowers) | **GET** /api/v1/accounts/familiar_followers | Find familiar followers
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccountFeaturedTags**](doc/AccountsApi.md#getaccountfeaturedtags) | **GET** /api/v1/accounts/{id}/featured_tags | Get account&#39;s featured tags
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccountFollowers**](doc/AccountsApi.md#getaccountfollowers) | **GET** /api/v1/accounts/{id}/followers | Get account&#39;s followers
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccountFollowing**](doc/AccountsApi.md#getaccountfollowing) | **GET** /api/v1/accounts/{id}/following | Get account&#39;s following
@@ -80,10 +81,9 @@ Class | Method | HTTP request | Description
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccountRelationships**](doc/AccountsApi.md#getaccountrelationships) | **GET** /api/v1/accounts/relationships | Check relationships to other accounts
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccountSearch**](doc/AccountsApi.md#getaccountsearch) | **GET** /api/v1/accounts/search | Search for matching accounts
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccountStatuses**](doc/AccountsApi.md#getaccountstatuses) | **GET** /api/v1/accounts/{id}/statuses | Get account&#39;s statuses
+[*AccountsApi*](doc/AccountsApi.md) | [**getAccountVerifyCredentials**](doc/AccountsApi.md#getaccountverifycredentials) | **GET** /api/v1/accounts/verify_credentials | Verify account credentials
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccounts**](doc/AccountsApi.md#getaccounts) | **GET** /api/v1/accounts | Get multiple accounts
-[*AccountsApi*](doc/AccountsApi.md) | [**getAccountsFamiliarFollowers**](doc/AccountsApi.md#getaccountsfamiliarfollowers) | **GET** /api/v1/accounts/familiar_followers | Find familiar followers
-[*AccountsApi*](doc/AccountsApi.md) | [**getAccountsVerifyCredentials**](doc/AccountsApi.md#getaccountsverifycredentials) | **GET** /api/v1/accounts/verify_credentials | Verify account credentials
-[*AccountsApi*](doc/AccountsApi.md) | [**patchAccountsUpdateCredentials**](doc/AccountsApi.md#patchaccountsupdatecredentials) | **PATCH** /api/v1/accounts/update_credentials | Update account credentials
+[*AccountsApi*](doc/AccountsApi.md) | [**patchAccountUpdateCredentials**](doc/AccountsApi.md#patchaccountupdatecredentials) | **PATCH** /api/v1/accounts/update_credentials | Update account credentials
 [*AccountsApi*](doc/AccountsApi.md) | [**postAccountBlock**](doc/AccountsApi.md#postaccountblock) | **POST** /api/v1/accounts/{id}/block | Block account
 [*AccountsApi*](doc/AccountsApi.md) | [**postAccountEndorse**](doc/AccountsApi.md#postaccountendorse) | **POST** /api/v1/accounts/{id}/endorse | Feature account on your profile
 [*AccountsApi*](doc/AccountsApi.md) | [**postAccountFollow**](doc/AccountsApi.md#postaccountfollow) | **POST** /api/v1/accounts/{id}/follow | Follow account
@@ -100,13 +100,13 @@ Class | Method | HTTP request | Description
 [*AnnouncementsApi*](doc/AnnouncementsApi.md) | [**getAnnouncements**](doc/AnnouncementsApi.md#getannouncements) | **GET** /api/v1/announcements | View all announcements
 [*AnnouncementsApi*](doc/AnnouncementsApi.md) | [**postAnnouncementDismiss**](doc/AnnouncementsApi.md#postannouncementdismiss) | **POST** /api/v1/announcements/{id}/dismiss | Dismiss an announcement
 [*AnnouncementsApi*](doc/AnnouncementsApi.md) | [**updateAnnouncementReaction**](doc/AnnouncementsApi.md#updateannouncementreaction) | **PUT** /api/v1/announcements/{id}/reactions/{name} | Add a reaction to an announcement
+[*AnnualReportsApi*](doc/AnnualReportsApi.md) | [**getAnnualReport**](doc/AnnualReportsApi.md#getannualreport) | **GET** /api/v1/annual_reports/{year} | Get a single annual report
 [*AnnualReportsApi*](doc/AnnualReportsApi.md) | [**getAnnualReportState**](doc/AnnualReportsApi.md#getannualreportstate) | **GET** /api/v1/annual_reports/{year}/state | Get the state of an annual report
 [*AnnualReportsApi*](doc/AnnualReportsApi.md) | [**getAnnualReports**](doc/AnnualReportsApi.md#getannualreports) | **GET** /api/v1/annual_reports | Get all annual reports
-[*AnnualReportsApi*](doc/AnnualReportsApi.md) | [**getAnnualReportsByYear**](doc/AnnualReportsApi.md#getannualreportsbyyear) | **GET** /api/v1/annual_reports/{year} | Get a single annual report
 [*AnnualReportsApi*](doc/AnnualReportsApi.md) | [**postAnnualReportGenerate**](doc/AnnualReportsApi.md#postannualreportgenerate) | **POST** /api/v1/annual_reports/{year}/generate | Generate a new annual report {generate}
 [*AnnualReportsApi*](doc/AnnualReportsApi.md) | [**postAnnualReportRead**](doc/AnnualReportsApi.md#postannualreportread) | **POST** /api/v1/annual_reports/{year}/read | Mark an annual report as read
 [*AppsApi*](doc/AppsApi.md) | [**createApp**](doc/AppsApi.md#createapp) | **POST** /api/v1/apps | Create an application
-[*AppsApi*](doc/AppsApi.md) | [**getAppsVerifyCredentials**](doc/AppsApi.md#getappsverifycredentials) | **GET** /api/v1/apps/verify_credentials | Verify your app works
+[*AppsApi*](doc/AppsApi.md) | [**getAppVerifyCredentials**](doc/AppsApi.md#getappverifycredentials) | **GET** /api/v1/apps/verify_credentials | Verify your app works
 [*AsyncRefreshesApi*](doc/AsyncRefreshesApi.md) | [**getAsyncRefreshV1Alpha**](doc/AsyncRefreshesApi.md#getasyncrefreshv1alpha) | **GET** /api/v1_alpha/async_refreshes/{id} | Get Status of Async Refresh
 [*BlocksApi*](doc/BlocksApi.md) | [**getBlocks**](doc/BlocksApi.md#getblocks) | **GET** /api/v1/blocks | View blocked users
 [*BookmarksApi*](doc/BookmarksApi.md) | [**getBookmarks**](doc/BookmarksApi.md#getbookmarks) | **GET** /api/v1/bookmarks | View bookmarked statuses
@@ -114,8 +114,8 @@ Class | Method | HTTP request | Description
 [*CollectionsApi*](doc/CollectionsApi.md) | [**deleteCollection**](doc/CollectionsApi.md#deletecollection) | **DELETE** /api/v1/collections/{id} | Delete a Collection
 [*CollectionsApi*](doc/CollectionsApi.md) | [**deleteCollectionItem**](doc/CollectionsApi.md#deletecollectionitem) | **DELETE** /api/v1/collections/{collection_id}/items/{id} | Remove account from a Collection
 [*CollectionsApi*](doc/CollectionsApi.md) | [**getCollection**](doc/CollectionsApi.md#getcollection) | **GET** /api/v1/collections/{id} | Get a single Collection
+[*CollectionsApi*](doc/CollectionsApi.md) | [**postCollectionItemRevoke**](doc/CollectionsApi.md#postcollectionitemrevoke) | **POST** /api/v1/collections/{collection_id}/items/{id}/revoke | Revoke inclusion in a Collection
 [*CollectionsApi*](doc/CollectionsApi.md) | [**postCollectionItems**](doc/CollectionsApi.md#postcollectionitems) | **POST** /api/v1/collections/{collection_id}/items | Add an account to a Collection
-[*CollectionsApi*](doc/CollectionsApi.md) | [**postCollectionsByCollectionIdItemsByIdRevoke**](doc/CollectionsApi.md#postcollectionsbycollectioniditemsbyidrevoke) | **POST** /api/v1/collections/{collection_id}/items/{id}/revoke | Revoke inclusion in a Collection
 [*CollectionsApi*](doc/CollectionsApi.md) | [**updateCollection**](doc/CollectionsApi.md#updatecollection) | **PATCH** /api/v1/collections/{id} | Update a Collection
 [*ConversationsApi*](doc/ConversationsApi.md) | [**deleteConversation**](doc/ConversationsApi.md#deleteconversation) | **DELETE** /api/v1/conversations/{id} | Remove a conversation
 [*ConversationsApi*](doc/ConversationsApi.md) | [**getConversations**](doc/ConversationsApi.md#getconversations) | **GET** /api/v1/conversations | View all conversations
@@ -135,22 +135,22 @@ Class | Method | HTTP request | Description
 [*FiltersApi*](doc/FiltersApi.md) | [**createFilter**](doc/FiltersApi.md#createfilter) | **POST** /api/v1/filters | Create a filter
 [*FiltersApi*](doc/FiltersApi.md) | [**createFilterV2**](doc/FiltersApi.md#createfilterv2) | **POST** /api/v2/filters | Create a filter
 [*FiltersApi*](doc/FiltersApi.md) | [**deleteFilter**](doc/FiltersApi.md#deletefilter) | **DELETE** /api/v1/filters/{id} | Remove a filter
+[*FiltersApi*](doc/FiltersApi.md) | [**deleteFilterKeywordV2**](doc/FiltersApi.md#deletefilterkeywordv2) | **DELETE** /api/v2/filters/keywords/{id} | Remove keywords from a filter
+[*FiltersApi*](doc/FiltersApi.md) | [**deleteFilterStatusV2**](doc/FiltersApi.md#deletefilterstatusv2) | **DELETE** /api/v2/filters/statuses/{id} | Remove a status from a filter group
 [*FiltersApi*](doc/FiltersApi.md) | [**deleteFilterV2**](doc/FiltersApi.md#deletefilterv2) | **DELETE** /api/v2/filters/{id} | Delete a filter
-[*FiltersApi*](doc/FiltersApi.md) | [**deleteFiltersKeywordsByIdV2**](doc/FiltersApi.md#deletefilterskeywordsbyidv2) | **DELETE** /api/v2/filters/keywords/{id} | Remove keywords from a filter
-[*FiltersApi*](doc/FiltersApi.md) | [**deleteFiltersStatusesByIdV2**](doc/FiltersApi.md#deletefiltersstatusesbyidv2) | **DELETE** /api/v2/filters/statuses/{id} | Remove a status from a filter group
 [*FiltersApi*](doc/FiltersApi.md) | [**getFilter**](doc/FiltersApi.md#getfilter) | **GET** /api/v1/filters/{id} | View a single filter
+[*FiltersApi*](doc/FiltersApi.md) | [**getFilterKeywordV2**](doc/FiltersApi.md#getfilterkeywordv2) | **GET** /api/v2/filters/keywords/{id} | View a single keyword
 [*FiltersApi*](doc/FiltersApi.md) | [**getFilterKeywordsV2**](doc/FiltersApi.md#getfilterkeywordsv2) | **GET** /api/v2/filters/{filter_id}/keywords | View keywords added to a filter
+[*FiltersApi*](doc/FiltersApi.md) | [**getFilterStatusV2**](doc/FiltersApi.md#getfilterstatusv2) | **GET** /api/v2/filters/statuses/{id} | View a single status filter
 [*FiltersApi*](doc/FiltersApi.md) | [**getFilterStatusesV2**](doc/FiltersApi.md#getfilterstatusesv2) | **GET** /api/v2/filters/{filter_id}/statuses | View all status filters
 [*FiltersApi*](doc/FiltersApi.md) | [**getFilterV2**](doc/FiltersApi.md#getfilterv2) | **GET** /api/v2/filters/{id} | View a specific filter
 [*FiltersApi*](doc/FiltersApi.md) | [**getFilters**](doc/FiltersApi.md#getfilters) | **GET** /api/v1/filters | View your filters
-[*FiltersApi*](doc/FiltersApi.md) | [**getFiltersKeywordsByIdV2**](doc/FiltersApi.md#getfilterskeywordsbyidv2) | **GET** /api/v2/filters/keywords/{id} | View a single keyword
-[*FiltersApi*](doc/FiltersApi.md) | [**getFiltersStatusesByIdV2**](doc/FiltersApi.md#getfiltersstatusesbyidv2) | **GET** /api/v2/filters/statuses/{id} | View a single status filter
 [*FiltersApi*](doc/FiltersApi.md) | [**getFiltersV2**](doc/FiltersApi.md#getfiltersv2) | **GET** /api/v2/filters | View all filters
 [*FiltersApi*](doc/FiltersApi.md) | [**postFilterKeywordsV2**](doc/FiltersApi.md#postfilterkeywordsv2) | **POST** /api/v2/filters/{filter_id}/keywords | Add a keyword to a filter
 [*FiltersApi*](doc/FiltersApi.md) | [**postFilterStatusesV2**](doc/FiltersApi.md#postfilterstatusesv2) | **POST** /api/v2/filters/{filter_id}/statuses | Add a status to a filter group
 [*FiltersApi*](doc/FiltersApi.md) | [**updateFilter**](doc/FiltersApi.md#updatefilter) | **PUT** /api/v1/filters/{id} | Update a filter
+[*FiltersApi*](doc/FiltersApi.md) | [**updateFilterKeywordV2**](doc/FiltersApi.md#updatefilterkeywordv2) | **PUT** /api/v2/filters/keywords/{id} | Edit a keyword within a filter
 [*FiltersApi*](doc/FiltersApi.md) | [**updateFilterV2**](doc/FiltersApi.md#updatefilterv2) | **PUT** /api/v2/filters/{id} | Update a filter
-[*FiltersApi*](doc/FiltersApi.md) | [**updateFiltersKeywordsByIdV2**](doc/FiltersApi.md#updatefilterskeywordsbyidv2) | **PUT** /api/v2/filters/keywords/{id} | Edit a keyword within a filter
 [*FollowRequestsApi*](doc/FollowRequestsApi.md) | [**getFollowRequests**](doc/FollowRequestsApi.md#getfollowrequests) | **GET** /api/v1/follow_requests | View pending follow requests
 [*FollowRequestsApi*](doc/FollowRequestsApi.md) | [**postFollowRequestAuthorize**](doc/FollowRequestsApi.md#postfollowrequestauthorize) | **POST** /api/v1/follow_requests/{account_id}/authorize | Accept follow request
 [*FollowRequestsApi*](doc/FollowRequestsApi.md) | [**postFollowRequestReject**](doc/FollowRequestsApi.md#postfollowrequestreject) | **POST** /api/v1/follow_requests/{account_id}/reject | Reject follow request
@@ -184,24 +184,24 @@ Class | Method | HTTP request | Description
 [*MediaApi*](doc/MediaApi.md) | [**updateMedia**](doc/MediaApi.md#updatemedia) | **PUT** /api/v1/media/{id} | Update media attachment
 [*MutesApi*](doc/MutesApi.md) | [**getMutes**](doc/MutesApi.md#getmutes) | **GET** /api/v1/mutes | View muted accounts
 [*NotificationsApi*](doc/NotificationsApi.md) | [**createNotificationClear**](doc/NotificationsApi.md#createnotificationclear) | **POST** /api/v1/notifications/clear | Dismiss all notifications
-[*NotificationsApi*](doc/NotificationsApi.md) | [**createNotificationsRequestsAccept**](doc/NotificationsApi.md#createnotificationsrequestsaccept) | **POST** /api/v1/notifications/requests/accept | Accept multiple notification requests
-[*NotificationsApi*](doc/NotificationsApi.md) | [**createNotificationsRequestsDismiss**](doc/NotificationsApi.md#createnotificationsrequestsdismiss) | **POST** /api/v1/notifications/requests/dismiss | Dismiss multiple notification requests
+[*NotificationsApi*](doc/NotificationsApi.md) | [**createNotificationRequestAccept**](doc/NotificationsApi.md#createnotificationrequestaccept) | **POST** /api/v1/notifications/requests/accept | Accept multiple notification requests
+[*NotificationsApi*](doc/NotificationsApi.md) | [**createNotificationRequestDismiss**](doc/NotificationsApi.md#createnotificationrequestdismiss) | **POST** /api/v1/notifications/requests/dismiss | Dismiss multiple notification requests
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotification**](doc/NotificationsApi.md#getnotification) | **GET** /api/v1/notifications/{id} | Get a single notification
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationAccountsV2**](doc/NotificationsApi.md#getnotificationaccountsv2) | **GET** /api/v2/notifications/{group_key}/accounts | Get accounts of all notifications in a notification group
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationPolicyV2**](doc/NotificationsApi.md#getnotificationpolicyv2) | **GET** /api/v2/notifications/policy | Get the filtering policy for notifications
+[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationRequest**](doc/NotificationsApi.md#getnotificationrequest) | **GET** /api/v1/notifications/requests/{id} | Get a single notification request
+[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationRequestMerged**](doc/NotificationsApi.md#getnotificationrequestmerged) | **GET** /api/v1/notifications/requests/merged | Check if accepted notification requests have been merged
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationRequests**](doc/NotificationsApi.md#getnotificationrequests) | **GET** /api/v1/notifications/requests | Get all notification requests
+[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationUnreadCount**](doc/NotificationsApi.md#getnotificationunreadcount) | **GET** /api/v1/notifications/unread_count | Get the number of unread notifications
+[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationUnreadCountV2**](doc/NotificationsApi.md#getnotificationunreadcountv2) | **GET** /api/v2/notifications/unread_count | Get the number of unread notifications
+[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationV2**](doc/NotificationsApi.md#getnotificationv2) | **GET** /api/v2/notifications/{group_key} | Get a single notification group
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotifications**](doc/NotificationsApi.md#getnotifications) | **GET** /api/v1/notifications | Get all notifications
-[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsByGroupKeyV2**](doc/NotificationsApi.md#getnotificationsbygroupkeyv2) | **GET** /api/v2/notifications/{group_key} | Get a single notification group
-[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsRequestsById**](doc/NotificationsApi.md#getnotificationsrequestsbyid) | **GET** /api/v1/notifications/requests/{id} | Get a single notification request
-[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsRequestsMerged**](doc/NotificationsApi.md#getnotificationsrequestsmerged) | **GET** /api/v1/notifications/requests/merged | Check if accepted notification requests have been merged
-[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsUnreadCount**](doc/NotificationsApi.md#getnotificationsunreadcount) | **GET** /api/v1/notifications/unread_count | Get the number of unread notifications
-[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsUnreadCountV2**](doc/NotificationsApi.md#getnotificationsunreadcountv2) | **GET** /api/v2/notifications/unread_count | Get the number of unread notifications
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsV2**](doc/NotificationsApi.md#getnotificationsv2) | **GET** /api/v2/notifications | Get all grouped notifications
 [*NotificationsApi*](doc/NotificationsApi.md) | [**patchNotificationPolicyV2**](doc/NotificationsApi.md#patchnotificationpolicyv2) | **PATCH** /api/v2/notifications/policy | Update the filtering policy for notifications
 [*NotificationsApi*](doc/NotificationsApi.md) | [**postNotificationDismiss**](doc/NotificationsApi.md#postnotificationdismiss) | **POST** /api/v1/notifications/{id}/dismiss | Dismiss a single notification
 [*NotificationsApi*](doc/NotificationsApi.md) | [**postNotificationDismissV2**](doc/NotificationsApi.md#postnotificationdismissv2) | **POST** /api/v2/notifications/{group_key}/dismiss | Dismiss a single notification group
-[*NotificationsApi*](doc/NotificationsApi.md) | [**postNotificationsRequestsByIdAccept**](doc/NotificationsApi.md#postnotificationsrequestsbyidaccept) | **POST** /api/v1/notifications/requests/{id}/accept | Accept a single notification request
-[*NotificationsApi*](doc/NotificationsApi.md) | [**postNotificationsRequestsByIdDismiss**](doc/NotificationsApi.md#postnotificationsrequestsbyiddismiss) | **POST** /api/v1/notifications/requests/{id}/dismiss | Dismiss a single notification request
+[*NotificationsApi*](doc/NotificationsApi.md) | [**postNotificationRequestAccept**](doc/NotificationsApi.md#postnotificationrequestaccept) | **POST** /api/v1/notifications/requests/{id}/accept | Accept a single notification request
+[*NotificationsApi*](doc/NotificationsApi.md) | [**postNotificationRequestDismiss**](doc/NotificationsApi.md#postnotificationrequestdismiss) | **POST** /api/v1/notifications/requests/{id}/dismiss | Dismiss a single notification request
 [*OauthApi*](doc/OauthApi.md) | [**getOauthAuthorize**](doc/OauthApi.md#getoauthauthorize) | **GET** /oauth/authorize | Authorize a user
 [*OauthApi*](doc/OauthApi.md) | [**getOauthUserinfo**](doc/OauthApi.md#getoauthuserinfo) | **GET** /oauth/userinfo | Retrieve user information
 [*OauthApi*](doc/OauthApi.md) | [**postOauthRevoke**](doc/OauthApi.md#postoauthrevoke) | **POST** /oauth/revoke | Revoke a token
@@ -210,7 +210,7 @@ Class | Method | HTTP request | Description
 [*PollsApi*](doc/PollsApi.md) | [**getPoll**](doc/PollsApi.md#getpoll) | **GET** /api/v1/polls/{id} | View a poll
 [*PollsApi*](doc/PollsApi.md) | [**postPollVotes**](doc/PollsApi.md#postpollvotes) | **POST** /api/v1/polls/{id}/votes | Vote on a poll
 [*PreferencesApi*](doc/PreferencesApi.md) | [**getPreferences**](doc/PreferencesApi.md#getpreferences) | **GET** /api/v1/preferences | View user preferences
-[*ProfileApi*](doc/ProfileApi.md) | [**deleteAvatar**](doc/ProfileApi.md#deleteavatar) | **DELETE** /api/v1/profile/avatar | Delete profile avatar
+[*ProfileApi*](doc/ProfileApi.md) | [**deleteProfileAvatar**](doc/ProfileApi.md#deleteprofileavatar) | **DELETE** /api/v1/profile/avatar | Delete profile avatar
 [*ProfileApi*](doc/ProfileApi.md) | [**deleteProfileHeader**](doc/ProfileApi.md#deleteprofileheader) | **DELETE** /api/v1/profile/header | Delete profile header
 [*ProfileApi*](doc/ProfileApi.md) | [**getProfile**](doc/ProfileApi.md#getprofile) | **GET** /api/v1/profile | Get current user profile
 [*ProfileApi*](doc/ProfileApi.md) | [**patchProfile**](doc/ProfileApi.md#patchprofile) | **PATCH** /api/v1/profile | Update current user profile
@@ -238,6 +238,7 @@ Class | Method | HTTP request | Description
 [*StatusesApi*](doc/StatusesApi.md) | [**postStatusFavourite**](doc/StatusesApi.md#poststatusfavourite) | **POST** /api/v1/statuses/{id}/favourite | Favourite a status
 [*StatusesApi*](doc/StatusesApi.md) | [**postStatusMute**](doc/StatusesApi.md#poststatusmute) | **POST** /api/v1/statuses/{id}/mute | Mute a conversation
 [*StatusesApi*](doc/StatusesApi.md) | [**postStatusPin**](doc/StatusesApi.md#poststatuspin) | **POST** /api/v1/statuses/{id}/pin | Pin status to profile
+[*StatusesApi*](doc/StatusesApi.md) | [**postStatusQuoteRevoke**](doc/StatusesApi.md#poststatusquoterevoke) | **POST** /api/v1/statuses/{id}/quotes/{quoting_status_id}/revoke | Revoke a quote post
 [*StatusesApi*](doc/StatusesApi.md) | [**postStatusReblog**](doc/StatusesApi.md#poststatusreblog) | **POST** /api/v1/statuses/{id}/reblog | Boost a status
 [*StatusesApi*](doc/StatusesApi.md) | [**postStatusTranslate**](doc/StatusesApi.md#poststatustranslate) | **POST** /api/v1/statuses/{id}/translate | Translate a status
 [*StatusesApi*](doc/StatusesApi.md) | [**postStatusUnbookmark**](doc/StatusesApi.md#poststatusunbookmark) | **POST** /api/v1/statuses/{id}/unbookmark | Undo bookmark of a status
@@ -245,7 +246,6 @@ Class | Method | HTTP request | Description
 [*StatusesApi*](doc/StatusesApi.md) | [**postStatusUnmute**](doc/StatusesApi.md#poststatusunmute) | **POST** /api/v1/statuses/{id}/unmute | Unmute a conversation
 [*StatusesApi*](doc/StatusesApi.md) | [**postStatusUnpin**](doc/StatusesApi.md#poststatusunpin) | **POST** /api/v1/statuses/{id}/unpin | Unpin status from profile
 [*StatusesApi*](doc/StatusesApi.md) | [**postStatusUnreblog**](doc/StatusesApi.md#poststatusunreblog) | **POST** /api/v1/statuses/{id}/unreblog | Undo boost of a status
-[*StatusesApi*](doc/StatusesApi.md) | [**postStatusesByIdQuotesByQuotingStatusIdRevoke**](doc/StatusesApi.md#poststatusesbyidquotesbyquotingstatusidrevoke) | **POST** /api/v1/statuses/{id}/quotes/{quoting_status_id}/revoke | Revoke a quote post
 [*StatusesApi*](doc/StatusesApi.md) | [**updateStatus**](doc/StatusesApi.md#updatestatus) | **PUT** /api/v1/statuses/{id} | Edit a status
 [*StatusesApi*](doc/StatusesApi.md) | [**updateStatusInteractionPolicy**](doc/StatusesApi.md#updatestatusinteractionpolicy) | **PUT** /api/v1/statuses/{id}/interaction_policy | Edit a status&#39; interaction policies
 [*StreamingApi*](doc/StreamingApi.md) | [**getStreamingDirect**](doc/StreamingApi.md#getstreamingdirect) | **GET** /api/v1/streaming/direct | Watch for direct messages
@@ -258,10 +258,10 @@ Class | Method | HTTP request | Description
 [*StreamingApi*](doc/StreamingApi.md) | [**getStreamingPublicRemote**](doc/StreamingApi.md#getstreamingpublicremote) | **GET** /api/v1/streaming/public/remote | Watch for remote statuses
 [*StreamingApi*](doc/StreamingApi.md) | [**getStreamingUser**](doc/StreamingApi.md#getstreaminguser) | **GET** /api/v1/streaming/user | Watch your home timeline and notifications
 [*StreamingApi*](doc/StreamingApi.md) | [**getStreamingUserNotification**](doc/StreamingApi.md#getstreamingusernotification) | **GET** /api/v1/streaming/user/notification | Watch your notifications
-[*SuggestionsApi*](doc/SuggestionsApi.md) | [**deleteSuggestionsByAccountId**](doc/SuggestionsApi.md#deletesuggestionsbyaccountid) | **DELETE** /api/v1/suggestions/{account_id} | Remove a suggestion
+[*SuggestionsApi*](doc/SuggestionsApi.md) | [**deleteSuggestion**](doc/SuggestionsApi.md#deletesuggestion) | **DELETE** /api/v1/suggestions/{account_id} | Remove a suggestion
 [*SuggestionsApi*](doc/SuggestionsApi.md) | [**getSuggestions**](doc/SuggestionsApi.md#getsuggestions) | **GET** /api/v1/suggestions | View follow suggestions (v1)
 [*SuggestionsApi*](doc/SuggestionsApi.md) | [**getSuggestionsV2**](doc/SuggestionsApi.md#getsuggestionsv2) | **GET** /api/v2/suggestions | View follow suggestions (v2)
-[*TagsApi*](doc/TagsApi.md) | [**getTagsByName**](doc/TagsApi.md#gettagsbyname) | **GET** /api/v1/tags/{name} | View information about a single tag
+[*TagsApi*](doc/TagsApi.md) | [**getTag**](doc/TagsApi.md#gettag) | **GET** /api/v1/tags/{name} | View information about a single tag
 [*TagsApi*](doc/TagsApi.md) | [**postTagFeature**](doc/TagsApi.md#posttagfeature) | **POST** /api/v1/tags/{id}/feature | Feature a hashtag
 [*TagsApi*](doc/TagsApi.md) | [**postTagFollow**](doc/TagsApi.md#posttagfollow) | **POST** /api/v1/tags/{name}/follow | Follow a hashtag
 [*TagsApi*](doc/TagsApi.md) | [**postTagUnfeature**](doc/TagsApi.md#posttagunfeature) | **POST** /api/v1/tags/{id}/unfeature | Unfeature a hashtag
@@ -269,9 +269,9 @@ Class | Method | HTTP request | Description
 [*TimelinesApi*](doc/TimelinesApi.md) | [**getTimelineDirect**](doc/TimelinesApi.md#gettimelinedirect) | **GET** /api/v1/timelines/direct | View direct timeline
 [*TimelinesApi*](doc/TimelinesApi.md) | [**getTimelineHome**](doc/TimelinesApi.md#gettimelinehome) | **GET** /api/v1/timelines/home | View home timeline
 [*TimelinesApi*](doc/TimelinesApi.md) | [**getTimelineLink**](doc/TimelinesApi.md#gettimelinelink) | **GET** /api/v1/timelines/link | View link timeline
+[*TimelinesApi*](doc/TimelinesApi.md) | [**getTimelineList**](doc/TimelinesApi.md#gettimelinelist) | **GET** /api/v1/timelines/list/{list_id} | View list timeline
 [*TimelinesApi*](doc/TimelinesApi.md) | [**getTimelinePublic**](doc/TimelinesApi.md#gettimelinepublic) | **GET** /api/v1/timelines/public | View public timeline
-[*TimelinesApi*](doc/TimelinesApi.md) | [**getTimelinesListByListId**](doc/TimelinesApi.md#gettimelineslistbylistid) | **GET** /api/v1/timelines/list/{list_id} | View list timeline
-[*TimelinesApi*](doc/TimelinesApi.md) | [**getTimelinesTagByHashtag**](doc/TimelinesApi.md#gettimelinestagbyhashtag) | **GET** /api/v1/timelines/tag/{hashtag} | View hashtag timeline
+[*TimelinesApi*](doc/TimelinesApi.md) | [**getTimelineTagByHashtag**](doc/TimelinesApi.md#gettimelinetagbyhashtag) | **GET** /api/v1/timelines/tag/{hashtag} | View hashtag timeline
 [*TrendsApi*](doc/TrendsApi.md) | [**getTrendLinks**](doc/TrendsApi.md#gettrendlinks) | **GET** /api/v1/trends/links | View trending links
 [*TrendsApi*](doc/TrendsApi.md) | [**getTrendStatuses**](doc/TrendsApi.md#gettrendstatuses) | **GET** /api/v1/trends/statuses | View trending statuses
 [*TrendsApi*](doc/TrendsApi.md) | [**getTrendTags**](doc/TrendsApi.md#gettrendtags) | **GET** /api/v1/trends/tags | View trending tags
@@ -387,6 +387,7 @@ Class | Method | HTTP request | Description
  - [InstanceConfigurationTimelinesAccessTrendingLinkFeeds](doc/InstanceConfigurationTimelinesAccessTrendingLinkFeeds.md)
  - [InstanceConfigurationTranslation](doc/InstanceConfigurationTranslation.md)
  - [InstanceConfigurationUrls](doc/InstanceConfigurationUrls.md)
+ - [InstanceConfigurationVapid](doc/InstanceConfigurationVapid.md)
  - [InstanceContact](doc/InstanceContact.md)
  - [InstanceIcon](doc/InstanceIcon.md)
  - [InstanceRegistrations](doc/InstanceRegistrations.md)
@@ -415,8 +416,9 @@ Class | Method | HTTP request | Description
  - [OAuthScope](doc/OAuthScope.md)
  - [OEmbedResponse](doc/OEmbedResponse.md)
  - [PartialAccountWithAvatar](doc/PartialAccountWithAvatar.md)
- - [PatchAccountsUpdateCredentialsRequest](doc/PatchAccountsUpdateCredentialsRequest.md)
- - [PatchAccountsUpdateCredentialsRequestSource](doc/PatchAccountsUpdateCredentialsRequestSource.md)
+ - [PatchAccountUpdateCredentialsRequest](doc/PatchAccountUpdateCredentialsRequest.md)
+ - [PatchAccountUpdateCredentialsRequestFieldsAttributesValue](doc/PatchAccountUpdateCredentialsRequestFieldsAttributesValue.md)
+ - [PatchAccountUpdateCredentialsRequestSource](doc/PatchAccountUpdateCredentialsRequestSource.md)
  - [PatchProfileRequest](doc/PatchProfileRequest.md)
  - [Poll](doc/Poll.md)
  - [PollOption](doc/PollOption.md)
@@ -582,5 +584,5 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+hi@abrah.am
 

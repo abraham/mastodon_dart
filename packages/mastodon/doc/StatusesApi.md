@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**postStatusFavourite**](StatusesApi.md#poststatusfavourite) | **POST** /api/v1/statuses/{id}/favourite | Favourite a status
 [**postStatusMute**](StatusesApi.md#poststatusmute) | **POST** /api/v1/statuses/{id}/mute | Mute a conversation
 [**postStatusPin**](StatusesApi.md#poststatuspin) | **POST** /api/v1/statuses/{id}/pin | Pin status to profile
+[**postStatusQuoteRevoke**](StatusesApi.md#poststatusquoterevoke) | **POST** /api/v1/statuses/{id}/quotes/{quoting_status_id}/revoke | Revoke a quote post
 [**postStatusReblog**](StatusesApi.md#poststatusreblog) | **POST** /api/v1/statuses/{id}/reblog | Boost a status
 [**postStatusTranslate**](StatusesApi.md#poststatustranslate) | **POST** /api/v1/statuses/{id}/translate | Translate a status
 [**postStatusUnbookmark**](StatusesApi.md#poststatusunbookmark) | **POST** /api/v1/statuses/{id}/unbookmark | Undo bookmark of a status
@@ -30,7 +31,6 @@ Method | HTTP request | Description
 [**postStatusUnmute**](StatusesApi.md#poststatusunmute) | **POST** /api/v1/statuses/{id}/unmute | Unmute a conversation
 [**postStatusUnpin**](StatusesApi.md#poststatusunpin) | **POST** /api/v1/statuses/{id}/unpin | Unpin status from profile
 [**postStatusUnreblog**](StatusesApi.md#poststatusunreblog) | **POST** /api/v1/statuses/{id}/unreblog | Undo boost of a status
-[**postStatusesByIdQuotesByQuotingStatusIdRevoke**](StatusesApi.md#poststatusesbyidquotesbyquotingstatusidrevoke) | **POST** /api/v1/statuses/{id}/quotes/{quoting_status_id}/revoke | Revoke a quote post
 [**updateStatus**](StatusesApi.md#updatestatus) | **PUT** /api/v1/statuses/{id} | Edit a status
 [**updateStatusInteractionPolicy**](StatusesApi.md#updatestatusinteractionpolicy) | **PUT** /api/v1/statuses/{id}/interaction_policy | Edit a status&#39; interaction policies
 
@@ -715,6 +715,55 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **postStatusQuoteRevoke**
+> Status postStatusQuoteRevoke(id, quotingStatusId)
+
+Revoke a quote post
+
+Revoke quote authorization of status `quoting_status_id`, detaching status `id`.  Version history:  4.5.0 (`mastodon` [API version] 7) - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getStatusesApi();
+final String id = id_example; // String | id parameter
+final String quotingStatusId = quotingStatusId_example; // String | quoting_status_id parameter
+
+try {
+    final response = api.postStatusQuoteRevoke(id, quotingStatusId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling StatusesApi->postStatusQuoteRevoke: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+ **quotingStatusId** | **String**| quoting_status_id parameter | 
+
+### Return type
+
+[**Status**](Status.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **postStatusReblog**
 > Status postStatusReblog(id, postStatusReblogRequest)
 
@@ -1032,55 +1081,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| id parameter | 
-
-### Return type
-
-[**Status**](Status.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **postStatusesByIdQuotesByQuotingStatusIdRevoke**
-> Status postStatusesByIdQuotesByQuotingStatusIdRevoke(id, quotingStatusId)
-
-Revoke a quote post
-
-Revoke quote authorization of status `quoting_status_id`, detaching status `id`.  Version history:  4.5.0 (`mastodon` [API version] 7) - added
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getStatusesApi();
-final String id = id_example; // String | id parameter
-final String quotingStatusId = quotingStatusId_example; // String | quoting_status_id parameter
-
-try {
-    final response = api.postStatusesByIdQuotesByQuotingStatusIdRevoke(id, quotingStatusId);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling StatusesApi->postStatusesByIdQuotesByQuotingStatusIdRevoke: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| id parameter | 
- **quotingStatusId** | **String**| quoting_status_id parameter | 
 
 ### Return type
 

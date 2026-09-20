@@ -91,7 +91,7 @@ void main() {
       // TODO
     });
 
-    // The ID of the [Application]({{< relref \"entities/application\" >}}) that created this account, if applicable.
+    // The ID of the [Application](https://docs.joinmastodon.org/entities/application/) that created this account, if applicable.
     // String createdByApplicationId
     test('to test the property `createdByApplicationId`', () async {
       // TODO
@@ -109,7 +109,7 @@ void main() {
       // TODO
     });
 
-    // The ID of the [Account]({{< relref \"entities/account\" >}}) that invited this user, if applicable.
+    // The ID of the [Account](https://docs.joinmastodon.org/entities/account/) that invited this user, if applicable.
     // String invitedByAccountId
     test('to test the property `invitedByAccountId`', () async {
       // TODO

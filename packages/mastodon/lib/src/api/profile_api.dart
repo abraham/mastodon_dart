@@ -33,7 +33,7 @@ class ProfileApi {
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Delete profile avatar Documentation](https://docs.joinmastodon.org/methods/profile/#delete-profile-avatar)
-  Future<Response<CredentialAccount>> deleteAvatar({
+  Future<Response<CredentialAccount>> deleteProfileAvatar({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

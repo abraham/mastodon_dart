@@ -1,30 +1,30 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'patch_accounts_update_credentials_request_source.dart';
+part of 'patch_account_update_credentials_request_source.dart';
 
 // **************************************************************************
 // CopyWithGenerator
 // **************************************************************************
 
-abstract class _$PatchAccountsUpdateCredentialsRequestSourceCWProxy {
-  PatchAccountsUpdateCredentialsRequestSource privacy(
+abstract class _$PatchAccountUpdateCredentialsRequestSourceCWProxy {
+  PatchAccountUpdateCredentialsRequestSource privacy(
     StatusVisibilityEnum? privacy,
   );
 
-  PatchAccountsUpdateCredentialsRequestSource sensitive(bool? sensitive);
+  PatchAccountUpdateCredentialsRequestSource sensitive(bool? sensitive);
 
-  PatchAccountsUpdateCredentialsRequestSource language(String? language);
+  PatchAccountUpdateCredentialsRequestSource language(String? language);
 
-  PatchAccountsUpdateCredentialsRequestSource quotePolicy(String? quotePolicy);
+  PatchAccountUpdateCredentialsRequestSource quotePolicy(String? quotePolicy);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PatchAccountsUpdateCredentialsRequestSource(...).copyWith.fieldName(value)`.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PatchAccountUpdateCredentialsRequestSource(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
-  /// PatchAccountsUpdateCredentialsRequestSource(...).copyWith(id: 12, name: "My name")
+  /// PatchAccountUpdateCredentialsRequestSource(...).copyWith(id: 12, name: "My name")
   /// ```
-  PatchAccountsUpdateCredentialsRequestSource call({
+  PatchAccountUpdateCredentialsRequestSource call({
     StatusVisibilityEnum? privacy,
     bool? sensitive,
     String? language,
@@ -33,46 +33,45 @@ abstract class _$PatchAccountsUpdateCredentialsRequestSourceCWProxy {
 }
 
 /// Callable proxy for `copyWith` functionality.
-/// Use as `instanceOfPatchAccountsUpdateCredentialsRequestSource.copyWith(...)` or call `instanceOfPatchAccountsUpdateCredentialsRequestSource.copyWith.fieldName(value)` for a single field.
-class _$PatchAccountsUpdateCredentialsRequestSourceCWProxyImpl
-    implements _$PatchAccountsUpdateCredentialsRequestSourceCWProxy {
-  const _$PatchAccountsUpdateCredentialsRequestSourceCWProxyImpl(this._value);
+/// Use as `instanceOfPatchAccountUpdateCredentialsRequestSource.copyWith(...)` or call `instanceOfPatchAccountUpdateCredentialsRequestSource.copyWith.fieldName(value)` for a single field.
+class _$PatchAccountUpdateCredentialsRequestSourceCWProxyImpl
+    implements _$PatchAccountUpdateCredentialsRequestSourceCWProxy {
+  const _$PatchAccountUpdateCredentialsRequestSourceCWProxyImpl(this._value);
 
-  final PatchAccountsUpdateCredentialsRequestSource _value;
+  final PatchAccountUpdateCredentialsRequestSource _value;
 
   @override
-  PatchAccountsUpdateCredentialsRequestSource privacy(
+  PatchAccountUpdateCredentialsRequestSource privacy(
     StatusVisibilityEnum? privacy,
   ) => call(privacy: privacy);
 
   @override
-  PatchAccountsUpdateCredentialsRequestSource sensitive(bool? sensitive) =>
+  PatchAccountUpdateCredentialsRequestSource sensitive(bool? sensitive) =>
       call(sensitive: sensitive);
 
   @override
-  PatchAccountsUpdateCredentialsRequestSource language(String? language) =>
+  PatchAccountUpdateCredentialsRequestSource language(String? language) =>
       call(language: language);
 
   @override
-  PatchAccountsUpdateCredentialsRequestSource quotePolicy(
-    String? quotePolicy,
-  ) => call(quotePolicy: quotePolicy);
+  PatchAccountUpdateCredentialsRequestSource quotePolicy(String? quotePolicy) =>
+      call(quotePolicy: quotePolicy);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PatchAccountsUpdateCredentialsRequestSource(...).copyWith.fieldName(value)`.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PatchAccountUpdateCredentialsRequestSource(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
-  /// PatchAccountsUpdateCredentialsRequestSource(...).copyWith(id: 12, name: "My name")
+  /// PatchAccountUpdateCredentialsRequestSource(...).copyWith(id: 12, name: "My name")
   /// ```
   @override
-  PatchAccountsUpdateCredentialsRequestSource call({
+  PatchAccountUpdateCredentialsRequestSource call({
     Object? privacy = const $CopyWithPlaceholder(),
     Object? sensitive = const $CopyWithPlaceholder(),
     Object? language = const $CopyWithPlaceholder(),
     Object? quotePolicy = const $CopyWithPlaceholder(),
   }) {
-    return PatchAccountsUpdateCredentialsRequestSource(
+    return PatchAccountUpdateCredentialsRequestSource(
       privacy: privacy == const $CopyWithPlaceholder()
           ? _value.privacy
           // ignore: cast_nullable_to_non_nullable
@@ -93,26 +92,26 @@ class _$PatchAccountsUpdateCredentialsRequestSourceCWProxyImpl
   }
 }
 
-extension $PatchAccountsUpdateCredentialsRequestSourceCopyWith
-    on PatchAccountsUpdateCredentialsRequestSource {
+extension $PatchAccountUpdateCredentialsRequestSourceCopyWith
+    on PatchAccountUpdateCredentialsRequestSource {
   /// Returns a callable class used to build a new instance with modified fields.
-  /// Example: `instanceOfPatchAccountsUpdateCredentialsRequestSource.copyWith(...)` or `instanceOfPatchAccountsUpdateCredentialsRequestSource.copyWith.fieldName(...)`.
+  /// Example: `instanceOfPatchAccountUpdateCredentialsRequestSource.copyWith(...)` or `instanceOfPatchAccountUpdateCredentialsRequestSource.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
-  _$PatchAccountsUpdateCredentialsRequestSourceCWProxy get copyWith =>
-      _$PatchAccountsUpdateCredentialsRequestSourceCWProxyImpl(this);
+  _$PatchAccountUpdateCredentialsRequestSourceCWProxy get copyWith =>
+      _$PatchAccountUpdateCredentialsRequestSourceCWProxyImpl(this);
 }
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-PatchAccountsUpdateCredentialsRequestSource
-_$PatchAccountsUpdateCredentialsRequestSourceFromJson(
+PatchAccountUpdateCredentialsRequestSource
+_$PatchAccountUpdateCredentialsRequestSourceFromJson(
   Map<String, dynamic> json,
-) => $checkedCreate('PatchAccountsUpdateCredentialsRequestSource', json, (
+) => $checkedCreate('PatchAccountUpdateCredentialsRequestSource', json, (
   $checkedConvert,
 ) {
-  final val = PatchAccountsUpdateCredentialsRequestSource(
+  final val = PatchAccountUpdateCredentialsRequestSource(
     privacy: $checkedConvert(
       'privacy',
       (v) => $enumDecodeNullable(_$StatusVisibilityEnumEnumMap, v),
@@ -124,8 +123,8 @@ _$PatchAccountsUpdateCredentialsRequestSourceFromJson(
   return val;
 }, fieldKeyMap: const {'quotePolicy': 'quote_policy'});
 
-Map<String, dynamic> _$PatchAccountsUpdateCredentialsRequestSourceToJson(
-  PatchAccountsUpdateCredentialsRequestSource instance,
+Map<String, dynamic> _$PatchAccountUpdateCredentialsRequestSourceToJson(
+  PatchAccountUpdateCredentialsRequestSource instance,
 ) => <String, dynamic>{
   'privacy': ?_$StatusVisibilityEnumEnumMap[instance.privacy],
   'sensitive': ?instance.sensitive,

@@ -19,7 +19,7 @@ void main() {
       // TODO
     });
 
-    // Should the filter consider word boundaries? See [implementation guidelines for filters]({{< relref \"api/guidelines#filters\" >}}).
+    // Should the filter consider word boundaries? See [implementation guidelines for filters](https://docs.joinmastodon.org/api/guidelines/#filters).
     // bool wholeWord
     test('to test the property `wholeWord`', () async {
       // TODO

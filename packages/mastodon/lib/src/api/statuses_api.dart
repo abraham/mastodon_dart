@@ -1248,6 +1248,96 @@ class StatusesApi {
     );
   }
 
+  /// Revoke a quote post
+  /// Revoke quote authorization of status &#x60;quoting_status_id&#x60;, detaching status &#x60;id&#x60;.  Version history:  4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added
+  ///
+  /// Parameters:
+  /// * [id] - id parameter
+  /// * [quotingStatusId] - quoting_status_id parameter
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [Status] as data
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [Revoke a quote post Documentation](https://docs.joinmastodon.org/methods/statuses/#revoke_quote)
+  Future<Response<Status>> postStatusQuoteRevoke({
+    required String id,
+    required String quotingStatusId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/statuses/{id}/quotes/{quoting_status_id}/revoke'
+        .replaceAll(
+          '{'
+          r'id'
+          '}',
+          id.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'quoting_status_id'
+          '}',
+          quotingStatusId.toString(),
+        );
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    Status? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Status, Status>(rawData, 'Status', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Status>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Boost a status
   /// Reshare a status on your own profile.  Version history:  0.0.0 - added\\ 2.8.0 - add &#x60;visibility&#x60; parameter
   ///
@@ -1803,96 +1893,6 @@ class StatusesApi {
       '}',
       id.toString(),
     );
-    final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{...?headers},
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'OAuth2'},
-          {'type': 'oauth2', 'name': 'OAuth2'},
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    Status? _responseData;
-
-    try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<Status, Status>(rawData, 'Status', growable: true);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<Status>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// Revoke a quote post
-  /// Revoke quote authorization of status &#x60;quoting_status_id&#x60;, detaching status &#x60;id&#x60;.  Version history:  4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added
-  ///
-  /// Parameters:
-  /// * [id] - id parameter
-  /// * [quotingStatusId] - quoting_status_id parameter
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [Status] as data
-  /// Throws [DioException] if API call or serialization fails
-  /// Official Mastodon API documentation
-  /// Also see [Revoke a quote post Documentation](https://docs.joinmastodon.org/methods/statuses/#revoke_quote)
-  Future<Response<Status>> postStatusesByIdQuotesByQuotingStatusIdRevoke({
-    required String id,
-    required String quotingStatusId,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v1/statuses/{id}/quotes/{quoting_status_id}/revoke'
-        .replaceAll(
-          '{'
-          r'id'
-          '}',
-          id.toString(),
-        )
-        .replaceAll(
-          '{'
-          r'quoting_status_id'
-          '}',
-          quotingStatusId.toString(),
-        );
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{...?headers},

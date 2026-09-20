@@ -13,8 +13,8 @@ Method | HTTP request | Description
 [**deleteCollection**](CollectionsApi.md#deletecollection) | **DELETE** /api/v1/collections/{id} | Delete a Collection
 [**deleteCollectionItem**](CollectionsApi.md#deletecollectionitem) | **DELETE** /api/v1/collections/{collection_id}/items/{id} | Remove account from a Collection
 [**getCollection**](CollectionsApi.md#getcollection) | **GET** /api/v1/collections/{id} | Get a single Collection
+[**postCollectionItemRevoke**](CollectionsApi.md#postcollectionitemrevoke) | **POST** /api/v1/collections/{collection_id}/items/{id}/revoke | Revoke inclusion in a Collection
 [**postCollectionItems**](CollectionsApi.md#postcollectionitems) | **POST** /api/v1/collections/{collection_id}/items | Add an account to a Collection
-[**postCollectionsByCollectionIdItemsByIdRevoke**](CollectionsApi.md#postcollectionsbycollectioniditemsbyidrevoke) | **POST** /api/v1/collections/{collection_id}/items/{id}/revoke | Revoke inclusion in a Collection
 [**updateCollection**](CollectionsApi.md#updatecollection) | **PATCH** /api/v1/collections/{id} | Update a Collection
 
 
@@ -206,6 +206,54 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **postCollectionItemRevoke**
+> postCollectionItemRevoke(collectionId, id)
+
+Revoke inclusion in a Collection
+
+Remove the current user from a Collection created by a different user.  Version history:  4.6.0 (`mastodon` [API version] 10) - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getCollectionsApi();
+final String collectionId = collectionId_example; // String | collection_id parameter
+final String id = id_example; // String | id parameter
+
+try {
+    api.postCollectionItemRevoke(collectionId, id);
+} on DioException catch (e) {
+    print('Exception when calling CollectionsApi->postCollectionItemRevoke: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **collectionId** | **String**| collection_id parameter | 
+ **id** | **String**| id parameter | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **postCollectionItems**
 > WrappedCollectionItem postCollectionItems(collectionId, postCollectionItemsRequest)
 
@@ -251,54 +299,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **postCollectionsByCollectionIdItemsByIdRevoke**
-> postCollectionsByCollectionIdItemsByIdRevoke(collectionId, id)
-
-Revoke inclusion in a Collection
-
-Remove the current user from a Collection created by a different user.  Version history:  4.6.0 (`mastodon` [API version] 10) - added
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getCollectionsApi();
-final String collectionId = collectionId_example; // String | collection_id parameter
-final String id = id_example; // String | id parameter
-
-try {
-    api.postCollectionsByCollectionIdItemsByIdRevoke(collectionId, id);
-} on DioException catch (e) {
-    print('Exception when calling CollectionsApi->postCollectionsByCollectionIdItemsByIdRevoke: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| collection_id parameter | 
- **id** | **String**| id parameter | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

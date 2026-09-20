@@ -9,6 +9,7 @@ import 'package:mastodon/src/model/instance_configuration_media_attachments.dart
 import 'package:mastodon/src/model/instance_configuration_translation.dart';
 import 'package:mastodon/src/model/instance_configuration_accounts.dart';
 import 'package:mastodon/src/model/instance_configuration_polls.dart';
+import 'package:mastodon/src/model/instance_configuration_vapid.dart';
 import 'package:mastodon/src/model/instance_configuration_timelines_access.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -40,6 +41,8 @@ class InstanceConfiguration {
     this.limitedFederation,
 
     this.timelinesAccess,
+
+    this.vapid,
   });
 
   @JsonKey(name: r'accounts', required: true, includeIfNull: false)
@@ -67,6 +70,9 @@ class InstanceConfiguration {
   @JsonKey(name: r'timelines_access', required: false, includeIfNull: false)
   final InstanceConfigurationTimelinesAccess? timelinesAccess;
 
+  @JsonKey(name: r'vapid', required: false, includeIfNull: false)
+  final InstanceConfigurationVapid? vapid;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -78,7 +84,8 @@ class InstanceConfiguration {
           other.translation == translation &&
           other.urls == urls &&
           other.limitedFederation == limitedFederation &&
-          other.timelinesAccess == timelinesAccess;
+          other.timelinesAccess == timelinesAccess &&
+          other.vapid == vapid;
 
   @override
   int get hashCode =>
@@ -89,7 +96,8 @@ class InstanceConfiguration {
       translation.hashCode +
       urls.hashCode +
       (limitedFederation == null ? 0 : limitedFederation.hashCode) +
-      (timelinesAccess == null ? 0 : timelinesAccess.hashCode);
+      (timelinesAccess == null ? 0 : timelinesAccess.hashCode) +
+      vapid.hashCode;
 
   factory InstanceConfiguration.fromJson(Map<String, dynamic> json) =>
       _$InstanceConfigurationFromJson(json);

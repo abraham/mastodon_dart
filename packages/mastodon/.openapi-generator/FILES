@@ -130,6 +130,7 @@ doc/InstanceConfigurationTimelinesAccessLiveFeeds.md
 doc/InstanceConfigurationTimelinesAccessTrendingLinkFeeds.md
 doc/InstanceConfigurationTranslation.md
 doc/InstanceConfigurationUrls.md
+doc/InstanceConfigurationVapid.md
 doc/InstanceContact.md
 doc/InstanceIcon.md
 doc/InstanceRegistrations.md
@@ -165,8 +166,9 @@ doc/OEmbedResponse.md
 doc/OauthApi.md
 doc/OembedApi.md
 doc/PartialAccountWithAvatar.md
-doc/PatchAccountsUpdateCredentialsRequest.md
-doc/PatchAccountsUpdateCredentialsRequestSource.md
+doc/PatchAccountUpdateCredentialsRequest.md
+doc/PatchAccountUpdateCredentialsRequestFieldsAttributesValue.md
+doc/PatchAccountUpdateCredentialsRequestSource.md
 doc/PatchProfileRequest.md
 doc/Poll.md
 doc/PollOption.md
@@ -430,6 +432,7 @@ lib/src/model/instance_configuration_timelines_access_live_feeds.dart
 lib/src/model/instance_configuration_timelines_access_trending_link_feeds.dart
 lib/src/model/instance_configuration_translation.dart
 lib/src/model/instance_configuration_urls.dart
+lib/src/model/instance_configuration_vapid.dart
 lib/src/model/instance_contact.dart
 lib/src/model/instance_icon.dart
 lib/src/model/instance_registrations.dart
@@ -458,8 +461,9 @@ lib/src/model/notification_type_enum.dart
 lib/src/model/o_auth_scope.dart
 lib/src/model/o_embed_response.dart
 lib/src/model/partial_account_with_avatar.dart
-lib/src/model/patch_accounts_update_credentials_request.dart
-lib/src/model/patch_accounts_update_credentials_request_source.dart
+lib/src/model/patch_account_update_credentials_request.dart
+lib/src/model/patch_account_update_credentials_request_fields_attributes_value.dart
+lib/src/model/patch_account_update_credentials_request_source.dart
 lib/src/model/patch_profile_request.dart
 lib/src/model/poll.dart
 lib/src/model/poll_option.dart
@@ -679,6 +683,7 @@ test/instance_configuration_timelines_access_test.dart
 test/instance_configuration_timelines_access_trending_link_feeds_test.dart
 test/instance_configuration_translation_test.dart
 test/instance_configuration_urls_test.dart
+test/instance_configuration_vapid_test.dart
 test/instance_contact_test.dart
 test/instance_icon_test.dart
 test/instance_registrations_test.dart
@@ -715,8 +720,9 @@ test/o_embed_response_test.dart
 test/oauth_api_test.dart
 test/oembed_api_test.dart
 test/partial_account_with_avatar_test.dart
-test/patch_accounts_update_credentials_request_source_test.dart
-test/patch_accounts_update_credentials_request_test.dart
+test/patch_account_update_credentials_request_fields_attributes_value_test.dart
+test/patch_account_update_credentials_request_source_test.dart
+test/patch_account_update_credentials_request_test.dart
 test/patch_profile_request_test.dart
 test/poll_option_test.dart
 test/poll_status_test.dart
