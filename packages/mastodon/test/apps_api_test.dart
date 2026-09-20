@@ -19,8 +19,8 @@ void main() {
     //
     // Confirm that the app's OAuth2 credentials work.  Version history:  2.0.0 - added\\ 2.7.2 - now returns `vapid_key`\\ 4.3.0 - deprecated `vapid_key`, please see [api/v2/instance]\\ 4.3.0 - removed needing `read` scope to access this API, now any valid App token can be used\\ 4.3.0 - added `scopes` and `redirect_uris` properties
     //
-    //Future<Application> getAppsVerifyCredentials() async
-    test('test getAppsVerifyCredentials', () async {
+    //Future<Application> getAppVerifyCredentials() async
+    test('test getAppVerifyCredentials', () async {
       // TODO
     });
   });

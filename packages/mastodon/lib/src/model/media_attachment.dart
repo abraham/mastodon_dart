@@ -65,7 +65,7 @@ class MediaAttachment {
   @JsonKey(name: r'remote_url', required: false, includeIfNull: false)
   final Uri? remoteUrl;
 
-  /// The location of the original full-size attachment. Url may be null if the file is still being processed. See [`POST /api/v2/media`]({{< relref \"methods/media\" >}}#v2).
+  /// The location of the original full-size attachment. Url may be null if the file is still being processed. See [`POST /api/v2/media`](https://docs.joinmastodon.org/methods/media/#v2).
   @JsonKey(name: r'url', required: false, includeIfNull: false)
   final Uri? url;
 

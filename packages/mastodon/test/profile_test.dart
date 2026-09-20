@@ -61,7 +61,7 @@ void main() {
       // TODO
     });
 
-    // The profile's bio or description. Unlike for [Account]({{< relref \"entities/Account\">}}), this is the raw unprocessed text, not the rendered HTML.
+    // The profile's bio or description. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is the raw unprocessed text, not the rendered HTML.
     // String note
     test('to test the property `note`', () async {
       // TODO
@@ -85,13 +85,13 @@ void main() {
       // TODO
     });
 
-    // An image icon that is shown next to statuses and in the profile. Unlike for [Account]({{< relref \"entities/Account\">}}), this is nullable and will be null if the avatar is unset.
+    // An image icon that is shown next to statuses and in the profile. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is nullable and will be null if the avatar is unset.
     // Uri avatar
     test('to test the property `avatar`', () async {
       // TODO
     });
 
-    // A static version of the avatar. Unlike for [Account]({{< relref \"entities/Account\">}}), this is nullable and will be null if the avatar is unset.
+    // A static version of the avatar. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is nullable and will be null if the avatar is unset.
     // Uri avatarStatic
     test('to test the property `avatarStatic`', () async {
       // TODO
@@ -103,13 +103,13 @@ void main() {
       // TODO
     });
 
-    // An image banner that is shown above the profile and in profile cards. Unlike for [Account]({{< relref \"entities/Account\">}}), this is nullable and will be null if the header is unset.
+    // An image banner that is shown above the profile and in profile cards. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is nullable and will be null if the header is unset.
     // Uri header
     test('to test the property `header`', () async {
       // TODO
     });
 
-    // A static version of the header. Unlike for [Account]({{< relref \"entities/Account\">}}), this is nullable and will be null if the header is unset.
+    // A static version of the header. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is nullable and will be null if the header is unset.
     // Uri headerStatic
     test('to test the property `headerStatic`', () async {
       // TODO

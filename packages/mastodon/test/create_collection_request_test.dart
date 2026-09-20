@@ -20,7 +20,7 @@ void main() {
       // TODO
     });
 
-    // A longer description of this Collection, max. 100 characters. String is taken \"as is\", which means there is currently no special handling of URLs a
+    // A longer description of this Collection, max. 100 characters. String is taken \"as is\", which means there is currently no special handling of URLs a nd hashtags and no support for custom emoji.
     // String description
     test('to test the property `description`', () async {
       // TODO

@@ -33,7 +33,7 @@ class FilterKeyword {
   @JsonKey(name: r'keyword', required: true, includeIfNull: false)
   final String keyword;
 
-  /// Should the filter consider word boundaries? See [implementation guidelines for filters]({{< relref \"api/guidelines#filters\" >}}).
+  /// Should the filter consider word boundaries? See [implementation guidelines for filters](https://docs.joinmastodon.org/api/guidelines/#filters).
   @JsonKey(name: r'whole_word', required: true, includeIfNull: false)
   final bool wholeWord;
 

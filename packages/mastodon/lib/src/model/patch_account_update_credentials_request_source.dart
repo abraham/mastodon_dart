@@ -7,7 +7,7 @@ import 'package:mastodon/src/model/status_visibility_enum.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'patch_accounts_update_credentials_request_source.g.dart';
+part 'patch_account_update_credentials_request_source.g.dart';
 
 @CopyWith()
 @JsonSerializable(
@@ -16,9 +16,9 @@ part 'patch_accounts_update_credentials_request_source.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class PatchAccountsUpdateCredentialsRequestSource {
-  /// Returns a new [PatchAccountsUpdateCredentialsRequestSource] instance.
-  PatchAccountsUpdateCredentialsRequestSource({
+class PatchAccountUpdateCredentialsRequestSource {
+  /// Returns a new [PatchAccountUpdateCredentialsRequestSource] instance.
+  PatchAccountUpdateCredentialsRequestSource({
     this.privacy,
 
     this.sensitive,
@@ -47,7 +47,7 @@ class PatchAccountsUpdateCredentialsRequestSource {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is PatchAccountsUpdateCredentialsRequestSource &&
+      other is PatchAccountUpdateCredentialsRequestSource &&
           other.privacy == privacy &&
           other.sensitive == sensitive &&
           other.language == language &&
@@ -60,12 +60,12 @@ class PatchAccountsUpdateCredentialsRequestSource {
       language.hashCode +
       quotePolicy.hashCode;
 
-  factory PatchAccountsUpdateCredentialsRequestSource.fromJson(
+  factory PatchAccountUpdateCredentialsRequestSource.fromJson(
     Map<String, dynamic> json,
-  ) => _$PatchAccountsUpdateCredentialsRequestSourceFromJson(json);
+  ) => _$PatchAccountUpdateCredentialsRequestSourceFromJson(json);
 
   Map<String, dynamic> toJson() =>
-      _$PatchAccountsUpdateCredentialsRequestSourceToJson(this);
+      _$PatchAccountUpdateCredentialsRequestSourceToJson(this);
 
   @override
   String toString() {

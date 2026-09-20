@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **meta** | [**MediaAttachmentMeta**](MediaAttachmentMeta.md) |  | [optional] 
 **previewUrl** | [**Uri**](Uri.md) | The location of a scaled-down preview of the attachment. | [optional] 
 **remoteUrl** | [**Uri**](Uri.md) | The location of the full-size original attachment on the remote website. | [optional] 
-**url** | [**Uri**](Uri.md) | The location of the original full-size attachment. Url may be null if the file is still being processed. See [`POST /api/v2/media`]({{< relref \"methods/media\" >}}#v2). | [optional] 
+**url** | [**Uri**](Uri.md) | The location of the original full-size attachment. Url may be null if the file is still being processed. See [`POST /api/v2/media`](https://docs.joinmastodon.org/methods/media/#v2). | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

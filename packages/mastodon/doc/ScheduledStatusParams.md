@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **poll** | [**ScheduledStatusParamsPoll**](ScheduledStatusParamsPoll.md) |  | [optional] 
 **quoteApprovalPolicy** | [**ScheduledStatusParamsQuoteApprovalPolicyEnum**](ScheduledStatusParamsQuoteApprovalPolicyEnum.md) | The quote policy for the Status. | [optional] 
 **quotedStatusId** | **String** | ID of the Status being quoted. | [optional] 
-**scheduledAt** | **String** | When the status will be scheduled. This will be null because the status is only scheduled once. | [optional] 
+**scheduledAt** | **Object** | When the status will be scheduled. This will be null because the status is only scheduled once. | [optional] 
 **sensitive** | **bool** | Whether the status will be marked as sensitive. | [optional] 
 **spoilerText** | **String** | The text of the content warning or summary for the status. | [optional] 
 

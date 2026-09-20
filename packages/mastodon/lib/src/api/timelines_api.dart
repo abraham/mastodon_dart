@@ -302,6 +302,107 @@ class TimelinesApi {
     );
   }
 
+  /// View list timeline
+  /// View statuses in the given list timeline.  Version history:  2.1.0 - added\\ 2.6.0 - add &#x60;min_id&#x60;\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now
+  ///
+  /// Parameters:
+  /// * [listId] - list_id parameter
+  /// * [limit] - Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
+  /// * [maxId] - All results returned will be lesser than this ID. In effect, sets an upper bound on results.
+  /// * [minId] - Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward.
+  /// * [sinceId] - All results returned will be greater than this ID. In effect, sets a lower bound on results.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<Status>] as data
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [View list timeline Documentation](https://docs.joinmastodon.org/methods/timelines/#list)
+  Future<Response<List<Status>>> getTimelineList({
+    required String listId,
+    int? limit = 20,
+    String? maxId,
+    String? minId,
+    String? sinceId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/timelines/list/{list_id}'.replaceAll(
+      '{'
+      r'list_id'
+      '}',
+      listId.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (limit != null) r'limit': limit,
+      if (maxId != null) r'max_id': maxId,
+      if (minId != null) r'min_id': minId,
+      if (sinceId != null) r'since_id': sinceId,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<Status>? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Status>, Status>(
+              rawData,
+              'List<Status>',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<Status>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// View public timeline
   /// View public statuses.  Version history:  0.0.0 - added\\ 2.3.0 - added &#x60;only_media&#x60;\\ 2.6.0 - add &#x60;min_id&#x60;\\ 3.0.0 - auth is required if public preview is disabled\\ 3.1.4 - added &#x60;remote&#x60;\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now\\ 4.5.0 - add [access control settings]
   ///
@@ -405,107 +506,6 @@ class TimelinesApi {
     );
   }
 
-  /// View list timeline
-  /// View statuses in the given list timeline.  Version history:  2.1.0 - added\\ 2.6.0 - add &#x60;min_id&#x60;\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now
-  ///
-  /// Parameters:
-  /// * [listId] - list_id parameter
-  /// * [limit] - Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
-  /// * [maxId] - All results returned will be lesser than this ID. In effect, sets an upper bound on results.
-  /// * [minId] - Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward.
-  /// * [sinceId] - All results returned will be greater than this ID. In effect, sets a lower bound on results.
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [List<Status>] as data
-  /// Throws [DioException] if API call or serialization fails
-  /// Official Mastodon API documentation
-  /// Also see [View list timeline Documentation](https://docs.joinmastodon.org/methods/timelines/#list)
-  Future<Response<List<Status>>> getTimelinesListByListId({
-    required String listId,
-    int? limit = 20,
-    String? maxId,
-    String? minId,
-    String? sinceId,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v1/timelines/list/{list_id}'.replaceAll(
-      '{'
-      r'list_id'
-      '}',
-      listId.toString(),
-    );
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{...?headers},
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'OAuth2'},
-          {'type': 'oauth2', 'name': 'OAuth2'},
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      if (limit != null) r'limit': limit,
-      if (maxId != null) r'max_id': maxId,
-      if (minId != null) r'min_id': minId,
-      if (sinceId != null) r'since_id': sinceId,
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    List<Status>? _responseData;
-
-    try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<List<Status>, Status>(
-              rawData,
-              'List<Status>',
-              growable: true,
-            );
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<List<Status>>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
   /// View hashtag timeline
   /// View public statuses containing the given hashtag.  Version history:  0.0.0 - added\\ 2.3.0 - added &#x60;only_media&#x60;\\ 2.6.0 - add &#x60;min_id&#x60;\\ 2.7.0 - add &#x60;any[]&#x60;, &#x60;all[]&#x60;, &#x60;none[]&#x60; for additional tags\\ 3.0.0 - auth is required if public preview is disabled\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now. add &#x60;remote&#x60;\\ 4.5.0 - add [access control settings]
   ///
@@ -532,7 +532,7 @@ class TimelinesApi {
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [View hashtag timeline Documentation](https://docs.joinmastodon.org/methods/timelines/#tag)
-  Future<Response<List<Status>>> getTimelinesTagByHashtag({
+  Future<Response<List<Status>>> getTimelineTagByHashtag({
     required String hashtag,
     List<String>? all,
     List<String>? any,

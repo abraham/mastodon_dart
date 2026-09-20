@@ -12,9 +12,9 @@ Method | HTTP request | Description
 [**getTimelineDirect**](TimelinesApi.md#gettimelinedirect) | **GET** /api/v1/timelines/direct | View direct timeline
 [**getTimelineHome**](TimelinesApi.md#gettimelinehome) | **GET** /api/v1/timelines/home | View home timeline
 [**getTimelineLink**](TimelinesApi.md#gettimelinelink) | **GET** /api/v1/timelines/link | View link timeline
+[**getTimelineList**](TimelinesApi.md#gettimelinelist) | **GET** /api/v1/timelines/list/{list_id} | View list timeline
 [**getTimelinePublic**](TimelinesApi.md#gettimelinepublic) | **GET** /api/v1/timelines/public | View public timeline
-[**getTimelinesListByListId**](TimelinesApi.md#gettimelineslistbylistid) | **GET** /api/v1/timelines/list/{list_id} | View list timeline
-[**getTimelinesTagByHashtag**](TimelinesApi.md#gettimelinestagbyhashtag) | **GET** /api/v1/timelines/tag/{hashtag} | View hashtag timeline
+[**getTimelineTagByHashtag**](TimelinesApi.md#gettimelinetagbyhashtag) | **GET** /api/v1/timelines/tag/{hashtag} | View hashtag timeline
 
 
 # **getTimelineDirect**
@@ -178,6 +178,61 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getTimelineList**
+> List<Status> getTimelineList(listId, limit, maxId, minId, sinceId)
+
+View list timeline
+
+View statuses in the given list timeline.  Version history:  2.1.0 - added\\ 2.6.0 - add `min_id`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getTimelinesApi();
+final String listId = listId_example; // String | list_id parameter
+final int limit = 56; // int | Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
+final String maxId = maxId_example; // String | All results returned will be lesser than this ID. In effect, sets an upper bound on results.
+final String minId = minId_example; // String | Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward.
+final String sinceId = sinceId_example; // String | All results returned will be greater than this ID. In effect, sets a lower bound on results.
+
+try {
+    final response = api.getTimelineList(listId, limit, maxId, minId, sinceId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling TimelinesApi->getTimelineList: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **listId** | **String**| list_id parameter | 
+ **limit** | **int**| Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses. | [optional] [default to 20]
+ **maxId** | **String**| All results returned will be lesser than this ID. In effect, sets an upper bound on results. | [optional] 
+ **minId** | **String**| Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward. | [optional] 
+ **sinceId** | **String**| All results returned will be greater than this ID. In effect, sets a lower bound on results. | [optional] 
+
+### Return type
+
+[**List&lt;Status&gt;**](Status.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getTimelinePublic**
 > List<Status> getTimelinePublic(limit, local, maxId, minId, onlyMedia, remote, sinceId)
 
@@ -237,63 +292,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getTimelinesListByListId**
-> List<Status> getTimelinesListByListId(listId, limit, maxId, minId, sinceId)
-
-View list timeline
-
-View statuses in the given list timeline.  Version history:  2.1.0 - added\\ 2.6.0 - add `min_id`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getTimelinesApi();
-final String listId = listId_example; // String | list_id parameter
-final int limit = 56; // int | Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
-final String maxId = maxId_example; // String | All results returned will be lesser than this ID. In effect, sets an upper bound on results.
-final String minId = minId_example; // String | Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward.
-final String sinceId = sinceId_example; // String | All results returned will be greater than this ID. In effect, sets a lower bound on results.
-
-try {
-    final response = api.getTimelinesListByListId(listId, limit, maxId, minId, sinceId);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling TimelinesApi->getTimelinesListByListId: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **listId** | **String**| list_id parameter | 
- **limit** | **int**| Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses. | [optional] [default to 20]
- **maxId** | **String**| All results returned will be lesser than this ID. In effect, sets an upper bound on results. | [optional] 
- **minId** | **String**| Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward. | [optional] 
- **sinceId** | **String**| All results returned will be greater than this ID. In effect, sets a lower bound on results. | [optional] 
-
-### Return type
-
-[**List&lt;Status&gt;**](Status.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getTimelinesTagByHashtag**
-> List<Status> getTimelinesTagByHashtag(hashtag, all, any, limit, local, maxId, minId, none, onlyMedia, remote, sinceId)
+# **getTimelineTagByHashtag**
+> List<Status> getTimelineTagByHashtag(hashtag, all, any, limit, local, maxId, minId, none, onlyMedia, remote, sinceId)
 
 View hashtag timeline
 
@@ -321,10 +321,10 @@ final bool remote = true; // bool | Return only remote statuses? Defaults to fal
 final String sinceId = sinceId_example; // String | All results returned will be greater than this ID. In effect, sets a lower bound on results.
 
 try {
-    final response = api.getTimelinesTagByHashtag(hashtag, all, any, limit, local, maxId, minId, none, onlyMedia, remote, sinceId);
+    final response = api.getTimelineTagByHashtag(hashtag, all, any, limit, local, maxId, minId, none, onlyMedia, remote, sinceId);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling TimelinesApi->getTimelinesTagByHashtag: $e\n');
+    print('Exception when calling TimelinesApi->getTimelineTagByHashtag: $e\n');
 }
 ```
 

@@ -3,11 +3,12 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/patch_accounts_update_credentials_request_source.dart';
+import 'package:mastodon/src/model/patch_account_update_credentials_request_fields_attributes_value.dart';
+import 'package:mastodon/src/model/patch_account_update_credentials_request_source.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'patch_accounts_update_credentials_request.g.dart';
+part 'patch_account_update_credentials_request.g.dart';
 
 @CopyWith()
 @JsonSerializable(
@@ -16,9 +17,9 @@ part 'patch_accounts_update_credentials_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class PatchAccountsUpdateCredentialsRequest {
-  /// Returns a new [PatchAccountsUpdateCredentialsRequest] instance.
-  PatchAccountsUpdateCredentialsRequest({
+class PatchAccountUpdateCredentialsRequest {
+  /// Returns a new [PatchAccountUpdateCredentialsRequest] instance.
+  PatchAccountUpdateCredentialsRequest({
     this.attributionDomains,
 
     this.avatar,
@@ -74,7 +75,8 @@ class PatchAccountsUpdateCredentialsRequest {
 
   /// The profile fields to be set. Inside this hash, the key is an integer cast to a string (although the exact integer does not matter), and the value is another hash including `name` and `value`. By default, max 4 fields (specified in [Instance#max_profile_fields]).
   @JsonKey(name: r'fields_attributes', required: false, includeIfNull: false)
-  final Object? fieldsAttributes;
+  final Map<String, PatchAccountUpdateCredentialsRequestFieldsAttributesValue>?
+  fieldsAttributes;
 
   /// Header image encoded using `multipart/form-data`
   @JsonKey(name: r'header', required: false, includeIfNull: false)
@@ -101,12 +103,12 @@ class PatchAccountsUpdateCredentialsRequest {
   final String? note;
 
   @JsonKey(name: r'source', required: false, includeIfNull: false)
-  final PatchAccountsUpdateCredentialsRequestSource? source_;
+  final PatchAccountUpdateCredentialsRequestSource? source_;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is PatchAccountsUpdateCredentialsRequest &&
+      other is PatchAccountUpdateCredentialsRequest &&
           other.attributionDomains == attributionDomains &&
           other.avatar == avatar &&
           other.avatarDescription == avatarDescription &&
@@ -139,12 +141,12 @@ class PatchAccountsUpdateCredentialsRequest {
       note.hashCode +
       source_.hashCode;
 
-  factory PatchAccountsUpdateCredentialsRequest.fromJson(
+  factory PatchAccountUpdateCredentialsRequest.fromJson(
     Map<String, dynamic> json,
-  ) => _$PatchAccountsUpdateCredentialsRequestFromJson(json);
+  ) => _$PatchAccountUpdateCredentialsRequestFromJson(json);
 
   Map<String, dynamic> toJson() =>
-      _$PatchAccountsUpdateCredentialsRequestToJson(this);
+      _$PatchAccountUpdateCredentialsRequestToJson(this);
 
   @override
   String toString() {

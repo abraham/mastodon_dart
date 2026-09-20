@@ -6,6 +6,15 @@ void main() {
   final instance = Mastodon().getAnnualReportsApi();
 
   group(AnnualReportsApi, () {
+    // Get a single annual report
+    //
+    // Returns the current user's generated annual report for the given year, if it exists.  Version history:  4.4.0 - added
+    //
+    //Future<WrappedAnnualReports> getAnnualReport(String year) async
+    test('test getAnnualReport', () async {
+      // TODO
+    });
+
     // Get the state of an annual report
     //
     // Returns the state of the annual report for the current user and given year.  Version history:  4.6.0 (`mastodon` [API version] 8) - added
@@ -21,15 +30,6 @@ void main() {
     //
     //Future<WrappedAnnualReports> getAnnualReports() async
     test('test getAnnualReports', () async {
-      // TODO
-    });
-
-    // Get a single annual report
-    //
-    // Returns the current user's generated annual report for the given year, if it exists.  Version history:  4.4.0 - added
-    //
-    //Future<WrappedAnnualReports> getAnnualReportsByYear(String year) async
-    test('test getAnnualReportsByYear', () async {
       // TODO
     });
 

@@ -10,8 +10,8 @@ void main() {
     //
     // Remove an account from follow suggestions.  Version history:  2.4.3 - added
     //
-    //Future deleteSuggestionsByAccountId(String accountId) async
-    test('test deleteSuggestionsByAccountId', () async {
+    //Future deleteSuggestion(String accountId) async
+    test('test deleteSuggestion', () async {
       // TODO
     });
 

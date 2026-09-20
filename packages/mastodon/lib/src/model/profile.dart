@@ -95,7 +95,7 @@ class Profile {
   @JsonKey(name: r'locked', required: true, includeIfNull: false)
   final bool locked;
 
-  /// The profile's bio or description. Unlike for [Account]({{< relref \"entities/Account\">}}), this is the raw unprocessed text, not the rendered HTML.
+  /// The profile's bio or description. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is the raw unprocessed text, not the rendered HTML.
   @JsonKey(name: r'note', required: true, includeIfNull: false)
   final String note;
 
@@ -111,11 +111,11 @@ class Profile {
   @JsonKey(name: r'show_media_replies', required: true, includeIfNull: false)
   final bool showMediaReplies;
 
-  /// An image icon that is shown next to statuses and in the profile. Unlike for [Account]({{< relref \"entities/Account\">}}), this is nullable and will be null if the avatar is unset.
+  /// An image icon that is shown next to statuses and in the profile. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is nullable and will be null if the avatar is unset.
   @JsonKey(name: r'avatar', required: false, includeIfNull: false)
   final Uri? avatar;
 
-  /// A static version of the avatar. Unlike for [Account]({{< relref \"entities/Account\">}}), this is nullable and will be null if the avatar is unset.
+  /// A static version of the avatar. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is nullable and will be null if the avatar is unset.
   @JsonKey(name: r'avatar_static', required: false, includeIfNull: false)
   final Uri? avatarStatic;
 
@@ -123,11 +123,11 @@ class Profile {
   @JsonKey(name: r'discoverable', required: false, includeIfNull: false)
   final bool? discoverable;
 
-  /// An image banner that is shown above the profile and in profile cards. Unlike for [Account]({{< relref \"entities/Account\">}}), this is nullable and will be null if the header is unset.
+  /// An image banner that is shown above the profile and in profile cards. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is nullable and will be null if the header is unset.
   @JsonKey(name: r'header', required: false, includeIfNull: false)
   final Uri? header;
 
-  /// A static version of the header. Unlike for [Account]({{< relref \"entities/Account\">}}), this is nullable and will be null if the header is unset.
+  /// A static version of the header. Unlike for [Account](https://docs.joinmastodon.org/entities/Account/), this is nullable and will be null if the header is unset.
   @JsonKey(name: r'header_static', required: false, includeIfNull: false)
   final Uri? headerStatic;
 

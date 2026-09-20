@@ -33,7 +33,7 @@ class SuggestionsApi {
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Remove a suggestion Documentation](https://docs.joinmastodon.org/methods/suggestions/#remove)
-  Future<Response<void>> deleteSuggestionsByAccountId({
+  Future<Response<void>> deleteSuggestion({
     required String accountId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

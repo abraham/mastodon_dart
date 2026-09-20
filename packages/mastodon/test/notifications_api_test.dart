@@ -19,8 +19,8 @@ void main() {
     //
     // Accepts multiple notification requests, which merges the filtered notifications from those users back into the main notifications and accepts any future notification from them.  Version history:  4.3.0 - added
     //
-    //Future createNotificationsRequestsAccept() async
-    test('test createNotificationsRequestsAccept', () async {
+    //Future createNotificationRequestAccept() async
+    test('test createNotificationRequestAccept', () async {
       // TODO
     });
 
@@ -28,8 +28,8 @@ void main() {
     //
     // Dismiss multiple notification requests, which hides them and prevent them from contributing to the pending notification requests count.  Version history:  4.3.0 - added
     //
-    //Future createNotificationsRequestsDismiss() async
-    test('test createNotificationsRequestsDismiss', () async {
+    //Future createNotificationRequestDismiss() async
+    test('test createNotificationRequestDismiss', () async {
       // TODO
     });
 
@@ -60,6 +60,24 @@ void main() {
       // TODO
     });
 
+    // Get a single notification request
+    //
+    // View information about a notification request with a given ID.  Version history:  4.3.0 - added
+    //
+    //Future<NotificationRequest> getNotificationRequest(String id) async
+    test('test getNotificationRequest', () async {
+      // TODO
+    });
+
+    // Check if accepted notification requests have been merged
+    //
+    // Check whether accepted notification requests have been merged.  Version history:  4.3.0 - added
+    //
+    //Future<MergedResponse> getNotificationRequestMerged() async
+    test('test getNotificationRequestMerged', () async {
+      // TODO
+    });
+
     // Get all notification requests
     //
     // Notification requests for notifications filtered by the user's policy. This API returns Link headers containing links to the next/previous page.  Version history:  4.3.0 - added
@@ -69,48 +87,12 @@ void main() {
       // TODO
     });
 
-    // Get all notifications
-    //
-    // Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  0.0.0 - added\\ 2.6.0 - added `min_id`\\ 2.9.0 - added `account_id`\\ 3.1.0 - added `follow_request` type\\ 3.3.0 - added `status` type; both `min_id` and `max_id` can be used at the same time now\\ 3.5.0 - added `types`; add `update` and `admin.sign_up` types\\ 4.0.0 - added `admin.report` type\\ 4.1.0 - notification limit changed from 15 (max 30) to 40 (max 80)\\ 4.3.0 - added `include_filtered` parameter\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
-    //
-    //Future<List<Notification>> getNotifications({ String accountId, List<NotificationTypeEnum> excludeTypes, bool includeFiltered, int limit, String maxId, String minId, String sinceId, List<String> supportedTypes, List<NotificationTypeEnum> types }) async
-    test('test getNotifications', () async {
-      // TODO
-    });
-
-    // Get a single notification group
-    //
-    // View information about a specific notification group with a given group key.  Version history:  4.3.0 (`mastodon` [API version] 2) - added\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
-    //
-    //Future<GroupedNotificationsResults> getNotificationsByGroupKeyV2(String groupKey, { List<String> supportedTypes }) async
-    test('test getNotificationsByGroupKeyV2', () async {
-      // TODO
-    });
-
-    // Get a single notification request
-    //
-    // View information about a notification request with a given ID.  Version history:  4.3.0 - added
-    //
-    //Future<NotificationRequest> getNotificationsRequestsById(String id) async
-    test('test getNotificationsRequestsById', () async {
-      // TODO
-    });
-
-    // Check if accepted notification requests have been merged
-    //
-    // Check whether accepted notification requests have been merged.  Version history:  4.3.0 - added
-    //
-    //Future<MergedResponse> getNotificationsRequestsMerged() async
-    test('test getNotificationsRequestsMerged', () async {
-      // TODO
-    });
-
     // Get the number of unread notifications
     //
     // Get the (capped) number of unread notifications for the current user.
     //
-    //Future<CountResponse> getNotificationsUnreadCount({ String accountId, List<String> excludeTypes, int limit, List<String> types }) async
-    test('test getNotificationsUnreadCount', () async {
+    //Future<CountResponse> getNotificationUnreadCount({ String accountId, List<String> excludeTypes, int limit, List<String> types }) async
+    test('test getNotificationUnreadCount', () async {
       // TODO
     });
 
@@ -118,8 +100,26 @@ void main() {
     //
     // Get the (capped) number of unread notification groups for the current user.
     //
-    //Future<CountResponse> getNotificationsUnreadCountV2({ String accountId, List<String> excludeTypes, List<String> groupedTypes, int limit, List<String> types }) async
-    test('test getNotificationsUnreadCountV2', () async {
+    //Future<CountResponse> getNotificationUnreadCountV2({ String accountId, List<String> excludeTypes, List<String> groupedTypes, int limit, List<String> types }) async
+    test('test getNotificationUnreadCountV2', () async {
+      // TODO
+    });
+
+    // Get a single notification group
+    //
+    // View information about a specific notification group with a given group key.  Version history:  4.3.0 (`mastodon` [API version] 2) - added\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
+    //
+    //Future<GroupedNotificationsResults> getNotificationV2(String groupKey, { List<String> supportedTypes }) async
+    test('test getNotificationV2', () async {
+      // TODO
+    });
+
+    // Get all notifications
+    //
+    // Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  0.0.0 - added\\ 2.6.0 - added `min_id`\\ 2.9.0 - added `account_id`\\ 3.1.0 - added `follow_request` type\\ 3.3.0 - added `status` type; both `min_id` and `max_id` can be used at the same time now\\ 3.5.0 - added `types`; add `update` and `admin.sign_up` types\\ 4.0.0 - added `admin.report` type\\ 4.1.0 - notification limit changed from 15 (max 30) to 40 (max 80)\\ 4.3.0 - added `include_filtered` parameter\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
+    //
+    //Future<List<Notification>> getNotifications({ String accountId, List<NotificationTypeEnum> excludeTypes, bool includeFiltered, int limit, String maxId, String minId, String sinceId, List<String> supportedTypes, List<NotificationTypeEnum> types }) async
+    test('test getNotifications', () async {
       // TODO
     });
 
@@ -163,8 +163,8 @@ void main() {
     //
     // Accept a notification request, which merges the filtered notifications from that user back into the main notification and accepts any future notification from them.  Version history:  4.3.0 - added
     //
-    //Future postNotificationsRequestsByIdAccept(String id) async
-    test('test postNotificationsRequestsByIdAccept', () async {
+    //Future postNotificationRequestAccept(String id) async
+    test('test postNotificationRequestAccept', () async {
       // TODO
     });
 
@@ -172,8 +172,8 @@ void main() {
     //
     // Dismiss a notification request, which hides it and prevent it from contributing to the pending notification requests count.  Version history:  4.3.0 - added
     //
-    //Future postNotificationsRequestsByIdDismiss(String id) async
-    test('test postNotificationsRequestsByIdDismiss', () async {
+    //Future postNotificationRequestDismiss(String id) async
+    test('test postNotificationRequestDismiss', () async {
       // TODO
     });
   });

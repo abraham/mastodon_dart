@@ -132,6 +132,15 @@ void main() {
       // TODO
     });
 
+    // Revoke a quote post
+    //
+    // Revoke quote authorization of status `quoting_status_id`, detaching status `id`.  Version history:  4.5.0 (`mastodon` [API version] 7) - added
+    //
+    //Future<Status> postStatusQuoteRevoke(String id, String quotingStatusId) async
+    test('test postStatusQuoteRevoke', () async {
+      // TODO
+    });
+
     // Boost a status
     //
     // Reshare a status on your own profile.  Version history:  0.0.0 - added\\ 2.8.0 - add `visibility` parameter
@@ -192,15 +201,6 @@ void main() {
     //
     //Future<Status> postStatusUnreblog(String id) async
     test('test postStatusUnreblog', () async {
-      // TODO
-    });
-
-    // Revoke a quote post
-    //
-    // Revoke quote authorization of status `quoting_status_id`, detaching status `id`.  Version history:  4.5.0 (`mastodon` [API version] 7) - added
-    //
-    //Future<Status> postStatusesByIdQuotesByQuotingStatusIdRevoke(String id, String quotingStatusId) async
-    test('test postStatusesByIdQuotesByQuotingStatusIdRevoke', () async {
       // TODO
     });
 

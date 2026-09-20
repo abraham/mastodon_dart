@@ -116,7 +116,7 @@ class AdminAccount {
   @JsonKey(name: r'username', required: true, includeIfNull: false)
   final String username;
 
-  /// The ID of the [Application]({{< relref \"entities/application\" >}}) that created this account, if applicable.
+  /// The ID of the [Application](https://docs.joinmastodon.org/entities/application/) that created this account, if applicable.
   @JsonKey(
     name: r'created_by_application_id',
     required: false,
@@ -132,7 +132,7 @@ class AdminAccount {
   @JsonKey(name: r'invite_request', required: false, includeIfNull: false)
   final String? inviteRequest;
 
-  /// The ID of the [Account]({{< relref \"entities/account\" >}}) that invited this user, if applicable.
+  /// The ID of the [Account](https://docs.joinmastodon.org/entities/account/) that invited this user, if applicable.
   @JsonKey(
     name: r'invited_by_account_id',
     required: false,

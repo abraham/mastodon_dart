@@ -93,6 +93,7 @@ import 'package:mastodon/src/model/instance_configuration_timelines_access_live_
 import 'package:mastodon/src/model/instance_configuration_timelines_access_trending_link_feeds.dart';
 import 'package:mastodon/src/model/instance_configuration_translation.dart';
 import 'package:mastodon/src/model/instance_configuration_urls.dart';
+import 'package:mastodon/src/model/instance_configuration_vapid.dart';
 import 'package:mastodon/src/model/instance_contact.dart';
 import 'package:mastodon/src/model/instance_icon.dart';
 import 'package:mastodon/src/model/instance_registrations.dart';
@@ -117,8 +118,9 @@ import 'package:mastodon/src/model/notification_policy_summary.dart';
 import 'package:mastodon/src/model/notification_request.dart';
 import 'package:mastodon/src/model/o_embed_response.dart';
 import 'package:mastodon/src/model/partial_account_with_avatar.dart';
-import 'package:mastodon/src/model/patch_accounts_update_credentials_request.dart';
-import 'package:mastodon/src/model/patch_accounts_update_credentials_request_source.dart';
+import 'package:mastodon/src/model/patch_account_update_credentials_request.dart';
+import 'package:mastodon/src/model/patch_account_update_credentials_request_fields_attributes_value.dart';
+import 'package:mastodon/src/model/patch_account_update_credentials_request_source.dart';
 import 'package:mastodon/src/model/patch_profile_request.dart';
 import 'package:mastodon/src/model/poll.dart';
 import 'package:mastodon/src/model/poll_option.dart';
@@ -532,6 +534,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'InstanceConfigurationUrls':
       return InstanceConfigurationUrls.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'InstanceConfigurationVapid':
+      return InstanceConfigurationVapid.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'InstanceContact':
       return InstanceContact.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -601,13 +606,18 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'PartialAccountWithAvatar':
       return PartialAccountWithAvatar.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'PatchAccountsUpdateCredentialsRequest':
-      return PatchAccountsUpdateCredentialsRequest.fromJson(
+    case 'PatchAccountUpdateCredentialsRequest':
+      return PatchAccountUpdateCredentialsRequest.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;
-    case 'PatchAccountsUpdateCredentialsRequestSource':
-      return PatchAccountsUpdateCredentialsRequestSource.fromJson(
+    case 'PatchAccountUpdateCredentialsRequestFieldsAttributesValue':
+      return PatchAccountUpdateCredentialsRequestFieldsAttributesValue.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'PatchAccountUpdateCredentialsRequestSource':
+      return PatchAccountUpdateCredentialsRequestSource.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;

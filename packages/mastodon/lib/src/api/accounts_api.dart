@@ -17,7 +17,7 @@ import 'package:mastodon/src/model/credential_account.dart';
 import 'package:mastodon/src/model/familiar_followers.dart';
 import 'package:mastodon/src/model/featured_tag.dart';
 import 'package:mastodon/src/model/identity_proof.dart';
-import 'package:mastodon/src/model/patch_accounts_update_credentials_request.dart';
+import 'package:mastodon/src/model/patch_account_update_credentials_request.dart';
 import 'package:mastodon/src/model/post_account_follow_request.dart';
 import 'package:mastodon/src/model/post_account_mute_request.dart';
 import 'package:mastodon/src/model/post_account_note_request.dart';
@@ -372,6 +372,89 @@ class AccountsApi {
     }
 
     return Response<List<Account>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Find familiar followers
+  /// Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
+  ///
+  /// Parameters:
+  /// * [id] - Find familiar followers for the provided account IDs.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<FamiliarFollowers>] as data
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [Find familiar followers Documentation](https://docs.joinmastodon.org/methods/accounts/#familiar_followers)
+  Future<Response<List<FamiliarFollowers>>> getAccountFamiliarFollowers({
+    List<String>? id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/accounts/familiar_followers';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{if (id != null) r'id': id};
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<FamiliarFollowers>? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<FamiliarFollowers>, FamiliarFollowers>(
+              rawData,
+              'List<FamiliarFollowers>',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<FamiliarFollowers>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1298,6 +1381,84 @@ class AccountsApi {
     );
   }
 
+  /// Verify account credentials
+  /// Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added &#x60;profile&#x60; scope
+  ///
+  /// Parameters:
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [CredentialAccount] as data
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [Verify account credentials Documentation](https://docs.joinmastodon.org/methods/accounts/#verify_credentials)
+  Future<Response<CredentialAccount>> getAccountVerifyCredentials({
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/accounts/verify_credentials';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    CredentialAccount? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<CredentialAccount, CredentialAccount>(
+              rawData,
+              'CredentialAccount',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<CredentialAccount>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Get multiple accounts
   /// View information about multiple profiles.  Version history:  4.3.0 - added
   ///
@@ -1375,172 +1536,11 @@ class AccountsApi {
     );
   }
 
-  /// Find familiar followers
-  /// Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
-  ///
-  /// Parameters:
-  /// * [id] - Find familiar followers for the provided account IDs.
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [List<FamiliarFollowers>] as data
-  /// Throws [DioException] if API call or serialization fails
-  /// Official Mastodon API documentation
-  /// Also see [Find familiar followers Documentation](https://docs.joinmastodon.org/methods/accounts/#familiar_followers)
-  Future<Response<List<FamiliarFollowers>>> getAccountsFamiliarFollowers({
-    List<String>? id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v1/accounts/familiar_followers';
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{...?headers},
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'OAuth2'},
-          {'type': 'oauth2', 'name': 'OAuth2'},
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{if (id != null) r'id': id};
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    List<FamiliarFollowers>? _responseData;
-
-    try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<List<FamiliarFollowers>, FamiliarFollowers>(
-              rawData,
-              'List<FamiliarFollowers>',
-              growable: true,
-            );
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<List<FamiliarFollowers>>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// Verify account credentials
-  /// Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added &#x60;profile&#x60; scope
-  ///
-  /// Parameters:
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [CredentialAccount] as data
-  /// Throws [DioException] if API call or serialization fails
-  /// Official Mastodon API documentation
-  /// Also see [Verify account credentials Documentation](https://docs.joinmastodon.org/methods/accounts/#verify_credentials)
-  Future<Response<CredentialAccount>> getAccountsVerifyCredentials({
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v1/accounts/verify_credentials';
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{...?headers},
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'OAuth2'},
-          {'type': 'oauth2', 'name': 'OAuth2'},
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    CredentialAccount? _responseData;
-
-    try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<CredentialAccount, CredentialAccount>(
-              rawData,
-              'CredentialAccount',
-              growable: true,
-            );
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<CredentialAccount>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
   /// Update account credentials
   /// Update the user&#39;s display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added &#x60;locked&#x60; parameter\\ 2.4.0 - added &#x60;source[privacy,sensitive]&#x60; parameters\\ 2.4.2 - added &#x60;source[language]&#x60; parameter\\ 2.7.0 - added &#x60;discoverable&#x60; parameter\\ 4.1.0 - added &#x60;hide_collections&#x60; parameter\\ 4.2.0 - added &#x60;indexable&#x60; parameter\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 3) - added &#x60;attribution_domains&#x60; parameter\\ 4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added &#x60;quote_policy&#x60; parameter\\ 4.6.1 (&#x60;mastodon&#x60; [API version] 11) - added &#x60;avatar_description&#x60; and &#x60;header_description&#x60; parameter
   ///
   /// Parameters:
-  /// * [patchAccountsUpdateCredentialsRequest] - JSON request body parameters
+  /// * [patchAccountUpdateCredentialsRequest] - JSON request body parameters
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1552,9 +1552,8 @@ class AccountsApi {
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Update account credentials Documentation](https://docs.joinmastodon.org/methods/accounts/#update_credentials)
-  Future<Response<CredentialAccount>> patchAccountsUpdateCredentials({
-    PatchAccountsUpdateCredentialsRequest?
-    patchAccountsUpdateCredentialsRequest,
+  Future<Response<CredentialAccount>> patchAccountUpdateCredentials({
+    PatchAccountUpdateCredentialsRequest? patchAccountUpdateCredentialsRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1580,7 +1579,7 @@ class AccountsApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(patchAccountsUpdateCredentialsRequest);
+      _bodyData = jsonEncode(patchAccountUpdateCredentialsRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(_dio.options, _path),
@@ -1633,7 +1632,7 @@ class AccountsApi {
   }
 
   /// Block account
-  /// [Blocks]({{&lt; relref \&quot;user/moderating#block\&quot;&gt;}}) the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated &#x60;follow&#x60; scope. now additionally accepts &#x60;write&#x60;
+  /// [Blocks](https://docs.joinmastodon.org/user/moderating/#block) the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated &#x60;follow&#x60; scope. now additionally accepts &#x60;write&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter

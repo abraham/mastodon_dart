@@ -150,7 +150,7 @@ void main() {
       // TODO
     });
 
-    // Summary of the account's policy with regards to being featured in a [Collection]({{< relref \"entities/Collection\" >}}) and how it applies to the user making the request.
+    // Summary of the account's policy with regards to being featured in a [Collection](https://docs.joinmastodon.org/entities/Collection/) and how it applies to the user making the request.
     // FeatureApproval featureApproval
     test('to test the property `featureApproval`', () async {
       // TODO

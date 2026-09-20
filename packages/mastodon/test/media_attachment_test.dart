@@ -48,7 +48,7 @@ void main() {
       // TODO
     });
 
-    // The location of the original full-size attachment. Url may be null if the file is still being processed. See [`POST /api/v2/media`]({{< relref \"methods/media\" >}}#v2).
+    // The location of the original full-size attachment. Url may be null if the file is still being processed. See [`POST /api/v2/media`](https://docs.joinmastodon.org/methods/media/#v2).
     // Uri url
     test('to test the property `url`', () async {
       // TODO

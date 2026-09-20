@@ -9,14 +9,14 @@ All URIs are relative to *https://mastodon.example*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteAvatar**](ProfileApi.md#deleteavatar) | **DELETE** /api/v1/profile/avatar | Delete profile avatar
+[**deleteProfileAvatar**](ProfileApi.md#deleteprofileavatar) | **DELETE** /api/v1/profile/avatar | Delete profile avatar
 [**deleteProfileHeader**](ProfileApi.md#deleteprofileheader) | **DELETE** /api/v1/profile/header | Delete profile header
 [**getProfile**](ProfileApi.md#getprofile) | **GET** /api/v1/profile | Get current user profile
 [**patchProfile**](ProfileApi.md#patchprofile) | **PATCH** /api/v1/profile | Update current user profile
 
 
-# **deleteAvatar**
-> CredentialAccount deleteAvatar()
+# **deleteProfileAvatar**
+> CredentialAccount deleteProfileAvatar()
 
 Delete profile avatar
 
@@ -33,10 +33,10 @@ import 'package:mastodon/api.dart';
 final api = Mastodon().getProfileApi();
 
 try {
-    final response = api.deleteAvatar();
+    final response = api.deleteProfileAvatar();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ProfileApi->deleteAvatar: $e\n');
+    print('Exception when calling ProfileApi->deleteProfileAvatar: $e\n');
 }
 ```
 

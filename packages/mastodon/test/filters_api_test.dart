@@ -33,21 +33,12 @@ void main() {
       // TODO
     });
 
-    // Delete a filter
-    //
-    // Delete a filter group with the given id.  Version history:  4.0.0 - added
-    //
-    //Future deleteFilterV2(String id) async
-    test('test deleteFilterV2', () async {
-      // TODO
-    });
-
     // Remove keywords from a filter
     //
     // Deletes the given filter keyword.  Version history:  4.0.0 - added
     //
-    //Future deleteFiltersKeywordsByIdV2(String id) async
-    test('test deleteFiltersKeywordsByIdV2', () async {
+    //Future deleteFilterKeywordV2(String id) async
+    test('test deleteFilterKeywordV2', () async {
       // TODO
     });
 
@@ -55,8 +46,17 @@ void main() {
     //
     // Remove a status filter from the current filter group.  Version history:  4.0.0 - added
     //
-    //Future<FilterStatus> deleteFiltersStatusesByIdV2(String id) async
-    test('test deleteFiltersStatusesByIdV2', () async {
+    //Future<FilterStatus> deleteFilterStatusV2(String id) async
+    test('test deleteFilterStatusV2', () async {
+      // TODO
+    });
+
+    // Delete a filter
+    //
+    // Delete a filter group with the given id.  Version history:  4.0.0 - added
+    //
+    //Future deleteFilterV2(String id) async
+    test('test deleteFilterV2', () async {
       // TODO
     });
 
@@ -69,12 +69,30 @@ void main() {
       // TODO
     });
 
+    // View a single keyword
+    //
+    // Get one filter keyword by the given id.  Version history:  4.0.0 - added
+    //
+    //Future<FilterKeyword> getFilterKeywordV2(String id) async
+    test('test getFilterKeywordV2', () async {
+      // TODO
+    });
+
     // View keywords added to a filter
     //
     // List all keywords attached to the current filter group.  Version history:  4.0.0 - added
     //
     //Future<List<FilterKeyword>> getFilterKeywordsV2(String filterId) async
     test('test getFilterKeywordsV2', () async {
+      // TODO
+    });
+
+    // View a single status filter
+    //
+    // Obtain a single status filter.  Version history:  4.0.0 - added
+    //
+    //Future<FilterStatus> getFilterStatusV2(String id) async
+    test('test getFilterStatusV2', () async {
       // TODO
     });
 
@@ -102,24 +120,6 @@ void main() {
     //
     //Future<V1Filter> getFilters() async
     test('test getFilters', () async {
-      // TODO
-    });
-
-    // View a single keyword
-    //
-    // Get one filter keyword by the given id.  Version history:  4.0.0 - added
-    //
-    //Future<FilterKeyword> getFiltersKeywordsByIdV2(String id) async
-    test('test getFiltersKeywordsByIdV2', () async {
-      // TODO
-    });
-
-    // View a single status filter
-    //
-    // Obtain a single status filter.  Version history:  4.0.0 - added
-    //
-    //Future<FilterStatus> getFiltersStatusesByIdV2(String id) async
-    test('test getFiltersStatusesByIdV2', () async {
       // TODO
     });
 
@@ -159,21 +159,21 @@ void main() {
       // TODO
     });
 
+    // Edit a keyword within a filter
+    //
+    // Update the given filter keyword.  Version history:  4.0.0 - added
+    //
+    //Future<FilterKeyword> updateFilterKeywordV2(String id, PostFilterKeywordsV2Request postFilterKeywordsV2Request) async
+    test('test updateFilterKeywordV2', () async {
+      // TODO
+    });
+
     // Update a filter
     //
     // Update a filter group with the given parameters.  Version history:  4.0.0 - added\\ 4.4.0 (`mastodon` [API version] 5) - added `blur` value to `filter_action` attribute
     //
     //Future<Filter> updateFilterV2(String id, { UpdateFilterV2Request updateFilterV2Request }) async
     test('test updateFilterV2', () async {
-      // TODO
-    });
-
-    // Edit a keyword within a filter
-    //
-    // Update the given filter keyword.  Version history:  4.0.0 - added
-    //
-    //Future<FilterKeyword> updateFiltersKeywordsByIdV2(String id, PostFilterKeywordsV2Request postFilterKeywordsV2Request) async
-    test('test updateFiltersKeywordsByIdV2', () async {
       // TODO
     });
   });

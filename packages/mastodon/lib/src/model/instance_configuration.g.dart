@@ -29,6 +29,8 @@ abstract class _$InstanceConfigurationCWProxy {
     InstanceConfigurationTimelinesAccess? timelinesAccess,
   );
 
+  InstanceConfiguration vapid(InstanceConfigurationVapid? vapid);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceConfiguration(...).copyWith.fieldName(value)`.
   ///
@@ -45,6 +47,7 @@ abstract class _$InstanceConfigurationCWProxy {
     InstanceConfigurationUrls urls,
     bool? limitedFederation,
     InstanceConfigurationTimelinesAccess? timelinesAccess,
+    InstanceConfigurationVapid? vapid,
   });
 }
 
@@ -91,6 +94,10 @@ class _$InstanceConfigurationCWProxyImpl
     InstanceConfigurationTimelinesAccess? timelinesAccess,
   ) => call(timelinesAccess: timelinesAccess);
 
+  @override
+  InstanceConfiguration vapid(InstanceConfigurationVapid? vapid) =>
+      call(vapid: vapid);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceConfiguration(...).copyWith.fieldName(value)`.
   ///
@@ -108,6 +115,7 @@ class _$InstanceConfigurationCWProxyImpl
     Object? urls = const $CopyWithPlaceholder(),
     Object? limitedFederation = const $CopyWithPlaceholder(),
     Object? timelinesAccess = const $CopyWithPlaceholder(),
+    Object? vapid = const $CopyWithPlaceholder(),
   }) {
     return InstanceConfiguration(
       accounts: accounts == const $CopyWithPlaceholder() || accounts == null
@@ -145,6 +153,10 @@ class _$InstanceConfigurationCWProxyImpl
           ? _value.timelinesAccess
           // ignore: cast_nullable_to_non_nullable
           : timelinesAccess as InstanceConfigurationTimelinesAccess?,
+      vapid: vapid == const $CopyWithPlaceholder()
+          ? _value.vapid
+          // ignore: cast_nullable_to_non_nullable
+          : vapid as InstanceConfigurationVapid?,
     );
   }
 }
@@ -221,6 +233,12 @@ InstanceConfiguration _$InstanceConfigurationFromJson(
                 v as Map<String, dynamic>,
               ),
       ),
+      vapid: $checkedConvert(
+        'vapid',
+        (v) => v == null
+            ? null
+            : InstanceConfigurationVapid.fromJson(v as Map<String, dynamic>),
+      ),
     );
     return val;
   },
@@ -242,4 +260,5 @@ Map<String, dynamic> _$InstanceConfigurationToJson(
   'urls': instance.urls.toJson(),
   'limited_federation': ?instance.limitedFederation,
   'timelines_access': ?instance.timelinesAccess?.toJson(),
+  'vapid': ?instance.vapid?.toJson(),
 };

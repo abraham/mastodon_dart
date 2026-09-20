@@ -37,13 +37,13 @@ void main() {
       // TODO
     });
 
-    // The keywords grouped under this filter. Omitted when part of a [FilterResult]({{< relref \"entities/FilterResult\" >}}).
+    // The keywords grouped under this filter. Omitted when part of a [FilterResult](https://docs.joinmastodon.org/entities/FilterResult/).
     // List<FilterKeyword> keywords
     test('to test the property `keywords`', () async {
       // TODO
     });
 
-    // The statuses grouped under this filter. Omitted when part of a [FilterResult]({{< relref \"entities/FilterResult\" >}}).
+    // The statuses grouped under this filter. Omitted when part of a [FilterResult](https://docs.joinmastodon.org/entities/FilterResult/).
     // List<FilterStatus> statuses
     test('to test the property `statuses`', () async {
       // TODO

@@ -85,7 +85,7 @@ void main() {
       // TODO
     });
 
-    // The current Wrapstodon ([Annual report]({{< relref \"methods/annual_reports\" >}}) campaign identifier (year), if any.
+    // The current Wrapstodon ([Annual report](https://docs.joinmastodon.org/methods/annual_reports/) campaign identifier (year), if any.
     // String wrapstodon
     test('to test the property `wrapstodon`', () async {
       // TODO

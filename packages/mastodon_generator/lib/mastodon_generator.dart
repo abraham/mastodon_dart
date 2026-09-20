@@ -16,7 +16,7 @@ import 'package:openapi_generator_annotations/openapi_generator_annotations.dart
   generatorName: Generator.dio,
   runSourceGenOnOutput: true,
   nameMappings: {'update': 'edit'},
-  typeMappings: {'string+uri': 'Uri'},
+  typeMappings: {'null': 'Object', 'string+uri': 'Uri'},
   importMappings: {
     'Uri': 'dart:core',
     'CreateStatus200Response':

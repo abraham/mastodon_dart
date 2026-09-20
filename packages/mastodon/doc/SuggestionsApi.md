@@ -9,13 +9,13 @@ All URIs are relative to *https://mastodon.example*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteSuggestionsByAccountId**](SuggestionsApi.md#deletesuggestionsbyaccountid) | **DELETE** /api/v1/suggestions/{account_id} | Remove a suggestion
+[**deleteSuggestion**](SuggestionsApi.md#deletesuggestion) | **DELETE** /api/v1/suggestions/{account_id} | Remove a suggestion
 [**getSuggestions**](SuggestionsApi.md#getsuggestions) | **GET** /api/v1/suggestions | View follow suggestions (v1)
 [**getSuggestionsV2**](SuggestionsApi.md#getsuggestionsv2) | **GET** /api/v2/suggestions | View follow suggestions (v2)
 
 
-# **deleteSuggestionsByAccountId**
-> deleteSuggestionsByAccountId(accountId)
+# **deleteSuggestion**
+> deleteSuggestion(accountId)
 
 Remove a suggestion
 
@@ -33,9 +33,9 @@ final api = Mastodon().getSuggestionsApi();
 final String accountId = accountId_example; // String | account_id parameter
 
 try {
-    api.deleteSuggestionsByAccountId(accountId);
+    api.deleteSuggestion(accountId);
 } on DioException catch (e) {
-    print('Exception when calling SuggestionsApi->deleteSuggestionsByAccountId: $e\n');
+    print('Exception when calling SuggestionsApi->deleteSuggestion: $e\n');
 }
 ```
 

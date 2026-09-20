@@ -24,7 +24,7 @@ class InstanceApi {
   const InstanceApi(this._dio);
 
   /// View server information (v1)
-  /// Obtain general information about the server. See [api/v2/instance]({{&lt; relref \&quot;methods/Instance#v2\&quot;&gt;}}) instead.  Version history:  1.1.0 - added\\ 3.0.0 - requires user token if instance is in whitelist mode\\ 3.1.4 - added &#x60;invites_enabled&#x60; to response\\ 3.4.0 - added &#x60;rules&#x60;\\ 3.4.2 - added &#x60;configuration&#x60;\\ 4.0.0 - deprecated. added &#x60;configuration[accounts]&#x60;.
+  /// Obtain general information about the server. See [api/v2/instance](https://docs.joinmastodon.org/methods/Instance/#v2) instead.  Version history:  1.1.0 - added\\ 3.0.0 - requires user token if instance is in whitelist mode\\ 3.1.4 - added &#x60;invites_enabled&#x60; to response\\ 3.4.0 - added &#x60;rules&#x60;\\ 3.4.2 - added &#x60;configuration&#x60;\\ 4.0.0 - deprecated. added &#x60;configuration[accounts]&#x60;.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation

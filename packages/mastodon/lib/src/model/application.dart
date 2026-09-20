@@ -56,7 +56,7 @@ class Application {
   @JsonKey(name: r'scopes', required: true, includeIfNull: false)
   final List<OAuthScope> scopes;
 
-  /// Used for Push Streaming API. Returned with [POST /api/v1/apps]({{< relref \"methods/apps#create\" >}}). Equivalent to [WebPushSubscription#server_key]({{< relref \"entities/WebPushSubscription#server_key\" >}}) and [Instance#vapid_public_key]({{< relref \"entities/Instance#vapid_public_key\" >}})
+  /// Used for Push Streaming API. Returned with [POST /api/v1/apps](https://docs.joinmastodon.org/methods/apps/#create). Equivalent to [WebPushSubscription#server_key](https://docs.joinmastodon.org/entities/WebPushSubscription/#server_key) and [Instance#vapid_public_key](https://docs.joinmastodon.org/entities/Instance/#vapid_public_key)
   @Deprecated('vapidKey has been deprecated')
   @JsonKey(name: r'vapid_key', required: true, includeIfNull: false)
   final String vapidKey;

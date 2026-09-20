@@ -101,7 +101,7 @@ class ScheduledStatusParams {
 
   /// When the status will be scheduled. This will be null because the status is only scheduled once.
   @JsonKey(name: r'scheduled_at', required: false, includeIfNull: false)
-  final String? scheduledAt;
+  final Object? scheduledAt;
 
   /// Whether the status will be marked as sensitive.
   @JsonKey(name: r'sensitive', required: false, includeIfNull: false)
@@ -143,7 +143,7 @@ class ScheduledStatusParams {
       (poll == null ? 0 : poll.hashCode) +
       quoteApprovalPolicy.hashCode +
       (quotedStatusId == null ? 0 : quotedStatusId.hashCode) +
-      (scheduledAt == null ? 0 : scheduledAt.hashCode) +
+      scheduledAt.hashCode +
       (sensitive == null ? 0 : sensitive.hashCode) +
       (spoilerText == null ? 0 : spoilerText.hashCode);
 

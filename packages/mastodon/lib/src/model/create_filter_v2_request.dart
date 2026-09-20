@@ -47,7 +47,7 @@ class CreateFilterV2Request {
   @JsonKey(name: r'filter_action', required: false, includeIfNull: false)
   final String? filterAction;
 
-  /// Array of objects with properties: keyword, whole_word, id, _destroy
+  /// Array of objects with properties: keyword, whole_word
   @JsonKey(name: r'keywords_attributes', required: false, includeIfNull: false)
   final List<CreateFilterV2RequestKeywordsAttributesInner>? keywordsAttributes;
 

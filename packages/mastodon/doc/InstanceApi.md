@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 View server information (v1)
 
-Obtain general information about the server. See [api/v2/instance]({{< relref \"methods/Instance#v2\">}}) instead.  Version history:  1.1.0 - added\\ 3.0.0 - requires user token if instance is in whitelist mode\\ 3.1.4 - added `invites_enabled` to response\\ 3.4.0 - added `rules`\\ 3.4.2 - added `configuration`\\ 4.0.0 - deprecated. added `configuration[accounts]`.
+Obtain general information about the server. See [api/v2/instance](https://docs.joinmastodon.org/methods/Instance/#v2) instead.  Version history:  1.1.0 - added\\ 3.0.0 - requires user token if instance is in whitelist mode\\ 3.1.4 - added `invites_enabled` to response\\ 3.4.0 - added `rules`\\ 3.4.2 - added `configuration`\\ 4.0.0 - deprecated. added `configuration[accounts]`.
 
 ### Example
 ```dart

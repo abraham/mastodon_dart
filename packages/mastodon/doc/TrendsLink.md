@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **width** | **int** | Width of preview, in pixels. | 
 **blurhash** | **String** | A hash computed by [the BlurHash algorithm](https://github.com/woltapp/blurhash), for generating colorful preview thumbnails when media has not been downloaded yet. | [optional] 
 **image** | [**Uri**](Uri.md) | Preview thumbnail. | [optional] 
-**missingAttribution** | **bool** | True if the linked article claims to be written by the current user without the user having the article's domain in their [`attribution_domains`]({{< relref \"entities/Account#source[attribution_domains]\" >}})). This is used to prompt them to review and add the domain. | [optional] 
+**missingAttribution** | **bool** | True if the linked article claims to be written by the current user without the user having the article's domain in their [`attribution_domains`](https://docs.joinmastodon.org/entities/Account/#source[attribution_domains])). This is used to prompt them to review and add the domain. | [optional] 
 **publishedAt** | [**DateTime**](DateTime.md) | UNIX timestamp of publication date. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

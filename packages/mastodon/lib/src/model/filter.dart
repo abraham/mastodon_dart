@@ -57,11 +57,11 @@ class Filter {
   @JsonKey(name: r'expires_at', required: false, includeIfNull: false)
   final DateTime? expiresAt;
 
-  /// The keywords grouped under this filter. Omitted when part of a [FilterResult]({{< relref \"entities/FilterResult\" >}}).
+  /// The keywords grouped under this filter. Omitted when part of a [FilterResult](https://docs.joinmastodon.org/entities/FilterResult/).
   @JsonKey(name: r'keywords', required: false, includeIfNull: false)
   final List<FilterKeyword>? keywords;
 
-  /// The statuses grouped under this filter. Omitted when part of a [FilterResult]({{< relref \"entities/FilterResult\" >}}).
+  /// The statuses grouped under this filter. Omitted when part of a [FilterResult](https://docs.joinmastodon.org/entities/FilterResult/).
   @JsonKey(name: r'statuses', required: false, includeIfNull: false)
   final List<FilterStatus>? statuses;
 

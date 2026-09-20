@@ -122,7 +122,7 @@ class AppsApi {
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Verify your app works Documentation](https://docs.joinmastodon.org/methods/apps/#verify_credentials)
-  Future<Response<Application>> getAppsVerifyCredentials({
+  Future<Response<Application>> getAppVerifyCredentials({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

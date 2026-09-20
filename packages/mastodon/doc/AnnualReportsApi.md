@@ -9,12 +9,59 @@ All URIs are relative to *https://mastodon.example*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getAnnualReport**](AnnualReportsApi.md#getannualreport) | **GET** /api/v1/annual_reports/{year} | Get a single annual report
 [**getAnnualReportState**](AnnualReportsApi.md#getannualreportstate) | **GET** /api/v1/annual_reports/{year}/state | Get the state of an annual report
 [**getAnnualReports**](AnnualReportsApi.md#getannualreports) | **GET** /api/v1/annual_reports | Get all annual reports
-[**getAnnualReportsByYear**](AnnualReportsApi.md#getannualreportsbyyear) | **GET** /api/v1/annual_reports/{year} | Get a single annual report
 [**postAnnualReportGenerate**](AnnualReportsApi.md#postannualreportgenerate) | **POST** /api/v1/annual_reports/{year}/generate | Generate a new annual report {generate}
 [**postAnnualReportRead**](AnnualReportsApi.md#postannualreportread) | **POST** /api/v1/annual_reports/{year}/read | Mark an annual report as read
 
+
+# **getAnnualReport**
+> WrappedAnnualReports getAnnualReport(year)
+
+Get a single annual report
+
+Returns the current user's generated annual report for the given year, if it exists.  Version history:  4.4.0 - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAnnualReportsApi();
+final String year = year_example; // String | year parameter
+
+try {
+    final response = api.getAnnualReport(year);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling AnnualReportsApi->getAnnualReport: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **String**| year parameter | 
+
+### Return type
+
+[**WrappedAnnualReports**](WrappedAnnualReports.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAnnualReportState**
 > getAnnualReportState(year)
@@ -89,53 +136,6 @@ try {
 
 ### Parameters
 This endpoint does not need any parameter.
-
-### Return type
-
-[**WrappedAnnualReports**](WrappedAnnualReports.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getAnnualReportsByYear**
-> WrappedAnnualReports getAnnualReportsByYear(year)
-
-Get a single annual report
-
-Returns the current user's generated annual report for the given year, if it exists.  Version history:  4.4.0 - added
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getAnnualReportsApi();
-final String year = year_example; // String | year parameter
-
-try {
-    final response = api.getAnnualReportsByYear(year);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling AnnualReportsApi->getAnnualReportsByYear: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **year** | **String**| year parameter | 
 
 ### Return type
 

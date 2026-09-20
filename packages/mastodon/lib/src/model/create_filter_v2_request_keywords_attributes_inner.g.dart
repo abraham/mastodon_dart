@@ -11,10 +11,6 @@ abstract class _$CreateFilterV2RequestKeywordsAttributesInnerCWProxy {
 
   CreateFilterV2RequestKeywordsAttributesInner wholeWord(bool? wholeWord);
 
-  CreateFilterV2RequestKeywordsAttributesInner id(String? id);
-
-  CreateFilterV2RequestKeywordsAttributesInner destroy(bool? destroy);
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateFilterV2RequestKeywordsAttributesInner(...).copyWith.fieldName(value)`.
   ///
@@ -25,8 +21,6 @@ abstract class _$CreateFilterV2RequestKeywordsAttributesInnerCWProxy {
   CreateFilterV2RequestKeywordsAttributesInner call({
     String? keyword,
     bool? wholeWord,
-    String? id,
-    bool? destroy,
   });
 }
 
@@ -46,13 +40,6 @@ class _$CreateFilterV2RequestKeywordsAttributesInnerCWProxyImpl
   CreateFilterV2RequestKeywordsAttributesInner wholeWord(bool? wholeWord) =>
       call(wholeWord: wholeWord);
 
-  @override
-  CreateFilterV2RequestKeywordsAttributesInner id(String? id) => call(id: id);
-
-  @override
-  CreateFilterV2RequestKeywordsAttributesInner destroy(bool? destroy) =>
-      call(destroy: destroy);
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateFilterV2RequestKeywordsAttributesInner(...).copyWith.fieldName(value)`.
   ///
@@ -64,8 +51,6 @@ class _$CreateFilterV2RequestKeywordsAttributesInnerCWProxyImpl
   CreateFilterV2RequestKeywordsAttributesInner call({
     Object? keyword = const $CopyWithPlaceholder(),
     Object? wholeWord = const $CopyWithPlaceholder(),
-    Object? id = const $CopyWithPlaceholder(),
-    Object? destroy = const $CopyWithPlaceholder(),
   }) {
     return CreateFilterV2RequestKeywordsAttributesInner(
       keyword: keyword == const $CopyWithPlaceholder()
@@ -76,14 +61,6 @@ class _$CreateFilterV2RequestKeywordsAttributesInnerCWProxyImpl
           ? _value.wholeWord
           // ignore: cast_nullable_to_non_nullable
           : wholeWord as bool?,
-      id: id == const $CopyWithPlaceholder()
-          ? _value.id
-          // ignore: cast_nullable_to_non_nullable
-          : id as String?,
-      destroy: destroy == const $CopyWithPlaceholder()
-          ? _value.destroy
-          // ignore: cast_nullable_to_non_nullable
-          : destroy as bool?,
     );
   }
 }
@@ -110,17 +87,13 @@ _$CreateFilterV2RequestKeywordsAttributesInnerFromJson(
   final val = CreateFilterV2RequestKeywordsAttributesInner(
     keyword: $checkedConvert('keyword', (v) => v as String?),
     wholeWord: $checkedConvert('whole_word', (v) => v as bool?),
-    id: $checkedConvert('id', (v) => v as String?),
-    destroy: $checkedConvert('_destroy', (v) => v as bool?),
   );
   return val;
-}, fieldKeyMap: const {'wholeWord': 'whole_word', 'destroy': '_destroy'});
+}, fieldKeyMap: const {'wholeWord': 'whole_word'});
 
 Map<String, dynamic> _$CreateFilterV2RequestKeywordsAttributesInnerToJson(
   CreateFilterV2RequestKeywordsAttributesInner instance,
 ) => <String, dynamic>{
   'keyword': ?instance.keyword,
   'whole_word': ?instance.wholeWord,
-  'id': ?instance.id,
-  '_destroy': ?instance.destroy,
 };

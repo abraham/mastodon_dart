@@ -10,8 +10,8 @@ void main() {
     //
     // Version history:  4.2.0 - added  Deletes the avatar associated with the user's profile.
     //
-    //Future<CredentialAccount> deleteAvatar() async
-    test('test deleteAvatar', () async {
+    //Future<CredentialAccount> deleteProfileAvatar() async
+    test('test deleteProfileAvatar', () async {
       // TODO
     });
 
