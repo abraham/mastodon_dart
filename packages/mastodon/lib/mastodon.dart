@@ -7,6 +7,7 @@ export 'package:mastodon/src/auth/api_key_auth.dart';
 export 'package:mastodon/src/auth/basic_auth.dart';
 export 'package:mastodon/src/auth/bearer_auth.dart';
 export 'package:mastodon/src/auth/oauth.dart';
+export 'package:mastodon/pagination.dart';
 
 export 'package:mastodon/src/api/accounts_api.dart';
 export 'package:mastodon/src/api/announcements_api.dart';

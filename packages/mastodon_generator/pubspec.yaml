@@ -7,6 +7,9 @@ dependencies:
   openapi_generator_annotations: ^7.0.0
 dev_dependencies:
   openapi_generator: ^7.0.0
+  dio: ^5.2.0
+  mastodon: ^1.0.0
+  test: ^1.0.0
   # openapi_generator:
   #   git:
   #     url: https://github.com/abraham/openapi-generator-dart.git

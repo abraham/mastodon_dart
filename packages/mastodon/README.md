@@ -60,6 +60,22 @@ try {
 
 ```
 
+## Pagination
+
+Paginated API responses expose links parsed from the HTTP `Link` header:
+
+```dart
+final response = await api.getBookmarks();
+final pagination = response.pagination;
+
+print(pagination.next?.maxId);
+print(pagination.prev?.minId);
+print(pagination.next?.uri);
+```
+
+All advertised relation targets are available through
+`pagination.relations` or `pagination['relation-name']`.
+
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://mastodon.example*
