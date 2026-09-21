@@ -1,5 +1,7 @@
 ## Unreleased
 
+## v1.1.0
+
 **Features**
 
 - Add HTTP `Link` header pagination parsing to generated API responses
