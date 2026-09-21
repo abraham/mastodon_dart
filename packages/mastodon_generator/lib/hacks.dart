@@ -176,8 +176,37 @@ void main() async {
     ),
     Hack(
       filePath: 'packages/mastodon/README.md',
-      replacements: [Replacement('# mastodon (EXPERIMENTAL)', '# mastodon')],
-      description: 'Remove experimental label from package title',
+      replacements: [
+        Replacement('# mastodon (EXPERIMENTAL)', '# mastodon'),
+        Replacement('## Documentation for API Endpoints', '''## Pagination
+
+Paginated API responses expose links parsed from the HTTP `Link` header:
+
+```dart
+final response = await api.getBookmarks();
+final pagination = response.pagination;
+
+print(pagination.next?.maxId);
+print(pagination.prev?.minId);
+print(pagination.next?.uri);
+```
+
+All advertised relation targets are available through
+`pagination.relations` or `pagination['relation-name']`.
+
+## Documentation for API Endpoints'''),
+      ],
+      description: 'Customize package README',
+    ),
+    Hack(
+      filePath: 'packages/mastodon/lib/mastodon.dart',
+      replacements: [
+        Replacement(
+          "export 'package:mastodon/src/auth/oauth.dart';",
+          "export 'package:mastodon/src/auth/oauth.dart';\nexport 'package:mastodon/pagination.dart';",
+        ),
+      ],
+      description: 'Export pagination helpers',
     ),
   ];
 
