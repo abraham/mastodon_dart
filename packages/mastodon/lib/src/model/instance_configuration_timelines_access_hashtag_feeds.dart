@@ -54,11 +54,8 @@ class InstanceConfigurationTimelinesAccessHashtagFeeds {
 
 /// Access restrictions for local posts in hashtag feeds.
 enum InstanceConfigurationTimelinesAccessHashtagFeedsLocalEnum {
-  /// Access restrictions for local posts in hashtag feeds.
   @JsonValue(r'public')
   public(r'public'),
-
-  /// Access restrictions for local posts in hashtag feeds.
   @JsonValue(r'authenticated')
   authenticated(r'authenticated');
 
@@ -72,15 +69,10 @@ enum InstanceConfigurationTimelinesAccessHashtagFeedsLocalEnum {
 
 /// Access restrictions for remote posts in hashtag feeds.
 enum InstanceConfigurationTimelinesAccessHashtagFeedsRemoteEnum {
-  /// Access restrictions for remote posts in hashtag feeds.
   @JsonValue(r'public')
   public(r'public'),
-
-  /// Access restrictions for remote posts in hashtag feeds.
   @JsonValue(r'authenticated')
   authenticated(r'authenticated'),
-
-  /// Access restrictions for remote posts in hashtag feeds.
   @JsonValue(r'disabled')
   disabled(r'disabled');
 

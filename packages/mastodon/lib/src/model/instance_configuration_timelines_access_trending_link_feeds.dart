@@ -58,11 +58,8 @@ class InstanceConfigurationTimelinesAccessTrendingLinkFeeds {
 
 /// Access restrictions for local posts in the trending link feeds.
 enum InstanceConfigurationTimelinesAccessTrendingLinkFeedsLocalEnum {
-  /// Access restrictions for local posts in the trending link feeds.
   @JsonValue(r'public')
   public(r'public'),
-
-  /// Access restrictions for local posts in the trending link feeds.
   @JsonValue(r'authenticated')
   authenticated(r'authenticated');
 
@@ -78,15 +75,10 @@ enum InstanceConfigurationTimelinesAccessTrendingLinkFeedsLocalEnum {
 
 /// Access restrictions for remote posts in trending link feeds.
 enum InstanceConfigurationTimelinesAccessTrendingLinkFeedsRemoteEnum {
-  /// Access restrictions for remote posts in trending link feeds.
   @JsonValue(r'public')
   public(r'public'),
-
-  /// Access restrictions for remote posts in trending link feeds.
   @JsonValue(r'authenticated')
   authenticated(r'authenticated'),
-
-  /// Access restrictions for remote posts in trending link feeds.
   @JsonValue(r'disabled')
   disabled(r'disabled');
 

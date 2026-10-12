@@ -54,15 +54,10 @@ class InstanceConfigurationTimelinesAccessLiveFeeds {
 
 /// Access restrictions for local posts in the public feed.
 enum InstanceConfigurationTimelinesAccessLiveFeedsLocalEnum {
-  /// Access restrictions for local posts in the public feed.
   @JsonValue(r'public')
   public(r'public'),
-
-  /// Access restrictions for local posts in the public feed.
   @JsonValue(r'authenticated')
   authenticated(r'authenticated'),
-
-  /// Access restrictions for local posts in the public feed.
   @JsonValue(r'disabled')
   disabled(r'disabled');
 
@@ -76,15 +71,10 @@ enum InstanceConfigurationTimelinesAccessLiveFeedsLocalEnum {
 
 /// Access restrictions for remote posts in the public feed.
 enum InstanceConfigurationTimelinesAccessLiveFeedsRemoteEnum {
-  /// Access restrictions for remote posts in the public feed.
   @JsonValue(r'public')
   public(r'public'),
-
-  /// Access restrictions for remote posts in the public feed.
   @JsonValue(r'authenticated')
   authenticated(r'authenticated'),
-
-  /// Access restrictions for remote posts in the public feed.
   @JsonValue(r'disabled')
   disabled(r'disabled');
 
