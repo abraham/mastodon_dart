@@ -1,5 +1,5 @@
 {
-  "openapiGeneratorVersion": "7.25.0",
+  "openapiGeneratorVersion": "7.26.0",
   "additionalCommands": "--config=openapi_generator_cli_config.json",
   "downloadUrlOverride": null,
   "customGeneratorUrls": [],
