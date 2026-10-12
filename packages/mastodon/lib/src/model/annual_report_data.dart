@@ -121,23 +121,14 @@ class AnnualReportData {
 
 /// Archetype the user corresponds to. This is meant to represent a playful and very coarse overview of the user's posting habits over the year.
 enum AnnualReportDataArchetypeEnum {
-  /// Archetype the user corresponds to. This is meant to represent a playful and very coarse overview of the user's posting habits over the year.
   @JsonValue(r'lurker')
   lurker(r'lurker'),
-
-  /// Archetype the user corresponds to. This is meant to represent a playful and very coarse overview of the user's posting habits over the year.
   @JsonValue(r'booster')
   booster(r'booster'),
-
-  /// Archetype the user corresponds to. This is meant to represent a playful and very coarse overview of the user's posting habits over the year.
   @JsonValue(r'pollster')
   pollster(r'pollster'),
-
-  /// Archetype the user corresponds to. This is meant to represent a playful and very coarse overview of the user's posting habits over the year.
   @JsonValue(r'replier')
   replier(r'replier'),
-
-  /// Archetype the user corresponds to. This is meant to represent a playful and very coarse overview of the user's posting habits over the year.
   @JsonValue(r'oracle')
   oracle(r'oracle');
 

@@ -320,25 +320,25 @@ class CreateStatus200Response {
       params.hashCode +
       scheduledAt.hashCode +
       (application == null ? 0 : application.hashCode) +
-      bookmarked.hashCode +
-      card.hashCode +
-      editedAt.hashCode +
-      favourited.hashCode +
-      filtered.hashCode +
-      inReplyToAccountId.hashCode +
-      inReplyToId.hashCode +
-      language.hashCode +
-      muted.hashCode +
-      pinned.hashCode +
-      poll.hashCode +
+      (bookmarked == null ? 0 : bookmarked.hashCode) +
+      (card == null ? 0 : card.hashCode) +
+      (editedAt == null ? 0 : editedAt.hashCode) +
+      (favourited == null ? 0 : favourited.hashCode) +
+      (filtered == null ? 0 : filtered.hashCode) +
+      (inReplyToAccountId == null ? 0 : inReplyToAccountId.hashCode) +
+      (inReplyToId == null ? 0 : inReplyToId.hashCode) +
+      (language == null ? 0 : language.hashCode) +
+      (muted == null ? 0 : muted.hashCode) +
+      (pinned == null ? 0 : pinned.hashCode) +
+      (poll == null ? 0 : poll.hashCode) +
       (quote == null ? 0 : quote.hashCode) +
-      quoteApproval.hashCode +
-      quotesCount.hashCode +
-      reblog.hashCode +
-      reblogged.hashCode +
-      taggedCollections.hashCode +
-      text.hashCode +
-      url.hashCode;
+      (quoteApproval == null ? 0 : quoteApproval.hashCode) +
+      (quotesCount == null ? 0 : quotesCount.hashCode) +
+      (reblog == null ? 0 : reblog.hashCode) +
+      (reblogged == null ? 0 : reblogged.hashCode) +
+      (taggedCollections == null ? 0 : taggedCollections.hashCode) +
+      (text == null ? 0 : text.hashCode) +
+      (url == null ? 0 : url.hashCode);
 
   factory CreateStatus200Response.fromJson(Map<String, dynamic> json) =>
       _$CreateStatus200ResponseFromJson(json);

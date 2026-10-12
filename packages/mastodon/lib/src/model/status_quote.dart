@@ -43,7 +43,9 @@ class StatusQuote {
 
   @override
   int get hashCode =>
-      state.hashCode + quotedStatus.hashCode + quotedStatusId.hashCode;
+      state.hashCode +
+      (quotedStatus == null ? 0 : quotedStatus.hashCode) +
+      (quotedStatusId == null ? 0 : quotedStatusId.hashCode);
 
   factory StatusQuote.fromJson(Map<String, dynamic> json) =>
       _$StatusQuoteFromJson(json);
