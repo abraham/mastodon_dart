@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **tags** | [**List&lt;StatusTag&gt;**](StatusTag.md) | Tags linked in the announcement text. | 
 **updatedAt** | [**DateTime**](DateTime.md) | When the announcement was last updated. | 
 **endsAt** | [**DateTime**](DateTime.md) | When the announcement will end. | [optional] 
+**reactionsAllowed** | **bool** | Whether emoji reactions on this announcement are allowed. | [optional] 
 **read** | **bool** | Whether the announcement has been read by the current user. | [optional] 
 **startsAt** | [**DateTime**](DateTime.md) | When the announcement will start. | [optional] 
 

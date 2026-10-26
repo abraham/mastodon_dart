@@ -9,6 +9,7 @@ import 'package:mastodon/src/model/field.dart';
 import 'package:mastodon/src/model/custom_emoji.dart';
 import 'package:mastodon/src/model/feature_approval.dart';
 import 'package:mastodon/src/model/account.dart';
+import 'package:mastodon/src/model/account_state.dart';
 import 'package:mastodon/src/model/account_role.dart';
 import 'dart:core';
 import 'package:copy_with_extension/copy_with_extension.dart';
@@ -97,6 +98,8 @@ class CredentialAccount {
     this.showMedia,
 
     this.showMediaReplies,
+
+    this.state,
 
     this.suspended,
 
@@ -246,6 +249,10 @@ class CredentialAccount {
   @JsonKey(name: r'show_media_replies', required: false, includeIfNull: false)
   final bool? showMediaReplies;
 
+  /// State of the current account.
+  @JsonKey(name: r'state', required: false, includeIfNull: false)
+  final AccountState? state;
+
   /// An extra attribute returned only when an account is suspended.
   @JsonKey(name: r'suspended', required: false, includeIfNull: false)
   final bool? suspended;
@@ -294,6 +301,7 @@ class CredentialAccount {
           other.showFeatured == showFeatured &&
           other.showMedia == showMedia &&
           other.showMediaReplies == showMediaReplies &&
+          other.state == state &&
           other.suspended == suspended &&
           other.url == url;
 
@@ -335,6 +343,7 @@ class CredentialAccount {
       (showFeatured == null ? 0 : showFeatured.hashCode) +
       (showMedia == null ? 0 : showMedia.hashCode) +
       (showMediaReplies == null ? 0 : showMediaReplies.hashCode) +
+      (state == null ? 0 : state.hashCode) +
       (suspended == null ? 0 : suspended.hashCode) +
       (url == null ? 0 : url.hashCode);
 

@@ -19,7 +19,7 @@ class OauthApi {
   const OauthApi(this._dio);
 
   /// Authorize a user
-  /// Displays an authorization form to the user. If approved, it will create and return an authorization code, then redirect to the desired &#x60;redirect_uri&#x60;, or show the authorization code if &#x60;urn:ietf:wg:oauth:2.0:oob&#x60; was requested. The authorization code can be used while requesting a token to obtain access to user-level methods.  Version history:  0.1.0 - added\\ 2.6.0 - added &#x60;force_login&#x60;\\ 3.5.0 - added &#x60;lang&#x60;\\ 4.3.0 - added support for PKCE parameters
+  /// Displays an authorization form to the user. If approved, it will create and return an authorization code, then redirect to the desired &#x60;redirect_uri&#x60;, or show the authorization code if &#x60;urn:ietf:wg:oauth:2.0:oob&#x60; was requested. The authorization code can be used while requesting a token to obtain access to user-level methods.  Version history:  0.1.0 - added\\ 2.6.0 - added &#x60;force_login&#x60;\\ 3.5.0 - added &#x60;lang&#x60;\\ 4.3.0 - added support for PKCE parameters\\ 5.0.0 - added &#x60;prompt&#x60; and &#x60;invite_code&#x60; parameters
   ///
   /// Parameters:
   /// * [clientId] - The client ID, obtained during app registration.
@@ -28,7 +28,9 @@ class OauthApi {
   /// * [codeChallenge] - The [PKCE code challenge] for the authorization request.
   /// * [codeChallengeMethod] - Must be `S256`, as this is the only code challenge method that is supported by Mastodon for PKCE.
   /// * [forceLogin] - Forces the user to re-login, which is necessary for authorizing with multiple accounts from the same instance.
+  /// * [inviteCode] - Invitation code, to be used with `prompt=create` when following an invitation to sign-up. The invite code is the last path segment of Mastodon invite URLs of the form `https://example.com/invite/:invite_code`.
   /// * [lang] - The ISO 639-1 two-letter language code to use while rendering the authorization form.
+  /// * [prompt] - String (Enumerable, oneOf `create` or `login`). OpenID Connect `prompt`. `create` = Enter sign-up flow instead of log-in. If the user is already logged in, they will be asked to log out first. `login` = Require the user to log-in again. If they are already logged in, they will be asked to log out first.
   /// * [scope] - List of requested [OAuth scopes], separated by spaces (or by pluses, if using query parameters). Must be a subset of `scopes` declared during app registration. If not provided, defaults to `read`.
   /// * [state] - Arbitrary value to pass through to your server when the user authorizes or rejects the authorization request.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -49,7 +51,9 @@ class OauthApi {
     String? codeChallenge,
     String? codeChallengeMethod,
     bool? forceLogin,
+    String? inviteCode,
     String? lang,
+    String? prompt,
     String? scope = 'read',
     String? state,
     CancelToken? cancelToken,
@@ -75,7 +79,9 @@ class OauthApi {
       if (codeChallengeMethod != null)
         r'code_challenge_method': codeChallengeMethod,
       if (forceLogin != null) r'force_login': forceLogin,
+      if (inviteCode != null) r'invite_code': inviteCode,
       if (lang != null) r'lang': lang,
+      if (prompt != null) r'prompt': prompt,
       if (scope != null) r'scope': scope,
       if (state != null) r'state': state,
     };

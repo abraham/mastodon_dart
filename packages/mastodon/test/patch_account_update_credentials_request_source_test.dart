@@ -31,5 +31,11 @@ void main() {
     test('to test the property `quotePolicy`', () async {
       // TODO
     });
+
+    // Whether to add a content warning to new posts by default.
+    // bool spoilerField
+    test('to test the property `spoilerField`', () async {
+      // TODO
+    });
   });
 }

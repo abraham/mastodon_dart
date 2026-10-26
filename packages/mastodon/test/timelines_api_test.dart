@@ -17,9 +17,9 @@ void main() {
 
     // View home timeline
     //
-    // View statuses from followed users and hashtags.  Version history:  0.0.0 - added\\ 2.6.0 - add `min_id`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now\\ 4.0.0 - as users can now follow hashtags, statuses from non-followed users may appear in the timeline
+    // View statuses from followed users and hashtags.  Version history:  0.0.0 - added\\ 2.6.0 - add `min_id`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now\\ 4.0.0 - as users can now follow hashtags, statuses from non-followed users may appear in the timeline\\ 5.0.0 (`mastodon` [API version] 12) - added `exclude_direct`, `exclude_reblogs`, `exclude_quotes` and `exclude_replies` parameters
     //
-    //Future<List<Status>> getTimelineHome({ int limit, String maxId, String minId, String sinceId }) async
+    //Future<List<Status>> getTimelineHome({ bool excludeDirect, bool excludeQuotes, bool excludeReblogs, bool excludeReplies, int limit, String maxId, String minId, String sinceId }) async
     test('test getTimelineHome', () async {
       // TODO
     });

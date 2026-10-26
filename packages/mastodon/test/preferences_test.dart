@@ -36,5 +36,14 @@ void main() {
     test('to test the property `postingColonDefaultColonLanguage`', () async {
       // TODO
     });
+
+    // Default for adding a content warning for new posts. Equivalent to [CredentialAccount#source\\[spoiler_field\\]](https://docs.joinmastodon.org/entities/Account/#source-spoiler-field).
+    // bool postingColonDefaultColonSpoilerField
+    test(
+      'to test the property `postingColonDefaultColonSpoilerField`',
+      () async {
+        // TODO
+      },
+    );
   });
 }

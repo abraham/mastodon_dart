@@ -31,7 +31,7 @@ class AccountsApi {
   const AccountsApi(this._dio);
 
   /// Register an account
-  /// Creates a user and account records. Returns an account access token for the app that initiated the request. The app should save this token for later, and should wait for the user to confirm their account by clicking a link in their email inbox.  Version history:  2.7.0 - added\\ 3.0.0 - added &#x60;reason&#x60; parameter\\ 3.4.0 - added &#x60;details&#x60; to failure response\\ 4.4.0 - added &#x60;date_of_birth&#x60; parameter
+  /// Creates a user and account records. Returns an account access token for the app that initiated the request. The app should save this token for later, and should wait for the user to confirm their account by clicking a link in their email inbox.  Version history:  2.7.0 - added\\ 3.0.0 - added &#x60;reason&#x60; parameter\\ 3.4.0 - added &#x60;details&#x60; to failure response\\ 4.4.0 - added &#x60;date_of_birth&#x60; parameter\\ 5.0.0 - deprecated in favor of the [OAuth sign-up flow]
   ///
   /// Parameters:
   /// * [createAccountRequest] - JSON request body parameters
@@ -46,6 +46,7 @@ class AccountsApi {
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Register an account Documentation](https://docs.joinmastodon.org/methods/accounts/#create)
+  @Deprecated('This operation has been deprecated')
   Future<Response<Token>> createAccount({
     required CreateAccountRequest createAccountRequest,
     CancelToken? cancelToken,
@@ -1382,9 +1383,10 @@ class AccountsApi {
   }
 
   /// Verify account credentials
-  /// Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added &#x60;profile&#x60; scope
+  /// Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added &#x60;profile&#x60; scope\\ 5.0.0 - added &#x60;allow_nonfunctional&#x60; parameter
   ///
   /// Parameters:
+  /// * [allowNonfunctional] - Whether to get account information even if the account is non-functional (such as e.g. not being approved or confirmed), defaults to `false`.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1397,6 +1399,7 @@ class AccountsApi {
   /// Official Mastodon API documentation
   /// Also see [Verify account credentials Documentation](https://docs.joinmastodon.org/methods/accounts/#verify_credentials)
   Future<Response<CredentialAccount>> getAccountVerifyCredentials({
+    bool? allowNonfunctional = false,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1418,9 +1421,15 @@ class AccountsApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (allowNonfunctional != null)
+        r'allow_nonfunctional': allowNonfunctional,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -1537,7 +1546,7 @@ class AccountsApi {
   }
 
   /// Update account credentials
-  /// Update the user&#39;s display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added &#x60;locked&#x60; parameter\\ 2.4.0 - added &#x60;source[privacy,sensitive]&#x60; parameters\\ 2.4.2 - added &#x60;source[language]&#x60; parameter\\ 2.7.0 - added &#x60;discoverable&#x60; parameter\\ 4.1.0 - added &#x60;hide_collections&#x60; parameter\\ 4.2.0 - added &#x60;indexable&#x60; parameter\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 3) - added &#x60;attribution_domains&#x60; parameter\\ 4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added &#x60;quote_policy&#x60; parameter\\ 4.6.1 (&#x60;mastodon&#x60; [API version] 11) - added &#x60;avatar_description&#x60; and &#x60;header_description&#x60; parameter
+  /// Update the user&#39;s display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added &#x60;locked&#x60; parameter\\ 2.4.0 - added &#x60;source[privacy,sensitive]&#x60; parameters\\ 2.4.2 - added &#x60;source[language]&#x60; parameter\\ 2.7.0 - added &#x60;discoverable&#x60; parameter\\ 4.1.0 - added &#x60;hide_collections&#x60; parameter\\ 4.2.0 - added &#x60;indexable&#x60; parameter\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 3) - added &#x60;attribution_domains&#x60; parameter\\ 4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added &#x60;quote_policy&#x60; parameter\\ 4.6.1 (&#x60;mastodon&#x60; [API version] 11) - added &#x60;avatar_description&#x60; and &#x60;header_description&#x60; parameter\\ 5.0.0 (&#x60;mastodon&#x60; [API version] 12) - added &#x60;source[spoiler_field]&#x60; parameter
   ///
   /// Parameters:
   /// * [patchAccountUpdateCredentialsRequest] - JSON request body parameters

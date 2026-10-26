@@ -14,6 +14,7 @@ import 'package:mastodon/src/model/model_list.dart';
 import 'package:mastodon/src/model/create_list_request.dart';
 import 'package:mastodon/src/model/delete_list_accounts_request.dart';
 import 'package:mastodon/src/model/post_list_accounts_request.dart';
+import 'package:mastodon/src/model/update_list_request.dart';
 
 class ListsApi {
   final Dio _dio;
@@ -583,7 +584,7 @@ class ListsApi {
   ///
   /// Parameters:
   /// * [id] - id parameter
-  /// * [createListRequest] - JSON request body parameters
+  /// * [updateListRequest] - JSON request body parameters
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -597,7 +598,7 @@ class ListsApi {
   /// Also see [Update a list Documentation](https://docs.joinmastodon.org/methods/lists/#update)
   Future<Response<ModelList>> updateList({
     required String id,
-    required CreateListRequest createListRequest,
+    required UpdateListRequest updateListRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -628,7 +629,7 @@ class ListsApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(createListRequest);
+      _bodyData = jsonEncode(updateListRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(_dio.options, _path),

@@ -27,6 +27,8 @@ class InstanceRegistrations {
 
     this.minAge,
 
+    this.oauth,
+
     this.reasonRequired,
 
     this.url,
@@ -48,6 +50,10 @@ class InstanceRegistrations {
   @JsonKey(name: r'min_age', required: false, includeIfNull: false)
   final int? minAge;
 
+  /// Signals whether the OAuth registration flow (`prompt=create`) is supported.
+  @JsonKey(name: r'oauth', required: false, includeIfNull: false)
+  final bool? oauth;
+
   /// Whether registrations require the user to provide a reason for joining. Only applicable when `registrations[approval_required]` is true.
   @JsonKey(name: r'reason_required', required: false, includeIfNull: false)
   final bool? reasonRequired;
@@ -64,6 +70,7 @@ class InstanceRegistrations {
           other.enabled == enabled &&
           other.message == message &&
           other.minAge == minAge &&
+          other.oauth == oauth &&
           other.reasonRequired == reasonRequired &&
           other.url == url;
 
@@ -73,6 +80,7 @@ class InstanceRegistrations {
       enabled.hashCode +
       (message == null ? 0 : message.hashCode) +
       (minAge == null ? 0 : minAge.hashCode) +
+      (oauth == null ? 0 : oauth.hashCode) +
       (reasonRequired == null ? 0 : reasonRequired.hashCode) +
       (url == null ? 0 : url.hashCode);
 

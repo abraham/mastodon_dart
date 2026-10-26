@@ -163,7 +163,7 @@ void main() {
     //
     // Update the given filter keyword.  Version history:  4.0.0 - added
     //
-    //Future<FilterKeyword> updateFilterKeywordV2(String id, PostFilterKeywordsV2Request postFilterKeywordsV2Request) async
+    //Future<FilterKeyword> updateFilterKeywordV2(String id, UpdateFilterKeywordV2Request updateFilterKeywordV2Request) async
     test('test updateFilterKeywordV2', () async {
       // TODO
     });

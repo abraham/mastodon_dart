@@ -1,5 +1,6 @@
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/account_role.dart';
+import 'package:mastodon/src/model/account_state.dart';
 import 'package:mastodon/src/model/account_warning.dart';
 import 'package:mastodon/src/model/admin_account.dart';
 import 'package:mastodon/src/model/admin_canonical_email_block.dart';
@@ -181,9 +182,11 @@ import 'package:mastodon/src/model/translation_poll_option.dart';
 import 'package:mastodon/src/model/trends_link.dart';
 import 'package:mastodon/src/model/trends_link_history_inner.dart';
 import 'package:mastodon/src/model/update_collection_request.dart';
+import 'package:mastodon/src/model/update_filter_keyword_v2_request.dart';
 import 'package:mastodon/src/model/update_filter_request.dart';
 import 'package:mastodon/src/model/update_filter_v2_request.dart';
 import 'package:mastodon/src/model/update_filter_v2_request_keywords_attributes_inner.dart';
+import 'package:mastodon/src/model/update_list_request.dart';
 import 'package:mastodon/src/model/update_scheduled_status_request.dart';
 import 'package:mastodon/src/model/update_status_interaction_policy_request.dart';
 import 'package:mastodon/src/model/update_status_request.dart';
@@ -230,6 +233,8 @@ ReturnType deserialize<ReturnType, BaseType>(
       return Account.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AccountRole':
       return AccountRole.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AccountState':
+      return AccountState.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AccountWarning':
       return AccountWarning.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -788,6 +793,11 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'UpdateCollectionRequest':
       return UpdateCollectionRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'UpdateFilterKeywordV2Request':
+      return UpdateFilterKeywordV2Request.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'UpdateFilterRequest':
       return UpdateFilterRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -798,6 +808,9 @@ ReturnType deserialize<ReturnType, BaseType>(
       return UpdateFilterV2RequestKeywordsAttributesInner.fromJson(
             value as Map<String, dynamic>,
           )
+          as ReturnType;
+    case 'UpdateListRequest':
+      return UpdateListRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'UpdateScheduledStatusRequest':
       return UpdateScheduledStatusRequest.fromJson(

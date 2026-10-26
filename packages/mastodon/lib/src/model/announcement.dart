@@ -45,6 +45,8 @@ class Announcement {
 
     this.endsAt,
 
+    this.reactionsAllowed,
+
     this.read,
 
     this.startsAt,
@@ -94,6 +96,10 @@ class Announcement {
   @JsonKey(name: r'ends_at', required: false, includeIfNull: false)
   final DateTime? endsAt;
 
+  /// Whether emoji reactions on this announcement are allowed.
+  @JsonKey(name: r'reactions_allowed', required: false, includeIfNull: false)
+  final bool? reactionsAllowed;
+
   /// Whether the announcement has been read by the current user.
   @JsonKey(name: r'read', required: false, includeIfNull: false)
   final bool? read;
@@ -117,6 +123,7 @@ class Announcement {
           other.tags == tags &&
           other.updatedAt == updatedAt &&
           other.endsAt == endsAt &&
+          other.reactionsAllowed == reactionsAllowed &&
           other.read == read &&
           other.startsAt == startsAt;
 
@@ -133,6 +140,7 @@ class Announcement {
       tags.hashCode +
       updatedAt.hashCode +
       (endsAt == null ? 0 : endsAt.hashCode) +
+      (reactionsAllowed == null ? 0 : reactionsAllowed.hashCode) +
       (read == null ? 0 : read.hashCode) +
       (startsAt == null ? 0 : startsAt.hashCode);
 

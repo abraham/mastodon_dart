@@ -16,11 +16,11 @@ Method | HTTP request | Description
 
 
 # **getOauthAuthorize**
-> getOauthAuthorize(clientId, redirectUri, responseType, codeChallenge, codeChallengeMethod, forceLogin, lang, scope, state)
+> getOauthAuthorize(clientId, redirectUri, responseType, codeChallenge, codeChallengeMethod, forceLogin, inviteCode, lang, prompt, scope, state)
 
 Authorize a user
 
-Displays an authorization form to the user. If approved, it will create and return an authorization code, then redirect to the desired `redirect_uri`, or show the authorization code if `urn:ietf:wg:oauth:2.0:oob` was requested. The authorization code can be used while requesting a token to obtain access to user-level methods.  Version history:  0.1.0 - added\\ 2.6.0 - added `force_login`\\ 3.5.0 - added `lang`\\ 4.3.0 - added support for PKCE parameters
+Displays an authorization form to the user. If approved, it will create and return an authorization code, then redirect to the desired `redirect_uri`, or show the authorization code if `urn:ietf:wg:oauth:2.0:oob` was requested. The authorization code can be used while requesting a token to obtain access to user-level methods.  Version history:  0.1.0 - added\\ 2.6.0 - added `force_login`\\ 3.5.0 - added `lang`\\ 4.3.0 - added support for PKCE parameters\\ 5.0.0 - added `prompt` and `invite_code` parameters
 
 ### Example
 ```dart
@@ -33,12 +33,14 @@ final String responseType = responseType_example; // String | Should be set equa
 final String codeChallenge = codeChallenge_example; // String | The [PKCE code challenge] for the authorization request.
 final String codeChallengeMethod = codeChallengeMethod_example; // String | Must be `S256`, as this is the only code challenge method that is supported by Mastodon for PKCE.
 final bool forceLogin = true; // bool | Forces the user to re-login, which is necessary for authorizing with multiple accounts from the same instance.
+final String inviteCode = inviteCode_example; // String | Invitation code, to be used with `prompt=create` when following an invitation to sign-up. The invite code is the last path segment of Mastodon invite URLs of the form `https://example.com/invite/:invite_code`.
 final String lang = lang_example; // String | The ISO 639-1 two-letter language code to use while rendering the authorization form.
+final String prompt = prompt_example; // String | String (Enumerable, oneOf `create` or `login`). OpenID Connect `prompt`. `create` = Enter sign-up flow instead of log-in. If the user is already logged in, they will be asked to log out first. `login` = Require the user to log-in again. If they are already logged in, they will be asked to log out first.
 final String scope = scope_example; // String | List of requested [OAuth scopes], separated by spaces (or by pluses, if using query parameters). Must be a subset of `scopes` declared during app registration. If not provided, defaults to `read`.
 final String state = state_example; // String | Arbitrary value to pass through to your server when the user authorizes or rejects the authorization request.
 
 try {
-    api.getOauthAuthorize(clientId, redirectUri, responseType, codeChallenge, codeChallengeMethod, forceLogin, lang, scope, state);
+    api.getOauthAuthorize(clientId, redirectUri, responseType, codeChallenge, codeChallengeMethod, forceLogin, inviteCode, lang, prompt, scope, state);
 } on DioException catch (e) {
     print('Exception when calling OauthApi->getOauthAuthorize: $e\n');
 }
@@ -54,7 +56,9 @@ Name | Type | Description  | Notes
  **codeChallenge** | **String**| The [PKCE code challenge] for the authorization request. | [optional] 
  **codeChallengeMethod** | **String**| Must be `S256`, as this is the only code challenge method that is supported by Mastodon for PKCE. | [optional] 
  **forceLogin** | **bool**| Forces the user to re-login, which is necessary for authorizing with multiple accounts from the same instance. | [optional] 
+ **inviteCode** | **String**| Invitation code, to be used with `prompt=create` when following an invitation to sign-up. The invite code is the last path segment of Mastodon invite URLs of the form `https://example.com/invite/:invite_code`. | [optional] 
  **lang** | **String**| The ISO 639-1 two-letter language code to use while rendering the authorization form. | [optional] 
+ **prompt** | **String**| String (Enumerable, oneOf `create` or `login`). OpenID Connect `prompt`. `create` = Enter sign-up flow instead of log-in. If the user is already logged in, they will be asked to log out first. `login` = Require the user to log-in again. If they are already logged in, they will be asked to log out first. | [optional] 
  **scope** | **String**| List of requested [OAuth scopes], separated by spaces (or by pluses, if using query parameters). Must be a subset of `scopes` declared during app registration. If not provided, defaults to `read`. | [optional] [default to 'read']
  **state** | **String**| Arbitrary value to pass through to your server when the user authorizes or rejects the authorization request. | [optional] 
 

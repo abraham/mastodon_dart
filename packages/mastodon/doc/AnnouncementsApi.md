@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 Remove a reaction from an announcement
 
-Undo a react emoji to an announcement.  Version history:  3.1.0 - added
+Undo a react emoji to an announcement.  Version history:  3.1.0 - added\\ 5.0.0 - reactions can be disabled, in which case this endpoint will return a 400 error
 
 ### Example
 ```dart
@@ -157,7 +157,7 @@ void (empty response body)
 
 Add a reaction to an announcement
 
-React to an announcement with an emoji.  Version history:  3.1.0 - added
+React to an announcement with an emoji.  Version history:  3.1.0 - added\\ 5.0.0 - reactions can be disabled, in which case this endpoint will return a 400 error
 
 ### Example
 ```dart

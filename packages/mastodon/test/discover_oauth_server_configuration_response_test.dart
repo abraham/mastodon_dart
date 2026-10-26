@@ -38,6 +38,12 @@ void main() {
       // TODO
     });
 
+    // Array of prompt_values_supported
+    // List<String> promptValuesSupported
+    test('to test the property `promptValuesSupported`', () async {
+      // TODO
+    });
+
     // Array of response_modes_supported
     // List<String> responseModesSupported
     test('to test the property `responseModesSupported`', () async {

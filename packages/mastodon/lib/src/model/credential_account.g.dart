@@ -79,6 +79,8 @@ abstract class _$CredentialAccountCWProxy {
 
   CredentialAccount showMediaReplies(bool? showMediaReplies);
 
+  CredentialAccount state(AccountState? state);
+
   CredentialAccount suspended(bool? suspended);
 
   CredentialAccount url(Uri? url);
@@ -127,6 +129,7 @@ abstract class _$CredentialAccountCWProxy {
     bool? showFeatured,
     bool? showMedia,
     bool? showMediaReplies,
+    AccountState? state,
     bool? suspended,
     Uri? url,
   });
@@ -263,6 +266,9 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
       call(showMediaReplies: showMediaReplies);
 
   @override
+  CredentialAccount state(AccountState? state) => call(state: state);
+
+  @override
   CredentialAccount suspended(bool? suspended) => call(suspended: suspended);
 
   @override
@@ -313,6 +319,7 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
     Object? showFeatured = const $CopyWithPlaceholder(),
     Object? showMedia = const $CopyWithPlaceholder(),
     Object? showMediaReplies = const $CopyWithPlaceholder(),
+    Object? state = const $CopyWithPlaceholder(),
     Object? suspended = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
   }) {
@@ -469,6 +476,10 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
           ? _value.showMediaReplies
           // ignore: cast_nullable_to_non_nullable
           : showMediaReplies as bool?,
+      state: state == const $CopyWithPlaceholder()
+          ? _value.state
+          // ignore: cast_nullable_to_non_nullable
+          : state as AccountState?,
       suspended: suspended == const $CopyWithPlaceholder()
           ? _value.suspended
           // ignore: cast_nullable_to_non_nullable
@@ -493,165 +504,167 @@ extension $CredentialAccountCopyWith on CredentialAccount {
 // JsonSerializableGenerator
 // **************************************************************************
 
-CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'CredentialAccount',
+CredentialAccount _$CredentialAccountFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate(
+  'CredentialAccount',
+  json,
+  ($checkedConvert) {
+    $checkKeys(
       json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'acct',
-            'avatar',
-            'avatar_static',
-            'bot',
-            'created_at',
-            'display_name',
-            'emojis',
-            'fields',
-            'followers_count',
-            'following_count',
-            'group',
-            'header',
-            'header_static',
-            'id',
-            'indexable',
-            'locked',
-            'note',
-            'role',
-            'source',
-            'statuses_count',
-            'uri',
-            'username',
-          ],
-        );
-        final val = CredentialAccount(
-          acct: $checkedConvert('acct', (v) => v as String),
-          avatar: $checkedConvert('avatar', (v) => Uri.parse(v as String)),
-          avatarStatic: $checkedConvert(
-            'avatar_static',
-            (v) => Uri.parse(v as String),
-          ),
-          bot: $checkedConvert('bot', (v) => v as bool),
-          createdAt: $checkedConvert(
-            'created_at',
-            (v) => DateTime.parse(v as String),
-          ),
-          displayName: $checkedConvert('display_name', (v) => v as String),
-          emojis: $checkedConvert(
-            'emojis',
-            (v) => (v as List<dynamic>)
-                .map((e) => CustomEmoji.fromJson(e as Map<String, dynamic>))
-                .toList(),
-          ),
-          fields: $checkedConvert(
-            'fields',
-            (v) => (v as List<dynamic>)
-                .map((e) => Field.fromJson(e as Map<String, dynamic>))
-                .toList(),
-          ),
-          followersCount: $checkedConvert(
-            'followers_count',
-            (v) => (v as num).toInt(),
-          ),
-          followingCount: $checkedConvert(
-            'following_count',
-            (v) => (v as num).toInt(),
-          ),
-          group: $checkedConvert('group', (v) => v as bool),
-          header: $checkedConvert('header', (v) => Uri.parse(v as String)),
-          headerStatic: $checkedConvert(
-            'header_static',
-            (v) => Uri.parse(v as String),
-          ),
-          id: $checkedConvert('id', (v) => v as String),
-          indexable: $checkedConvert('indexable', (v) => v as bool),
-          locked: $checkedConvert('locked', (v) => v as bool),
-          note: $checkedConvert('note', (v) => v as String),
-          role: $checkedConvert(
-            'role',
-            (v) => Role.fromJson(v as Map<String, dynamic>),
-          ),
-          source_: $checkedConvert(
-            'source',
-            (v) => CredentialAccountSource.fromJson(v as Map<String, dynamic>),
-          ),
-          statusesCount: $checkedConvert(
-            'statuses_count',
-            (v) => (v as num).toInt(),
-          ),
-          uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
-          username: $checkedConvert('username', (v) => v as String),
-          avatarDescription: $checkedConvert(
-            'avatar_description',
-            (v) => v as String?,
-          ),
-          discoverable: $checkedConvert('discoverable', (v) => v as bool?),
-          featureApproval: $checkedConvert(
-            'feature_approval',
-            (v) => v == null
-                ? null
-                : FeatureApproval.fromJson(v as Map<String, dynamic>),
-          ),
-          headerDescription: $checkedConvert(
-            'header_description',
-            (v) => v as String?,
-          ),
-          hideCollections: $checkedConvert(
-            'hide_collections',
-            (v) => v as bool?,
-          ),
-          lastStatusAt: $checkedConvert(
-            'last_status_at',
-            (v) => v == null ? null : DateTime.parse(v as String),
-          ),
-          limited: $checkedConvert('limited', (v) => v as bool?),
-          memorial: $checkedConvert('memorial', (v) => v as bool?),
-          moved: $checkedConvert(
-            'moved',
-            (v) =>
-                v == null ? null : Account.fromJson(v as Map<String, dynamic>),
-          ),
-          noindex: $checkedConvert('noindex', (v) => v as bool?),
-          roles: $checkedConvert(
-            'roles',
-            (v) => (v as List<dynamic>?)
-                ?.map((e) => AccountRole.fromJson(e as Map<String, dynamic>))
-                .toList(),
-          ),
-          showFeatured: $checkedConvert('show_featured', (v) => v as bool?),
-          showMedia: $checkedConvert('show_media', (v) => v as bool?),
-          showMediaReplies: $checkedConvert(
-            'show_media_replies',
-            (v) => v as bool?,
-          ),
-          suspended: $checkedConvert('suspended', (v) => v as bool?),
-          url: $checkedConvert(
-            'url',
-            (v) => v == null ? null : Uri.parse(v as String),
-          ),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'avatarStatic': 'avatar_static',
-        'createdAt': 'created_at',
-        'displayName': 'display_name',
-        'followersCount': 'followers_count',
-        'followingCount': 'following_count',
-        'headerStatic': 'header_static',
-        'source_': 'source',
-        'statusesCount': 'statuses_count',
-        'avatarDescription': 'avatar_description',
-        'featureApproval': 'feature_approval',
-        'headerDescription': 'header_description',
-        'hideCollections': 'hide_collections',
-        'lastStatusAt': 'last_status_at',
-        'showFeatured': 'show_featured',
-        'showMedia': 'show_media',
-        'showMediaReplies': 'show_media_replies',
-      },
+      requiredKeys: const [
+        'acct',
+        'avatar',
+        'avatar_static',
+        'bot',
+        'created_at',
+        'display_name',
+        'emojis',
+        'fields',
+        'followers_count',
+        'following_count',
+        'group',
+        'header',
+        'header_static',
+        'id',
+        'indexable',
+        'locked',
+        'note',
+        'role',
+        'source',
+        'statuses_count',
+        'uri',
+        'username',
+      ],
     );
+    final val = CredentialAccount(
+      acct: $checkedConvert('acct', (v) => v as String),
+      avatar: $checkedConvert('avatar', (v) => Uri.parse(v as String)),
+      avatarStatic: $checkedConvert(
+        'avatar_static',
+        (v) => Uri.parse(v as String),
+      ),
+      bot: $checkedConvert('bot', (v) => v as bool),
+      createdAt: $checkedConvert(
+        'created_at',
+        (v) => DateTime.parse(v as String),
+      ),
+      displayName: $checkedConvert('display_name', (v) => v as String),
+      emojis: $checkedConvert(
+        'emojis',
+        (v) => (v as List<dynamic>)
+            .map((e) => CustomEmoji.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      ),
+      fields: $checkedConvert(
+        'fields',
+        (v) => (v as List<dynamic>)
+            .map((e) => Field.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      ),
+      followersCount: $checkedConvert(
+        'followers_count',
+        (v) => (v as num).toInt(),
+      ),
+      followingCount: $checkedConvert(
+        'following_count',
+        (v) => (v as num).toInt(),
+      ),
+      group: $checkedConvert('group', (v) => v as bool),
+      header: $checkedConvert('header', (v) => Uri.parse(v as String)),
+      headerStatic: $checkedConvert(
+        'header_static',
+        (v) => Uri.parse(v as String),
+      ),
+      id: $checkedConvert('id', (v) => v as String),
+      indexable: $checkedConvert('indexable', (v) => v as bool),
+      locked: $checkedConvert('locked', (v) => v as bool),
+      note: $checkedConvert('note', (v) => v as String),
+      role: $checkedConvert(
+        'role',
+        (v) => Role.fromJson(v as Map<String, dynamic>),
+      ),
+      source_: $checkedConvert(
+        'source',
+        (v) => CredentialAccountSource.fromJson(v as Map<String, dynamic>),
+      ),
+      statusesCount: $checkedConvert(
+        'statuses_count',
+        (v) => (v as num).toInt(),
+      ),
+      uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
+      username: $checkedConvert('username', (v) => v as String),
+      avatarDescription: $checkedConvert(
+        'avatar_description',
+        (v) => v as String?,
+      ),
+      discoverable: $checkedConvert('discoverable', (v) => v as bool?),
+      featureApproval: $checkedConvert(
+        'feature_approval',
+        (v) => v == null
+            ? null
+            : FeatureApproval.fromJson(v as Map<String, dynamic>),
+      ),
+      headerDescription: $checkedConvert(
+        'header_description',
+        (v) => v as String?,
+      ),
+      hideCollections: $checkedConvert('hide_collections', (v) => v as bool?),
+      lastStatusAt: $checkedConvert(
+        'last_status_at',
+        (v) => v == null ? null : DateTime.parse(v as String),
+      ),
+      limited: $checkedConvert('limited', (v) => v as bool?),
+      memorial: $checkedConvert('memorial', (v) => v as bool?),
+      moved: $checkedConvert(
+        'moved',
+        (v) => v == null ? null : Account.fromJson(v as Map<String, dynamic>),
+      ),
+      noindex: $checkedConvert('noindex', (v) => v as bool?),
+      roles: $checkedConvert(
+        'roles',
+        (v) => (v as List<dynamic>?)
+            ?.map((e) => AccountRole.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      ),
+      showFeatured: $checkedConvert('show_featured', (v) => v as bool?),
+      showMedia: $checkedConvert('show_media', (v) => v as bool?),
+      showMediaReplies: $checkedConvert(
+        'show_media_replies',
+        (v) => v as bool?,
+      ),
+      state: $checkedConvert(
+        'state',
+        (v) =>
+            v == null ? null : AccountState.fromJson(v as Map<String, dynamic>),
+      ),
+      suspended: $checkedConvert('suspended', (v) => v as bool?),
+      url: $checkedConvert(
+        'url',
+        (v) => v == null ? null : Uri.parse(v as String),
+      ),
+    );
+    return val;
+  },
+  fieldKeyMap: const {
+    'avatarStatic': 'avatar_static',
+    'createdAt': 'created_at',
+    'displayName': 'display_name',
+    'followersCount': 'followers_count',
+    'followingCount': 'following_count',
+    'headerStatic': 'header_static',
+    'source_': 'source',
+    'statusesCount': 'statuses_count',
+    'avatarDescription': 'avatar_description',
+    'featureApproval': 'feature_approval',
+    'headerDescription': 'header_description',
+    'hideCollections': 'hide_collections',
+    'lastStatusAt': 'last_status_at',
+    'showFeatured': 'show_featured',
+    'showMedia': 'show_media',
+    'showMediaReplies': 'show_media_replies',
+  },
+);
 
 Map<String, dynamic> _$CredentialAccountToJson(CredentialAccount instance) =>
     <String, dynamic>{
@@ -691,6 +704,7 @@ Map<String, dynamic> _$CredentialAccountToJson(CredentialAccount instance) =>
       'show_featured': ?instance.showFeatured,
       'show_media': ?instance.showMedia,
       'show_media_replies': ?instance.showMediaReplies,
+      'state': ?instance.state?.toJson(),
       'suspended': ?instance.suspended,
       'url': ?instance.url?.toString(),
     };

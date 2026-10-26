@@ -4,6 +4,7 @@ analysis_options.yaml
 build.yaml
 doc/Account.md
 doc/AccountRole.md
+doc/AccountState.md
 doc/AccountWarning.md
 doc/AccountWarningActionEnum.md
 doc/AccountsApi.md
@@ -252,9 +253,11 @@ doc/TrendsLink.md
 doc/TrendsLinkHistoryInner.md
 doc/TrendsLinkTypeEnum.md
 doc/UpdateCollectionRequest.md
+doc/UpdateFilterKeywordV2Request.md
 doc/UpdateFilterRequest.md
 doc/UpdateFilterV2Request.md
 doc/UpdateFilterV2RequestKeywordsAttributesInner.md
+doc/UpdateListRequest.md
 doc/UpdateScheduledStatusRequest.md
 doc/UpdateStatusInteractionPolicyRequest.md
 doc/UpdateStatusRequest.md
@@ -327,6 +330,7 @@ lib/src/auth/oauth.dart
 lib/src/deserialize.dart
 lib/src/model/account.dart
 lib/src/model/account_role.dart
+lib/src/model/account_state.dart
 lib/src/model/account_warning.dart
 lib/src/model/account_warning_action_enum.dart
 lib/src/model/admin_account.dart
@@ -534,9 +538,11 @@ lib/src/model/trends_link.dart
 lib/src/model/trends_link_history_inner.dart
 lib/src/model/trends_link_type_enum.dart
 lib/src/model/update_collection_request.dart
+lib/src/model/update_filter_keyword_v2_request.dart
 lib/src/model/update_filter_request.dart
 lib/src/model/update_filter_v2_request.dart
 lib/src/model/update_filter_v2_request_keywords_attributes_inner.dart
+lib/src/model/update_list_request.dart
 lib/src/model/update_scheduled_status_request.dart
 lib/src/model/update_status_interaction_policy_request.dart
 lib/src/model/update_status_request.dart
@@ -557,6 +563,7 @@ lib/src/model/wrapped_annual_reports.dart
 lib/src/model/wrapped_collection.dart
 lib/src/model/wrapped_collection_item.dart
 test/account_role_test.dart
+test/account_state_test.dart
 test/account_test.dart
 test/account_warning_action_enum_test.dart
 test/account_warning_test.dart
@@ -806,9 +813,11 @@ test/trends_link_history_inner_test.dart
 test/trends_link_test.dart
 test/trends_link_type_enum_test.dart
 test/update_collection_request_test.dart
+test/update_filter_keyword_v2_request_test.dart
 test/update_filter_request_test.dart
 test/update_filter_v2_request_keywords_attributes_inner_test.dart
 test/update_filter_v2_request_test.dart
+test/update_list_request_test.dart
 test/update_scheduled_status_request_test.dart
 test/update_status_interaction_policy_request_test.dart
 test/update_status_request_poll_test.dart

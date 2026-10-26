@@ -73,6 +73,12 @@ void main() {
       // TODO
     });
 
+    // Whether emoji reactions on this announcement are allowed.
+    // bool reactionsAllowed
+    test('to test the property `reactionsAllowed`', () async {
+      // TODO
+    });
+
     // Whether the announcement has been read by the current user.
     // bool read
     test('to test the property `read`', () async {
