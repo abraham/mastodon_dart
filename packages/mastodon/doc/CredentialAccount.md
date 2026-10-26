@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **showFeatured** | **bool** | Whether the account wishes to have a “Featured” tab on their profile. | [optional] 
 **showMedia** | **bool** | Whether the account wishes to have a “Media” tab with media attachments on their profile. | [optional] 
 **showMediaReplies** | **bool** | Whether the account wishes to have replies in the “Media” tab on their profile. | [optional] 
+**state** | [**AccountState**](AccountState.md) | State of the current account. | [optional] 
 **suspended** | **bool** | An extra attribute returned only when an account is suspended. | [optional] 
 **url** | [**Uri**](Uri.md) | The location of the user's profile page (web interface URL). | [optional] 
 

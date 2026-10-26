@@ -25,6 +25,10 @@ abstract class _$DiscoverOauthServerConfigurationResponseCWProxy {
 
   DiscoverOauthServerConfigurationResponse issuer(Uri issuer);
 
+  DiscoverOauthServerConfigurationResponse promptValuesSupported(
+    List<String> promptValuesSupported,
+  );
+
   DiscoverOauthServerConfigurationResponse responseModesSupported(
     List<String> responseModesSupported,
   );
@@ -68,6 +72,7 @@ abstract class _$DiscoverOauthServerConfigurationResponseCWProxy {
     List<String> codeChallengeMethodsSupported,
     List<String> grantTypesSupported,
     Uri issuer,
+    List<String> promptValuesSupported,
     List<String> responseModesSupported,
     List<String> responseTypesSupported,
     Uri revocationEndpoint,
@@ -110,6 +115,11 @@ class _$DiscoverOauthServerConfigurationResponseCWProxyImpl
   @override
   DiscoverOauthServerConfigurationResponse issuer(Uri issuer) =>
       call(issuer: issuer);
+
+  @override
+  DiscoverOauthServerConfigurationResponse promptValuesSupported(
+    List<String> promptValuesSupported,
+  ) => call(promptValuesSupported: promptValuesSupported);
 
   @override
   DiscoverOauthServerConfigurationResponse responseModesSupported(
@@ -166,6 +176,7 @@ class _$DiscoverOauthServerConfigurationResponseCWProxyImpl
     Object? codeChallengeMethodsSupported = const $CopyWithPlaceholder(),
     Object? grantTypesSupported = const $CopyWithPlaceholder(),
     Object? issuer = const $CopyWithPlaceholder(),
+    Object? promptValuesSupported = const $CopyWithPlaceholder(),
     Object? responseModesSupported = const $CopyWithPlaceholder(),
     Object? responseTypesSupported = const $CopyWithPlaceholder(),
     Object? revocationEndpoint = const $CopyWithPlaceholder(),
@@ -204,6 +215,12 @@ class _$DiscoverOauthServerConfigurationResponseCWProxyImpl
           ? _value.issuer
           // ignore: cast_nullable_to_non_nullable
           : issuer as Uri,
+      promptValuesSupported:
+          promptValuesSupported == const $CopyWithPlaceholder() ||
+              promptValuesSupported == null
+          ? _value.promptValuesSupported
+          // ignore: cast_nullable_to_non_nullable
+          : promptValuesSupported as List<String>,
       responseModesSupported:
           responseModesSupported == const $CopyWithPlaceholder() ||
               responseModesSupported == null
@@ -282,6 +299,7 @@ _$DiscoverOauthServerConfigurationResponseFromJson(Map<String, dynamic> json) =>
             'code_challenge_methods_supported',
             'grant_types_supported',
             'issuer',
+            'prompt_values_supported',
             'response_modes_supported',
             'response_types_supported',
             'revocation_endpoint',
@@ -310,6 +328,10 @@ _$DiscoverOauthServerConfigurationResponseFromJson(Map<String, dynamic> json) =>
             (v) => (v as List<dynamic>).map((e) => e as String).toList(),
           ),
           issuer: $checkedConvert('issuer', (v) => Uri.parse(v as String)),
+          promptValuesSupported: $checkedConvert(
+            'prompt_values_supported',
+            (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+          ),
           responseModesSupported: $checkedConvert(
             'response_modes_supported',
             (v) => (v as List<dynamic>).map((e) => e as String).toList(),
@@ -352,6 +374,7 @@ _$DiscoverOauthServerConfigurationResponseFromJson(Map<String, dynamic> json) =>
         'authorizationEndpoint': 'authorization_endpoint',
         'codeChallengeMethodsSupported': 'code_challenge_methods_supported',
         'grantTypesSupported': 'grant_types_supported',
+        'promptValuesSupported': 'prompt_values_supported',
         'responseModesSupported': 'response_modes_supported',
         'responseTypesSupported': 'response_types_supported',
         'revocationEndpoint': 'revocation_endpoint',
@@ -372,6 +395,7 @@ Map<String, dynamic> _$DiscoverOauthServerConfigurationResponseToJson(
   'code_challenge_methods_supported': instance.codeChallengeMethodsSupported,
   'grant_types_supported': instance.grantTypesSupported,
   'issuer': instance.issuer.toString(),
+  'prompt_values_supported': instance.promptValuesSupported,
   'response_modes_supported': instance.responseModesSupported,
   'response_types_supported': instance.responseTypesSupported,
   'revocation_endpoint': instance.revocationEndpoint.toString(),

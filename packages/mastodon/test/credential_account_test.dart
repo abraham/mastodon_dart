@@ -222,6 +222,12 @@ void main() {
       // TODO
     });
 
+    // State of the current account.
+    // AccountState state
+    test('to test the property `state`', () async {
+      // TODO
+    });
+
     // An extra attribute returned only when an account is suspended.
     // bool suspended
     test('to test the property `suspended`', () async {

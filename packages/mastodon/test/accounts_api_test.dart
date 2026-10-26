@@ -8,7 +8,7 @@ void main() {
   group(AccountsApi, () {
     // Register an account
     //
-    // Creates a user and account records. Returns an account access token for the app that initiated the request. The app should save this token for later, and should wait for the user to confirm their account by clicking a link in their email inbox.  Version history:  2.7.0 - added\\ 3.0.0 - added `reason` parameter\\ 3.4.0 - added `details` to failure response\\ 4.4.0 - added `date_of_birth` parameter
+    // Creates a user and account records. Returns an account access token for the app that initiated the request. The app should save this token for later, and should wait for the user to confirm their account by clicking a link in their email inbox.  Version history:  2.7.0 - added\\ 3.0.0 - added `reason` parameter\\ 3.4.0 - added `details` to failure response\\ 4.4.0 - added `date_of_birth` parameter\\ 5.0.0 - deprecated in favor of the [OAuth sign-up flow]
     //
     //Future<Token> createAccount(CreateAccountRequest createAccountRequest) async
     test('test createAccount', () async {
@@ -143,9 +143,9 @@ void main() {
 
     // Verify account credentials
     //
-    // Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added `profile` scope
+    // Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added `profile` scope\\ 5.0.0 - added `allow_nonfunctional` parameter
     //
-    //Future<CredentialAccount> getAccountVerifyCredentials() async
+    //Future<CredentialAccount> getAccountVerifyCredentials({ bool allowNonfunctional }) async
     test('test getAccountVerifyCredentials', () async {
       // TODO
     });
@@ -161,7 +161,7 @@ void main() {
 
     // Update account credentials
     //
-    // Update the user's display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added `locked` parameter\\ 2.4.0 - added `source[privacy,sensitive]` parameters\\ 2.4.2 - added `source[language]` parameter\\ 2.7.0 - added `discoverable` parameter\\ 4.1.0 - added `hide_collections` parameter\\ 4.2.0 - added `indexable` parameter\\ 4.4.0 (`mastodon` [API version] 3) - added `attribution_domains` parameter\\ 4.5.0 (`mastodon` [API version] 7) - added `quote_policy` parameter\\ 4.6.1 (`mastodon` [API version] 11) - added `avatar_description` and `header_description` parameter
+    // Update the user's display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added `locked` parameter\\ 2.4.0 - added `source[privacy,sensitive]` parameters\\ 2.4.2 - added `source[language]` parameter\\ 2.7.0 - added `discoverable` parameter\\ 4.1.0 - added `hide_collections` parameter\\ 4.2.0 - added `indexable` parameter\\ 4.4.0 (`mastodon` [API version] 3) - added `attribution_domains` parameter\\ 4.5.0 (`mastodon` [API version] 7) - added `quote_policy` parameter\\ 4.6.1 (`mastodon` [API version] 11) - added `avatar_description` and `header_description` parameter\\ 5.0.0 (`mastodon` [API version] 12) - added `source[spoiler_field]` parameter
     //
     //Future<CredentialAccount> patchAccountUpdateCredentials({ PatchAccountUpdateCredentialsRequest patchAccountUpdateCredentialsRequest }) async
     test('test patchAccountUpdateCredentials', () async {

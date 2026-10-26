@@ -30,6 +30,8 @@ class DiscoverOauthServerConfigurationResponse {
 
     required this.issuer,
 
+    required this.promptValuesSupported,
+
     required this.responseModesSupported,
 
     required this.responseTypesSupported,
@@ -78,6 +80,14 @@ class DiscoverOauthServerConfigurationResponse {
   /// issuer field
   @JsonKey(name: r'issuer', required: true, includeIfNull: false)
   final Uri issuer;
+
+  /// Array of prompt_values_supported
+  @JsonKey(
+    name: r'prompt_values_supported',
+    required: true,
+    includeIfNull: false,
+  )
+  final List<String> promptValuesSupported;
 
   /// Array of response_modes_supported
   @JsonKey(
@@ -133,6 +143,7 @@ class DiscoverOauthServerConfigurationResponse {
               codeChallengeMethodsSupported &&
           other.grantTypesSupported == grantTypesSupported &&
           other.issuer == issuer &&
+          other.promptValuesSupported == promptValuesSupported &&
           other.responseModesSupported == responseModesSupported &&
           other.responseTypesSupported == responseTypesSupported &&
           other.revocationEndpoint == revocationEndpoint &&
@@ -150,6 +161,7 @@ class DiscoverOauthServerConfigurationResponse {
       codeChallengeMethodsSupported.hashCode +
       grantTypesSupported.hashCode +
       issuer.hashCode +
+      promptValuesSupported.hashCode +
       responseModesSupported.hashCode +
       responseTypesSupported.hashCode +
       revocationEndpoint.hashCode +

@@ -31,6 +31,8 @@ abstract class _$CredentialAccountSourceCWProxy {
     ScheduledStatusParamsQuoteApprovalPolicyEnum? quotePolicy,
   );
 
+  CredentialAccountSource spoilerField(bool? spoilerField);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CredentialAccountSource(...).copyWith.fieldName(value)`.
   ///
@@ -50,6 +52,7 @@ abstract class _$CredentialAccountSourceCWProxy {
     bool? hideCollections,
     String? language,
     ScheduledStatusParamsQuoteApprovalPolicyEnum? quotePolicy,
+    bool? spoilerField,
   });
 }
 
@@ -105,6 +108,10 @@ class _$CredentialAccountSourceCWProxyImpl
     ScheduledStatusParamsQuoteApprovalPolicyEnum? quotePolicy,
   ) => call(quotePolicy: quotePolicy);
 
+  @override
+  CredentialAccountSource spoilerField(bool? spoilerField) =>
+      call(spoilerField: spoilerField);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CredentialAccountSource(...).copyWith.fieldName(value)`.
   ///
@@ -125,6 +132,7 @@ class _$CredentialAccountSourceCWProxyImpl
     Object? hideCollections = const $CopyWithPlaceholder(),
     Object? language = const $CopyWithPlaceholder(),
     Object? quotePolicy = const $CopyWithPlaceholder(),
+    Object? spoilerField = const $CopyWithPlaceholder(),
   }) {
     return CredentialAccountSource(
       fields: fields == const $CopyWithPlaceholder() || fields == null
@@ -173,6 +181,10 @@ class _$CredentialAccountSourceCWProxyImpl
           ? _value.quotePolicy
           // ignore: cast_nullable_to_non_nullable
           : quotePolicy as ScheduledStatusParamsQuoteApprovalPolicyEnum?,
+      spoilerField: spoilerField == const $CopyWithPlaceholder()
+          ? _value.spoilerField
+          // ignore: cast_nullable_to_non_nullable
+          : spoilerField as bool?,
     );
   }
 }
@@ -238,6 +250,7 @@ CredentialAccountSource _$CredentialAccountSourceFromJson(
           v,
         ),
       ),
+      spoilerField: $checkedConvert('spoiler_field', (v) => v as bool?),
     );
     return val;
   },
@@ -246,6 +259,7 @@ CredentialAccountSource _$CredentialAccountSourceFromJson(
     'attributionDomains': 'attribution_domains',
     'hideCollections': 'hide_collections',
     'quotePolicy': 'quote_policy',
+    'spoilerField': 'spoiler_field',
   },
 );
 
@@ -265,6 +279,7 @@ Map<String, dynamic> _$CredentialAccountSourceToJson(
   'quote_policy':
       ?_$ScheduledStatusParamsQuoteApprovalPolicyEnumEnumMap[instance
           .quotePolicy],
+  'spoiler_field': ?instance.spoilerField,
 };
 
 const _$StatusVisibilityEnumEnumMap = {

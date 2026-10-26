@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **enabled** | **bool** | Whether registrations are enabled. This will be `false` if `registrations_mode` is `none` or if the server is in `single_user_mode`. | 
 **message** | **String** | A custom message to be shown when registrations are closed. Will be `null` if registrations are open. | [optional] 
 **minAge** | **int** | A minimum age required to register, if configured. | [optional] 
+**oauth** | **bool** | Signals whether the OAuth registration flow (`prompt=create`) is supported. | [optional] 
 **reasonRequired** | **bool** | Whether registrations require the user to provide a reason for joining. Only applicable when `registrations[approval_required]` is true. | [optional] 
 **url** | [**Uri**](Uri.md) | A custom URL for account registration, when using external authentication. | [optional] 
 

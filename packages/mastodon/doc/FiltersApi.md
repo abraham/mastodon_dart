@@ -825,7 +825,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateFilterKeywordV2**
-> FilterKeyword updateFilterKeywordV2(id, postFilterKeywordsV2Request)
+> FilterKeyword updateFilterKeywordV2(id, updateFilterKeywordV2Request)
 
 Edit a keyword within a filter
 
@@ -841,10 +841,10 @@ import 'package:mastodon/api.dart';
 
 final api = Mastodon().getFiltersApi();
 final String id = id_example; // String | id parameter
-final PostFilterKeywordsV2Request postFilterKeywordsV2Request = ; // PostFilterKeywordsV2Request | JSON request body parameters
+final UpdateFilterKeywordV2Request updateFilterKeywordV2Request = ; // UpdateFilterKeywordV2Request | JSON request body parameters
 
 try {
-    final response = api.updateFilterKeywordV2(id, postFilterKeywordsV2Request);
+    final response = api.updateFilterKeywordV2(id, updateFilterKeywordV2Request);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling FiltersApi->updateFilterKeywordV2: $e\n');
@@ -856,7 +856,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| id parameter | 
- **postFilterKeywordsV2Request** | [**PostFilterKeywordsV2Request**](PostFilterKeywordsV2Request.md)| JSON request body parameters | 
+ **updateFilterKeywordV2Request** | [**UpdateFilterKeywordV2Request**](UpdateFilterKeywordV2Request.md)| JSON request body parameters | 
 
 ### Return type
 

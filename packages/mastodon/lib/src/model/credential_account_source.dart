@@ -42,6 +42,8 @@ class CredentialAccountSource {
     this.language,
 
     this.quotePolicy,
+
+    this.spoilerField,
   });
 
   /// Metadata about the account.
@@ -88,6 +90,10 @@ class CredentialAccountSource {
   @JsonKey(name: r'quote_policy', required: false, includeIfNull: false)
   final ScheduledStatusParamsQuoteApprovalPolicyEnum? quotePolicy;
 
+  /// Whether new statuses should have content warnings by default.
+  @JsonKey(name: r'spoiler_field', required: false, includeIfNull: false)
+  final bool? spoilerField;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -102,7 +108,8 @@ class CredentialAccountSource {
           other.discoverable == discoverable &&
           other.hideCollections == hideCollections &&
           other.language == language &&
-          other.quotePolicy == quotePolicy;
+          other.quotePolicy == quotePolicy &&
+          other.spoilerField == spoilerField;
 
   @override
   int get hashCode =>
@@ -116,7 +123,8 @@ class CredentialAccountSource {
       (discoverable == null ? 0 : discoverable.hashCode) +
       (hideCollections == null ? 0 : hideCollections.hashCode) +
       (language == null ? 0 : language.hashCode) +
-      quotePolicy.hashCode;
+      quotePolicy.hashCode +
+      (spoilerField == null ? 0 : spoilerField.hashCode);
 
   factory CredentialAccountSource.fromJson(Map<String, dynamic> json) =>
       _$CredentialAccountSourceFromJson(json);

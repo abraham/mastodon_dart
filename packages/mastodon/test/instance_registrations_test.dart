@@ -31,6 +31,12 @@ void main() {
       // TODO
     });
 
+    // Signals whether the OAuth registration flow (`prompt=create`) is supported.
+    // bool oauth
+    test('to test the property `oauth`', () async {
+      // TODO
+    });
+
     // Whether registrations require the user to provide a reason for joining. Only applicable when `registrations[approval_required]` is true.
     // bool reasonRequired
     test('to test the property `reasonRequired`', () async {

@@ -17,6 +17,8 @@ abstract class _$PatchAccountUpdateCredentialsRequestSourceCWProxy {
 
   PatchAccountUpdateCredentialsRequestSource quotePolicy(String? quotePolicy);
 
+  PatchAccountUpdateCredentialsRequestSource spoilerField(bool? spoilerField);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PatchAccountUpdateCredentialsRequestSource(...).copyWith.fieldName(value)`.
   ///
@@ -29,6 +31,7 @@ abstract class _$PatchAccountUpdateCredentialsRequestSourceCWProxy {
     bool? sensitive,
     String? language,
     String? quotePolicy,
+    bool? spoilerField,
   });
 }
 
@@ -57,6 +60,10 @@ class _$PatchAccountUpdateCredentialsRequestSourceCWProxyImpl
   PatchAccountUpdateCredentialsRequestSource quotePolicy(String? quotePolicy) =>
       call(quotePolicy: quotePolicy);
 
+  @override
+  PatchAccountUpdateCredentialsRequestSource spoilerField(bool? spoilerField) =>
+      call(spoilerField: spoilerField);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PatchAccountUpdateCredentialsRequestSource(...).copyWith.fieldName(value)`.
   ///
@@ -70,6 +77,7 @@ class _$PatchAccountUpdateCredentialsRequestSourceCWProxyImpl
     Object? sensitive = const $CopyWithPlaceholder(),
     Object? language = const $CopyWithPlaceholder(),
     Object? quotePolicy = const $CopyWithPlaceholder(),
+    Object? spoilerField = const $CopyWithPlaceholder(),
   }) {
     return PatchAccountUpdateCredentialsRequestSource(
       privacy: privacy == const $CopyWithPlaceholder()
@@ -88,6 +96,10 @@ class _$PatchAccountUpdateCredentialsRequestSourceCWProxyImpl
           ? _value.quotePolicy
           // ignore: cast_nullable_to_non_nullable
           : quotePolicy as String?,
+      spoilerField: spoilerField == const $CopyWithPlaceholder()
+          ? _value.spoilerField
+          // ignore: cast_nullable_to_non_nullable
+          : spoilerField as bool?,
     );
   }
 }
@@ -108,20 +120,27 @@ extension $PatchAccountUpdateCredentialsRequestSourceCopyWith
 PatchAccountUpdateCredentialsRequestSource
 _$PatchAccountUpdateCredentialsRequestSourceFromJson(
   Map<String, dynamic> json,
-) => $checkedCreate('PatchAccountUpdateCredentialsRequestSource', json, (
-  $checkedConvert,
-) {
-  final val = PatchAccountUpdateCredentialsRequestSource(
-    privacy: $checkedConvert(
-      'privacy',
-      (v) => $enumDecodeNullable(_$StatusVisibilityEnumEnumMap, v),
-    ),
-    sensitive: $checkedConvert('sensitive', (v) => v as bool?),
-    language: $checkedConvert('language', (v) => v as String?),
-    quotePolicy: $checkedConvert('quote_policy', (v) => v as String?),
-  );
-  return val;
-}, fieldKeyMap: const {'quotePolicy': 'quote_policy'});
+) => $checkedCreate(
+  'PatchAccountUpdateCredentialsRequestSource',
+  json,
+  ($checkedConvert) {
+    final val = PatchAccountUpdateCredentialsRequestSource(
+      privacy: $checkedConvert(
+        'privacy',
+        (v) => $enumDecodeNullable(_$StatusVisibilityEnumEnumMap, v),
+      ),
+      sensitive: $checkedConvert('sensitive', (v) => v as bool?),
+      language: $checkedConvert('language', (v) => v as String?),
+      quotePolicy: $checkedConvert('quote_policy', (v) => v as String?),
+      spoilerField: $checkedConvert('spoiler_field', (v) => v as bool?),
+    );
+    return val;
+  },
+  fieldKeyMap: const {
+    'quotePolicy': 'quote_policy',
+    'spoilerField': 'spoiler_field',
+  },
+);
 
 Map<String, dynamic> _$PatchAccountUpdateCredentialsRequestSourceToJson(
   PatchAccountUpdateCredentialsRequestSource instance,
@@ -130,6 +149,7 @@ Map<String, dynamic> _$PatchAccountUpdateCredentialsRequestSourceToJson(
   'sensitive': ?instance.sensitive,
   'language': ?instance.language,
   'quote_policy': ?instance.quotePolicy,
+  'spoiler_field': ?instance.spoilerField,
 };
 
 const _$StatusVisibilityEnumEnumMap = {

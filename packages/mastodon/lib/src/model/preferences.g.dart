@@ -27,6 +27,10 @@ abstract class _$PreferencesCWProxy {
     String? postingColonDefaultColonLanguage,
   );
 
+  Preferences postingColonDefaultColonSpoilerField(
+    bool? postingColonDefaultColonSpoilerField,
+  );
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Preferences(...).copyWith.fieldName(value)`.
   ///
@@ -40,6 +44,7 @@ abstract class _$PreferencesCWProxy {
     PreferencesReadingExpandMediaEnum readingColonExpandColonMedia,
     bool readingColonExpandColonSpoilers,
     String? postingColonDefaultColonLanguage,
+    bool? postingColonDefaultColonSpoilerField,
   });
 }
 
@@ -79,6 +84,13 @@ class _$PreferencesCWProxyImpl implements _$PreferencesCWProxy {
     String? postingColonDefaultColonLanguage,
   ) => call(postingColonDefaultColonLanguage: postingColonDefaultColonLanguage);
 
+  @override
+  Preferences postingColonDefaultColonSpoilerField(
+    bool? postingColonDefaultColonSpoilerField,
+  ) => call(
+    postingColonDefaultColonSpoilerField: postingColonDefaultColonSpoilerField,
+  );
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Preferences(...).copyWith.fieldName(value)`.
   ///
@@ -93,6 +105,7 @@ class _$PreferencesCWProxyImpl implements _$PreferencesCWProxy {
     Object? readingColonExpandColonMedia = const $CopyWithPlaceholder(),
     Object? readingColonExpandColonSpoilers = const $CopyWithPlaceholder(),
     Object? postingColonDefaultColonLanguage = const $CopyWithPlaceholder(),
+    Object? postingColonDefaultColonSpoilerField = const $CopyWithPlaceholder(),
   }) {
     return Preferences(
       postingColonDefaultColonSensitive:
@@ -124,6 +137,11 @@ class _$PreferencesCWProxyImpl implements _$PreferencesCWProxy {
           ? _value.postingColonDefaultColonLanguage
           // ignore: cast_nullable_to_non_nullable
           : postingColonDefaultColonLanguage as String?,
+      postingColonDefaultColonSpoilerField:
+          postingColonDefaultColonSpoilerField == const $CopyWithPlaceholder()
+          ? _value.postingColonDefaultColonSpoilerField
+          // ignore: cast_nullable_to_non_nullable
+          : postingColonDefaultColonSpoilerField as bool?,
     );
   }
 }
@@ -173,6 +191,10 @@ Preferences _$PreferencesFromJson(Map<String, dynamic> json) => $checkedCreate(
         'posting:default:language',
         (v) => v as String?,
       ),
+      postingColonDefaultColonSpoilerField: $checkedConvert(
+        'posting:default:spoiler_field',
+        (v) => v as bool?,
+      ),
     );
     return val;
   },
@@ -182,6 +204,7 @@ Preferences _$PreferencesFromJson(Map<String, dynamic> json) => $checkedCreate(
     'readingColonExpandColonMedia': 'reading:expand:media',
     'readingColonExpandColonSpoilers': 'reading:expand:spoilers',
     'postingColonDefaultColonLanguage': 'posting:default:language',
+    'postingColonDefaultColonSpoilerField': 'posting:default:spoiler_field',
   },
 );
 
@@ -196,6 +219,8 @@ Map<String, dynamic> _$PreferencesToJson(Preferences instance) =>
               .readingColonExpandColonMedia]!,
       'reading:expand:spoilers': instance.readingColonExpandColonSpoilers,
       'posting:default:language': ?instance.postingColonDefaultColonLanguage,
+      'posting:default:spoiler_field':
+          ?instance.postingColonDefaultColonSpoilerField,
     };
 
 const _$StatusVisibilityEnumEnumMap = {

@@ -15,6 +15,8 @@ abstract class _$InstanceRegistrationsCWProxy {
 
   InstanceRegistrations minAge(int? minAge);
 
+  InstanceRegistrations oauth(bool? oauth);
+
   InstanceRegistrations reasonRequired(bool? reasonRequired);
 
   InstanceRegistrations url(Uri? url);
@@ -31,6 +33,7 @@ abstract class _$InstanceRegistrationsCWProxy {
     bool enabled,
     String? message,
     int? minAge,
+    bool? oauth,
     bool? reasonRequired,
     Uri? url,
   });
@@ -58,6 +61,9 @@ class _$InstanceRegistrationsCWProxyImpl
   InstanceRegistrations minAge(int? minAge) => call(minAge: minAge);
 
   @override
+  InstanceRegistrations oauth(bool? oauth) => call(oauth: oauth);
+
+  @override
   InstanceRegistrations reasonRequired(bool? reasonRequired) =>
       call(reasonRequired: reasonRequired);
 
@@ -77,6 +83,7 @@ class _$InstanceRegistrationsCWProxyImpl
     Object? enabled = const $CopyWithPlaceholder(),
     Object? message = const $CopyWithPlaceholder(),
     Object? minAge = const $CopyWithPlaceholder(),
+    Object? oauth = const $CopyWithPlaceholder(),
     Object? reasonRequired = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
   }) {
@@ -99,6 +106,10 @@ class _$InstanceRegistrationsCWProxyImpl
           ? _value.minAge
           // ignore: cast_nullable_to_non_nullable
           : minAge as int?,
+      oauth: oauth == const $CopyWithPlaceholder()
+          ? _value.oauth
+          // ignore: cast_nullable_to_non_nullable
+          : oauth as bool?,
       reasonRequired: reasonRequired == const $CopyWithPlaceholder()
           ? _value.reasonRequired
           // ignore: cast_nullable_to_non_nullable
@@ -135,6 +146,7 @@ InstanceRegistrations _$InstanceRegistrationsFromJson(
       enabled: $checkedConvert('enabled', (v) => v as bool),
       message: $checkedConvert('message', (v) => v as String?),
       minAge: $checkedConvert('min_age', (v) => (v as num?)?.toInt()),
+      oauth: $checkedConvert('oauth', (v) => v as bool?),
       reasonRequired: $checkedConvert('reason_required', (v) => v as bool?),
       url: $checkedConvert(
         'url',
@@ -157,6 +169,7 @@ Map<String, dynamic> _$InstanceRegistrationsToJson(
   'enabled': instance.enabled,
   'message': ?instance.message,
   'min_age': ?instance.minAge,
+  'oauth': ?instance.oauth,
   'reason_required': ?instance.reasonRequired,
   'url': ?instance.url?.toString(),
 };

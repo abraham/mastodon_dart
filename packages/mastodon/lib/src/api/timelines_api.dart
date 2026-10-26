@@ -112,9 +112,13 @@ class TimelinesApi {
   }
 
   /// View home timeline
-  /// View statuses from followed users and hashtags.  Version history:  0.0.0 - added\\ 2.6.0 - add &#x60;min_id&#x60;\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now\\ 4.0.0 - as users can now follow hashtags, statuses from non-followed users may appear in the timeline
+  /// View statuses from followed users and hashtags.  Version history:  0.0.0 - added\\ 2.6.0 - add &#x60;min_id&#x60;\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now\\ 4.0.0 - as users can now follow hashtags, statuses from non-followed users may appear in the timeline\\ 5.0.0 (&#x60;mastodon&#x60; [API version] 12) - added &#x60;exclude_direct&#x60;, &#x60;exclude_reblogs&#x60;, &#x60;exclude_quotes&#x60; and &#x60;exclude_replies&#x60; parameters
   ///
   /// Parameters:
+  /// * [excludeDirect] - Whether to exclude Direct Messages from the response.
+  /// * [excludeQuotes] - Whether to exclude quote posts from the response.
+  /// * [excludeReblogs] - Whether to exclude reblogs from the response.
+  /// * [excludeReplies] - Whether to exclude replies from the response.
   /// * [limit] - Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
   /// * [maxId] - All results returned will be lesser than this ID. In effect, sets an upper bound on results.
   /// * [minId] - Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward.
@@ -131,6 +135,10 @@ class TimelinesApi {
   /// Official Mastodon API documentation
   /// Also see [View home timeline Documentation](https://docs.joinmastodon.org/methods/timelines/#home)
   Future<Response<List<Status>>> getTimelineHome({
+    bool? excludeDirect,
+    bool? excludeQuotes,
+    bool? excludeReblogs,
+    bool? excludeReplies,
     int? limit = 20,
     String? maxId,
     String? minId,
@@ -157,6 +165,10 @@ class TimelinesApi {
     );
 
     final _queryParameters = <String, dynamic>{
+      if (excludeDirect != null) r'exclude_direct': excludeDirect,
+      if (excludeQuotes != null) r'exclude_quotes': excludeQuotes,
+      if (excludeReblogs != null) r'exclude_reblogs': excludeReblogs,
+      if (excludeReplies != null) r'exclude_replies': excludeReplies,
       if (limit != null) r'limit': limit,
       if (maxId != null) r'max_id': maxId,
       if (minId != null) r'min_id': minId,

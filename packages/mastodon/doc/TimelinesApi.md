@@ -71,11 +71,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTimelineHome**
-> List<Status> getTimelineHome(limit, maxId, minId, sinceId)
+> List<Status> getTimelineHome(excludeDirect, excludeQuotes, excludeReblogs, excludeReplies, limit, maxId, minId, sinceId)
 
 View home timeline
 
-View statuses from followed users and hashtags.  Version history:  0.0.0 - added\\ 2.6.0 - add `min_id`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now\\ 4.0.0 - as users can now follow hashtags, statuses from non-followed users may appear in the timeline
+View statuses from followed users and hashtags.  Version history:  0.0.0 - added\\ 2.6.0 - add `min_id`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now\\ 4.0.0 - as users can now follow hashtags, statuses from non-followed users may appear in the timeline\\ 5.0.0 (`mastodon` [API version] 12) - added `exclude_direct`, `exclude_reblogs`, `exclude_quotes` and `exclude_replies` parameters
 
 ### Example
 ```dart
@@ -86,13 +86,17 @@ import 'package:mastodon/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = Mastodon().getTimelinesApi();
+final bool excludeDirect = true; // bool | Whether to exclude Direct Messages from the response.
+final bool excludeQuotes = true; // bool | Whether to exclude quote posts from the response.
+final bool excludeReblogs = true; // bool | Whether to exclude reblogs from the response.
+final bool excludeReplies = true; // bool | Whether to exclude replies from the response.
 final int limit = 56; // int | Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
 final String maxId = maxId_example; // String | All results returned will be lesser than this ID. In effect, sets an upper bound on results.
 final String minId = minId_example; // String | Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward.
 final String sinceId = sinceId_example; // String | All results returned will be greater than this ID. In effect, sets a lower bound on results.
 
 try {
-    final response = api.getTimelineHome(limit, maxId, minId, sinceId);
+    final response = api.getTimelineHome(excludeDirect, excludeQuotes, excludeReblogs, excludeReplies, limit, maxId, minId, sinceId);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling TimelinesApi->getTimelineHome: $e\n');
@@ -103,6 +107,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **excludeDirect** | **bool**| Whether to exclude Direct Messages from the response. | [optional] 
+ **excludeQuotes** | **bool**| Whether to exclude quote posts from the response. | [optional] 
+ **excludeReblogs** | **bool**| Whether to exclude reblogs from the response. | [optional] 
+ **excludeReplies** | **bool**| Whether to exclude replies from the response. | [optional] 
  **limit** | **int**| Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses. | [optional] [default to 20]
  **maxId** | **String**| All results returned will be lesser than this ID. In effect, sets an upper bound on results. | [optional] 
  **minId** | **String**| Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward. | [optional] 

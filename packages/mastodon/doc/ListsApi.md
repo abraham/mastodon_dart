@@ -354,7 +354,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateList**
-> List updateList(id, createListRequest)
+> List updateList(id, updateListRequest)
 
 Update a list
 
@@ -370,10 +370,10 @@ import 'package:mastodon/api.dart';
 
 final api = Mastodon().getListsApi();
 final String id = id_example; // String | id parameter
-final CreateListRequest createListRequest = ; // CreateListRequest | JSON request body parameters
+final UpdateListRequest updateListRequest = ; // UpdateListRequest | JSON request body parameters
 
 try {
-    final response = api.updateList(id, createListRequest);
+    final response = api.updateList(id, updateListRequest);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling ListsApi->updateList: $e\n');
@@ -385,7 +385,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| id parameter | 
- **createListRequest** | [**CreateListRequest**](CreateListRequest.md)| JSON request body parameters | 
+ **updateListRequest** | [**UpdateListRequest**](UpdateListRequest.md)| JSON request body parameters | 
 
 ### Return type
 

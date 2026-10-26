@@ -26,6 +26,8 @@ class PatchAccountUpdateCredentialsRequestSource {
     this.language,
 
     this.quotePolicy,
+
+    this.spoilerField,
   });
 
   /// String (Enumerable, oneOf `public`, `unlisted`, or `private`). Default post privacy for authored statuses.
@@ -44,6 +46,10 @@ class PatchAccountUpdateCredentialsRequestSource {
   @JsonKey(name: r'quote_policy', required: false, includeIfNull: false)
   final String? quotePolicy;
 
+  /// Whether to add a content warning to new posts by default.
+  @JsonKey(name: r'spoiler_field', required: false, includeIfNull: false)
+  final bool? spoilerField;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -51,14 +57,16 @@ class PatchAccountUpdateCredentialsRequestSource {
           other.privacy == privacy &&
           other.sensitive == sensitive &&
           other.language == language &&
-          other.quotePolicy == quotePolicy;
+          other.quotePolicy == quotePolicy &&
+          other.spoilerField == spoilerField;
 
   @override
   int get hashCode =>
       privacy.hashCode +
       sensitive.hashCode +
       language.hashCode +
-      quotePolicy.hashCode;
+      quotePolicy.hashCode +
+      spoilerField.hashCode;
 
   factory PatchAccountUpdateCredentialsRequestSource.fromJson(
     Map<String, dynamic> json,

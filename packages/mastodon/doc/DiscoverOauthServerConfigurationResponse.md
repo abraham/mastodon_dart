@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **codeChallengeMethodsSupported** | **List&lt;String&gt;** | Array of code_challenge_methods_supported | 
 **grantTypesSupported** | **List&lt;String&gt;** | Array of grant_types_supported | 
 **issuer** | [**Uri**](Uri.md) | issuer field | 
+**promptValuesSupported** | **List&lt;String&gt;** | Array of prompt_values_supported | 
 **responseModesSupported** | **List&lt;String&gt;** | Array of response_modes_supported | 
 **responseTypesSupported** | **List&lt;String&gt;** | Array of response_types_supported | 
 **revocationEndpoint** | [**Uri**](Uri.md) | revocation_endpoint field | 

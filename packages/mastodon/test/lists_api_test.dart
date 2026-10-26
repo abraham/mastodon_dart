@@ -73,7 +73,7 @@ void main() {
     //
     // Change the properties of a list.  Version history:  2.1.0 - added\\ 3.3.0 - added `replies_policy` 4.2.0 - added `exclusive`
     //
-    //Future<List> updateList(String id, CreateListRequest createListRequest) async
+    //Future<List> updateList(String id, UpdateListRequest updateListRequest) async
     test('test updateList', () async {
       // TODO
     });

@@ -16,6 +16,7 @@ import 'package:mastodon/src/model/filter_keyword.dart';
 import 'package:mastodon/src/model/filter_status.dart';
 import 'package:mastodon/src/model/post_filter_keywords_v2_request.dart';
 import 'package:mastodon/src/model/post_filter_statuses_v2_request.dart';
+import 'package:mastodon/src/model/update_filter_keyword_v2_request.dart';
 import 'package:mastodon/src/model/update_filter_request.dart';
 import 'package:mastodon/src/model/update_filter_v2_request.dart';
 import 'package:mastodon/src/model/v1_filter.dart';
@@ -1439,7 +1440,7 @@ class FiltersApi {
   ///
   /// Parameters:
   /// * [id] - id parameter
-  /// * [postFilterKeywordsV2Request] - JSON request body parameters
+  /// * [updateFilterKeywordV2Request] - JSON request body parameters
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1453,7 +1454,7 @@ class FiltersApi {
   /// Also see [Edit a keyword within a filter Documentation](https://docs.joinmastodon.org/methods/filters/#keywords-update)
   Future<Response<FilterKeyword>> updateFilterKeywordV2({
     required String id,
-    required PostFilterKeywordsV2Request postFilterKeywordsV2Request,
+    required UpdateFilterKeywordV2Request updateFilterKeywordV2Request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1484,7 +1485,7 @@ class FiltersApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(postFilterKeywordsV2Request);
+      _bodyData = jsonEncode(updateFilterKeywordV2Request);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(_dio.options, _path),

@@ -29,6 +29,8 @@ abstract class _$AnnouncementCWProxy {
 
   Announcement endsAt(DateTime? endsAt);
 
+  Announcement reactionsAllowed(bool? reactionsAllowed);
+
   Announcement read(bool? read);
 
   Announcement startsAt(DateTime? startsAt);
@@ -52,6 +54,7 @@ abstract class _$AnnouncementCWProxy {
     List<StatusTag> tags,
     DateTime updatedAt,
     DateTime? endsAt,
+    bool? reactionsAllowed,
     bool? read,
     DateTime? startsAt,
   });
@@ -102,6 +105,10 @@ class _$AnnouncementCWProxyImpl implements _$AnnouncementCWProxy {
   Announcement endsAt(DateTime? endsAt) => call(endsAt: endsAt);
 
   @override
+  Announcement reactionsAllowed(bool? reactionsAllowed) =>
+      call(reactionsAllowed: reactionsAllowed);
+
+  @override
   Announcement read(bool? read) => call(read: read);
 
   @override
@@ -127,6 +134,7 @@ class _$AnnouncementCWProxyImpl implements _$AnnouncementCWProxy {
     Object? tags = const $CopyWithPlaceholder(),
     Object? updatedAt = const $CopyWithPlaceholder(),
     Object? endsAt = const $CopyWithPlaceholder(),
+    Object? reactionsAllowed = const $CopyWithPlaceholder(),
     Object? read = const $CopyWithPlaceholder(),
     Object? startsAt = const $CopyWithPlaceholder(),
   }) {
@@ -176,6 +184,10 @@ class _$AnnouncementCWProxyImpl implements _$AnnouncementCWProxy {
           ? _value.endsAt
           // ignore: cast_nullable_to_non_nullable
           : endsAt as DateTime?,
+      reactionsAllowed: reactionsAllowed == const $CopyWithPlaceholder()
+          ? _value.reactionsAllowed
+          // ignore: cast_nullable_to_non_nullable
+          : reactionsAllowed as bool?,
       read: read == const $CopyWithPlaceholder()
           ? _value.read
           // ignore: cast_nullable_to_non_nullable
@@ -266,6 +278,7 @@ Announcement _$AnnouncementFromJson(
         'ends_at',
         (v) => v == null ? null : DateTime.parse(v as String),
       ),
+      reactionsAllowed: $checkedConvert('reactions_allowed', (v) => v as bool?),
       read: $checkedConvert('read', (v) => v as bool?),
       startsAt: $checkedConvert(
         'starts_at',
@@ -279,6 +292,7 @@ Announcement _$AnnouncementFromJson(
     'publishedAt': 'published_at',
     'updatedAt': 'updated_at',
     'endsAt': 'ends_at',
+    'reactionsAllowed': 'reactions_allowed',
     'startsAt': 'starts_at',
   },
 );
@@ -296,6 +310,7 @@ Map<String, dynamic> _$AnnouncementToJson(Announcement instance) =>
       'tags': instance.tags.map((e) => e.toJson()).toList(),
       'updated_at': instance.updatedAt.toIso8601String(),
       'ends_at': ?instance.endsAt?.toIso8601String(),
+      'reactions_allowed': ?instance.reactionsAllowed,
       'read': ?instance.read,
       'starts_at': ?instance.startsAt?.toIso8601String(),
     };

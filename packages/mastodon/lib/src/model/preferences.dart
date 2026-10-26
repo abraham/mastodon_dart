@@ -29,6 +29,8 @@ class Preferences {
     required this.readingColonExpandColonSpoilers,
 
     this.postingColonDefaultColonLanguage,
+
+    this.postingColonDefaultColonSpoilerField,
   });
 
   /// Default sensitivity flag for new posts. Equivalent to [CredentialAccount#source\\[sensitive\\]](https://docs.joinmastodon.org/entities/Account/#source-sensitive).
@@ -67,6 +69,14 @@ class Preferences {
   )
   final String? postingColonDefaultColonLanguage;
 
+  /// Default for adding a content warning for new posts. Equivalent to [CredentialAccount#source\\[spoiler_field\\]](https://docs.joinmastodon.org/entities/Account/#source-spoiler-field).
+  @JsonKey(
+    name: r'posting:default:spoiler_field',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? postingColonDefaultColonSpoilerField;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -79,7 +89,9 @@ class Preferences {
           other.readingColonExpandColonSpoilers ==
               readingColonExpandColonSpoilers &&
           other.postingColonDefaultColonLanguage ==
-              postingColonDefaultColonLanguage;
+              postingColonDefaultColonLanguage &&
+          other.postingColonDefaultColonSpoilerField ==
+              postingColonDefaultColonSpoilerField;
 
   @override
   int get hashCode =>
@@ -89,7 +101,10 @@ class Preferences {
       readingColonExpandColonSpoilers.hashCode +
       (postingColonDefaultColonLanguage == null
           ? 0
-          : postingColonDefaultColonLanguage.hashCode);
+          : postingColonDefaultColonLanguage.hashCode) +
+      (postingColonDefaultColonSpoilerField == null
+          ? 0
+          : postingColonDefaultColonSpoilerField.hashCode);
 
   factory Preferences.fromJson(Map<String, dynamic> json) =>
       _$PreferencesFromJson(json);
