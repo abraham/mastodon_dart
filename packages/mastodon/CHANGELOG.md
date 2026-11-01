@@ -1,5 +1,11 @@
 ## Unreleased
 
+## v1.3.0
+
+**Features**
+
+- Updated spec [bbf2634...f9e4c01](https://github.com/mastodon/documentation/compare/bbf2634464593f8b937adb0515bceab900f54e0e...f9e4c0116b17d28b56db63798662f1bc3aa15420)
+
 ## v1.2.0
 
 **Features**
