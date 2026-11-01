@@ -6,8 +6,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: dart-lang/setup-dart@v1
+      - uses: actions/checkout@v7.0.1
+      - uses: dart-lang/setup-dart@v1.8.1
 
       - run: dart pub get
       - run: ./scripts/build
@@ -22,8 +22,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: dart-lang/setup-dart@v1
+      - uses: actions/checkout@v7.0.1
+      - uses: dart-lang/setup-dart@v1.8.1
 
       - run: dart pub get
       - run: ./scripts/analyze
