@@ -16,6 +16,9 @@ on:
           - alpha
           - dev
 
+permissions:
+  contents: read
+
 jobs:
   bump-version:
     runs-on: ubuntu-latest

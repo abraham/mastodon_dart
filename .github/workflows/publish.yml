@@ -3,13 +3,36 @@ name: Publish
 on:
   push:
     tags:
-    - 'v[0-9]+.[0-9]+.[0-9]+' # tag-pattern on pub.dev: 'v{{version}}'
-    - 'v[0-9]+.[0-9]+.[0-9]+-[a-z]+.[0-9]+' # tag-pattern on pub.dev: 'v{{version}}'
+      # Must match the tag pattern on pub.dev: v{{version}}
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+
+permissions:
+  contents: read
 
 jobs:
   publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: pub.dev
+      url: https://pub.dev/packages/mastodon/versions/${{ steps.version.outputs.version }}
+    concurrency:
+      group: deploy-pub.dev
+      cancel-in-progress: false
     permissions:
-      id-token: write # Required for authentication using OIDC
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
-    with:
-      working-directory: packages/mastodon
+      contents: read
+      id-token: write
+    defaults:
+      run:
+        working-directory: packages/mastodon
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: dart-lang/setup-dart@v1.8.1
+      - id: version
+        run: |
+          version=$(sed -n 's/^version: *//p' pubspec.yaml)
+          test "v$version" = "$GITHUB_REF_NAME"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+      - run: dart pub get
+      - run: dart pub publish --force

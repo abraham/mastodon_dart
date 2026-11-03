@@ -6,7 +6,9 @@ workflows:
     '.github/workflows/main.yml':
         - 'actions/checkout@v7.0.1'
         - 'dart-lang/setup-dart@v1.8.1'
-    '.github/workflows/publish.yml': []
+    '.github/workflows/publish.yml':
+        - 'actions/checkout@v7.0.1'
+        - 'dart-lang/setup-dart@v1.8.1'
     '.github/workflows/release.yml':
         - 'actions/checkout@v7.0.1'
         - 'dart-lang/setup-dart@v1.8.1'

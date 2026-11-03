@@ -2,11 +2,16 @@ name: Main
 on:
   push:
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
       - uses: dart-lang/setup-dart@v1.8.1
 
       - run: dart pub get
@@ -21,16 +26,24 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: dart-lang/setup-dart@v1.8.1
+        with:
+          persist-credentials: false
+      - run: gh extension install github/gh-actions-lock --pin v0.4.1
+      - run: gh actions-lock --verify
 
+      - uses: dart-lang/setup-dart@v1.8.1
       - run: dart pub get
       - run: ./scripts/analyze
-      - run: gh extension install github/gh-actions-lock --pin v0.4.0
-        env:
-          GH_TOKEN: ${{ github.token }}
-      - run: gh actions-lock --verify
-        env:
-          GH_TOKEN: ${{ github.token }}
 
+  main-required:
+    if: ${{ !cancelled() }}
+    needs: [build, lint]
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
+        run: exit 1
