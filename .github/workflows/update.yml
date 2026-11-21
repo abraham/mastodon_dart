@@ -24,7 +24,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: ./scripts/update_sha
 
-      - uses: dart-lang/setup-dart@v1.8.1
+      - uses: dart-lang/setup-dart@v1.8.2
         if: steps.check_sha.outputs.sha_changed == 'true'
 
       - name: Install dependencies
