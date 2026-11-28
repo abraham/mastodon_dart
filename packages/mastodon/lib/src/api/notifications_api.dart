@@ -198,7 +198,7 @@ class NotificationsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -288,7 +288,7 @@ class NotificationsApi {
       '{'
       r'group_key'
       '}',
-      groupKey.toString(),
+      Uri.encodeComponent(groupKey.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -451,7 +451,7 @@ class NotificationsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -901,7 +901,7 @@ class NotificationsApi {
       '{'
       r'group_key'
       '}',
-      groupKey.toString(),
+      Uri.encodeComponent(groupKey.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -1291,7 +1291,7 @@ class NotificationsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1346,7 +1346,7 @@ class NotificationsApi {
       '{'
       r'group_key'
       '}',
-      groupKey.toString(),
+      Uri.encodeComponent(groupKey.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1401,7 +1401,7 @@ class NotificationsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1456,7 +1456,7 @@ class NotificationsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',

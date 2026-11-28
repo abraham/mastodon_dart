@@ -151,7 +151,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -230,7 +230,7 @@ class AccountsApi {
       '{'
       r'account_id'
       '}',
-      accountId.toString(),
+      Uri.encodeComponent(accountId.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -327,7 +327,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -496,7 +496,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -583,7 +583,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -678,7 +678,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -766,7 +766,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -855,7 +855,7 @@ class AccountsApi {
       '{'
       r'account_id'
       '}',
-      accountId.toString(),
+      Uri.encodeComponent(accountId.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -946,7 +946,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -1313,7 +1313,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -1669,7 +1669,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1754,7 +1754,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1841,7 +1841,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1943,7 +1943,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -2045,7 +2045,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -2146,7 +2146,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -2231,7 +2231,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -2316,7 +2316,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -2401,7 +2401,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -2486,7 +2486,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -2571,7 +2571,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -2657,7 +2657,7 @@ class AccountsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',

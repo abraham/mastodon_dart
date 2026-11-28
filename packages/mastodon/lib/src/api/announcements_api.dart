@@ -48,13 +48,13 @@ class AnnouncementsApi {
           '{'
           r'id'
           '}',
-          id.toString(),
+          Uri.encodeComponent(id.toString()),
         )
         .replaceAll(
           '{'
           r'name'
           '}',
-          name.toString(),
+          Uri.encodeComponent(name.toString()),
         );
     final _options = Options(
       method: r'DELETE',
@@ -187,7 +187,7 @@ class AnnouncementsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -245,13 +245,13 @@ class AnnouncementsApi {
           '{'
           r'id'
           '}',
-          id.toString(),
+          Uri.encodeComponent(id.toString()),
         )
         .replaceAll(
           '{'
           r'name'
           '}',
-          name.toString(),
+          Uri.encodeComponent(name.toString()),
         );
     final _options = Options(
       method: r'PUT',

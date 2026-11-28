@@ -639,7 +639,7 @@ class InstanceApi {
       '{'
       r'date'
       '}',
-      date.toString(),
+      Uri.encodeComponent(date.toString()),
     );
     final _options = Options(
       method: r'GET',

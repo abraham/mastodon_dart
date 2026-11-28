@@ -351,7 +351,7 @@ class TimelinesApi {
       '{'
       r'list_id'
       '}',
-      listId.toString(),
+      Uri.encodeComponent(listId.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -567,7 +567,7 @@ class TimelinesApi {
       '{'
       r'hashtag'
       '}',
-      hashtag.toString(),
+      Uri.encodeComponent(hashtag.toString()),
     );
     final _options = Options(
       method: r'GET',

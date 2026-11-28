@@ -145,7 +145,7 @@ class CollectionsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'DELETE',
@@ -203,13 +203,13 @@ class CollectionsApi {
           '{'
           r'collection_id'
           '}',
-          collectionId.toString(),
+          Uri.encodeComponent(collectionId.toString()),
         )
         .replaceAll(
           '{'
           r'id'
           '}',
-          id.toString(),
+          Uri.encodeComponent(id.toString()),
         );
     final _options = Options(
       method: r'DELETE',
@@ -264,7 +264,7 @@ class CollectionsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -352,13 +352,13 @@ class CollectionsApi {
           '{'
           r'collection_id'
           '}',
-          collectionId.toString(),
+          Uri.encodeComponent(collectionId.toString()),
         )
         .replaceAll(
           '{'
           r'id'
           '}',
-          id.toString(),
+          Uri.encodeComponent(id.toString()),
         );
     final _options = Options(
       method: r'POST',
@@ -415,7 +415,7 @@ class CollectionsApi {
       '{'
       r'collection_id'
       '}',
-      collectionId.toString(),
+      Uri.encodeComponent(collectionId.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -517,7 +517,7 @@ class CollectionsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'PATCH',
