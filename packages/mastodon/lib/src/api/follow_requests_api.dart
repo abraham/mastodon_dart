@@ -137,7 +137,7 @@ class FollowRequestsApi {
       '{'
       r'account_id'
       '}',
-      accountId.toString(),
+      Uri.encodeComponent(accountId.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -222,7 +222,7 @@ class FollowRequestsApi {
       '{'
       r'account_id'
       '}',
-      accountId.toString(),
+      Uri.encodeComponent(accountId.toString()),
     );
     final _options = Options(
       method: r'POST',

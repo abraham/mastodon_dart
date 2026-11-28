@@ -45,7 +45,7 @@ class AnnualReportsApi {
       '{'
       r'year'
       '}',
-      year.toString(),
+      Uri.encodeComponent(year.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -130,7 +130,7 @@ class AnnualReportsApi {
       '{'
       r'year'
       '}',
-      year.toString(),
+      Uri.encodeComponent(year.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -263,7 +263,7 @@ class AnnualReportsApi {
       '{'
       r'year'
       '}',
-      year.toString(),
+      Uri.encodeComponent(year.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -318,7 +318,7 @@ class AnnualReportsApi {
       '{'
       r'year'
       '}',
-      year.toString(),
+      Uri.encodeComponent(year.toString()),
     );
     final _options = Options(
       method: r'POST',

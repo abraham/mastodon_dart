@@ -243,7 +243,7 @@ class FiltersApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'DELETE',
@@ -298,7 +298,7 @@ class FiltersApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'DELETE',
@@ -353,7 +353,7 @@ class FiltersApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'DELETE',
@@ -438,7 +438,7 @@ class FiltersApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'DELETE',
@@ -494,7 +494,7 @@ class FiltersApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -579,7 +579,7 @@ class FiltersApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -664,7 +664,7 @@ class FiltersApi {
       '{'
       r'filter_id'
       '}',
-      filterId.toString(),
+      Uri.encodeComponent(filterId.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -749,7 +749,7 @@ class FiltersApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -834,7 +834,7 @@ class FiltersApi {
       '{'
       r'filter_id'
       '}',
-      filterId.toString(),
+      Uri.encodeComponent(filterId.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -919,7 +919,7 @@ class FiltersApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -1159,7 +1159,7 @@ class FiltersApi {
       '{'
       r'filter_id'
       '}',
-      filterId.toString(),
+      Uri.encodeComponent(filterId.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1261,7 +1261,7 @@ class FiltersApi {
       '{'
       r'filter_id'
       '}',
-      filterId.toString(),
+      Uri.encodeComponent(filterId.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1364,7 +1364,7 @@ class FiltersApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'PUT',
@@ -1466,7 +1466,7 @@ class FiltersApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'PUT',
@@ -1568,7 +1568,7 @@ class FiltersApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'PUT',

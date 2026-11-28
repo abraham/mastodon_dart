@@ -158,7 +158,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'DELETE',
@@ -244,7 +244,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -325,7 +325,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -412,7 +412,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -504,7 +504,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -595,7 +595,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -693,7 +693,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -785,7 +785,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -953,7 +953,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1034,7 +1034,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1115,7 +1115,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1196,7 +1196,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1280,13 +1280,13 @@ class StatusesApi {
           '{'
           r'id'
           '}',
-          id.toString(),
+          Uri.encodeComponent(id.toString()),
         )
         .replaceAll(
           '{'
           r'quoting_status_id'
           '}',
-          quotingStatusId.toString(),
+          Uri.encodeComponent(quotingStatusId.toString()),
         );
     final _options = Options(
       method: r'POST',
@@ -1369,7 +1369,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1467,7 +1467,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1567,7 +1567,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1648,7 +1648,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1729,7 +1729,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1810,7 +1810,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1891,7 +1891,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -1974,7 +1974,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'PUT',
@@ -2072,7 +2072,7 @@ class StatusesApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'PUT',

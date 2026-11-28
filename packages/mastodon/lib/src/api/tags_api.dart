@@ -45,7 +45,7 @@ class TagsApi {
       '{'
       r'name'
       '}',
-      name.toString(),
+      Uri.encodeComponent(name.toString()),
     );
     final _options = Options(
       method: r'GET',
@@ -126,7 +126,7 @@ class TagsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -207,7 +207,7 @@ class TagsApi {
       '{'
       r'name'
       '}',
-      name.toString(),
+      Uri.encodeComponent(name.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -288,7 +288,7 @@ class TagsApi {
       '{'
       r'id'
       '}',
-      id.toString(),
+      Uri.encodeComponent(id.toString()),
     );
     final _options = Options(
       method: r'POST',
@@ -369,7 +369,7 @@ class TagsApi {
       '{'
       r'name'
       '}',
-      name.toString(),
+      Uri.encodeComponent(name.toString()),
     );
     final _options = Options(
       method: r'POST',

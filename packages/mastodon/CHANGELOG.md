@@ -1,5 +1,9 @@
 ## Unreleased
 
+**Features**
+
+- Updated OpenAPI Generator to [v7.28.0](https://github.com/OpenAPITools/openapi-generator/releases/tag/v7.28.0)
+
 ## v1.4.0
 
 **Features**

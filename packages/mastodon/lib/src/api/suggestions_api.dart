@@ -46,7 +46,7 @@ class SuggestionsApi {
       '{'
       r'account_id'
       '}',
-      accountId.toString(),
+      Uri.encodeComponent(accountId.toString()),
     );
     final _options = Options(
       method: r'DELETE',
